@@ -1,0 +1,1379 @@
+{
+ "batch": "eval2",
+ "run": "main",
+ "pairs": 200,
+ "scored": 181,
+ "opposed_scored": 68,
+ "opposed_contradictions": 19,
+ "all_contradictions": 25,
+ "l2": 1.0,
+ "seed": 7,
+ "coverage": {
+  "dataset": {
+   "unknown": [
+    17,
+    58
+   ],
+   "overlap": [
+    1,
+    3
+   ],
+   "different": [
+    1,
+    7
+   ]
+  },
+  "data scale": {
+   "unknown": [
+    19,
+    68
+   ]
+  },
+  "population": {
+   "unknown": [
+    18,
+    63
+   ],
+   "same": [
+    1,
+    1
+   ],
+   "immaterial": [
+    0,
+    1
+   ],
+   "overlap": [
+    0,
+    3
+   ]
+  },
+  "task": {
+   "unknown": [
+    16,
+    45
+   ],
+   "same": [
+    1,
+    7
+   ],
+   "overlap": [
+    2,
+    15
+   ],
+   "immaterial": [
+    0,
+    1
+   ]
+  },
+  "experimental conditions": {
+   "unknown": [
+    14,
+    35
+   ],
+   "same": [
+    1,
+    2
+   ],
+   "different": [
+    4,
+    29
+   ],
+   "overlap": [
+    0,
+    2
+   ]
+  },
+  "training & design": {
+   "unknown": [
+    18,
+    63
+   ],
+   "different": [
+    1,
+    5
+   ]
+  },
+  "evaluation metric": {
+   "overlap": [
+    2,
+    7
+   ],
+   "unknown": [
+    15,
+    44
+   ],
+   "different": [
+    2,
+    10
+   ],
+   "same": [
+    0,
+    5
+   ],
+   "immaterial": [
+    0,
+    2
+   ]
+  },
+  "methodology": {
+   "unknown": [
+    19,
+    68
+   ]
+  },
+  "sample size": {
+   "unknown": [
+    19,
+    68
+   ]
+  },
+  "time period": {
+   "unknown": [
+    19,
+    68
+   ]
+  },
+  "model / method": {
+   "overlap": [
+    2,
+    9
+   ],
+   "immaterial": [
+    1,
+    6
+   ],
+   "unknown": [
+    8,
+    23
+   ],
+   "different": [
+    6,
+    23
+   ],
+   "same": [
+    2,
+    7
+   ]
+  },
+  "baseline": {
+   "unknown": [
+    12,
+    44
+   ],
+   "immaterial": [
+    1,
+    6
+   ],
+   "different": [
+    2,
+    6
+   ],
+   "overlap": [
+    3,
+    6
+   ],
+   "same": [
+    1,
+    6
+   ]
+  }
+ },
+ "never_known": [
+  "data scale",
+  "methodology",
+  "sample size",
+  "time period"
+ ],
+ "sufficiency_fisher_p": 0.0009847193460880215,
+ "sufficiency_cells": {
+  "E = 0 (none stated by both)": {
+   "n": 16,
+   "contradictions": 10,
+   "per_annotator": [
+    "7/17",
+    "10/17",
+    "10/17"
+   ]
+  },
+  "E > 0": {
+   "n": 52,
+   "contradictions": 9,
+   "per_annotator": [
+    "3/60",
+    "15/60",
+    "22/60"
+   ]
+  }
+ },
+ "raw_auc": {
+  "all mismatches (uniform)": {
+   "all": 0.6205882352941177,
+   "known": 0.4868421052631579,
+   "known_ci": [
+    0.164262729844413,
+    0.8014175836514706
+   ]
+  },
+  "scope + measurement mismatches": {
+   "all": 0.6617647058823529,
+   "known": 0.47368421052631576,
+   "known_ci": [
+    0.2142485119047619,
+    0.7501262626262625
+   ]
+  },
+  "scope mismatches": {
+   "all": 0.6352941176470588,
+   "known": 0.45394736842105265,
+   "known_ci": [
+    0.18585526315789475,
+    0.7
+   ]
+  },
+  "hand-weighted mismatches (V1 weights)": {
+   "all": 0.6441176470588236,
+   "known": 0.5,
+   "known_ci": [
+    0.20829741379310346,
+    0.7916666666666666
+   ]
+  },
+  "intervention mismatches": {
+   "all": 0.538235294117647,
+   "known": 0.506578947368421,
+   "known_ci": [
+    0.2369342672413793,
+    0.7681969870327993
+   ]
+  },
+  "agreeing factors (reversed: more agreement = more genuine)": {
+   "all": 0.4852941176470588,
+   "known": 0.5592105263157895,
+   "known_ci": [
+    0.29996527777777776,
+    0.8192951807228914
+   ]
+  }
+ },
+ "auc_context_stated": 0.6882352941176471,
+ "cv": {
+  "constant": {
+   "n_params": 1,
+   "auc": 0.5,
+   "auc_ci": [
+    0.5,
+    0.5
+   ],
+   "log_loss": 0.6171843302402743,
+   "auc_5fold_mean": null,
+   "auc_5fold_sd": null,
+   "auc_known": null,
+   "skill": 0.0
+  },
+  "semantic": {
+   "n_params": 4,
+   "auc": 0.3352941176470588,
+   "auc_ci": [
+    0.14836869452262394,
+    0.5469637634059149
+   ],
+   "log_loss": 0.6571842916736288,
+   "auc_5fold_mean": 0.3767508055853921,
+   "auc_5fold_sd": 0.06671150706493743,
+   "auc_known": 0.32894736842105265,
+   "skill": -0.06481039694864288
+  },
+  "context_stated": {
+   "n_params": 2,
+   "auc": 0.6882352941176471,
+   "auc_ci": [
+    0.5471392146863845,
+    0.8196526359250722
+   ],
+   "log_loss": 0.5443765301952619,
+   "auc_5fold_mean": 0.6340870032223416,
+   "auc_5fold_sd": 0.01927459156210971,
+   "auc_known": null,
+   "skill": 0.11796767428730381
+  },
+  "uniform_ctx": {
+   "n_params": 2,
+   "auc": 0.6617647058823529,
+   "auc_ci": [
+    0.48076117318435757,
+    0.8333653846153845
+   ],
+   "log_loss": 0.5770018819427708,
+   "auc_5fold_mean": 0.6786788399570355,
+   "auc_5fold_sd": 0.018646087520400288,
+   "auc_known": 0.48026315789473684,
+   "skill": 0.06510607338630936
+  },
+  "role2": {
+   "n_params": 3,
+   "auc": 0.6617647058823529,
+   "auc_ci": [
+    0.4793961675579323,
+    0.8293524652822015
+   ],
+   "log_loss": 0.5862133700004181,
+   "auc_5fold_mean": 0.6624274973147153,
+   "auc_5fold_sd": 0.022736712103016064,
+   "auc_known": 0.47368421052631576,
+   "skill": 0.05018105405851603
+  },
+  "uniform_diff": {
+   "n_params": 2,
+   "auc": 0.6205882352941177,
+   "auc_ci": [
+    0.4215084284042709,
+    0.817767629566695
+   ],
+   "log_loss": 0.5818676654774368,
+   "auc_5fold_mean": 0.6599087003222343,
+   "auc_5fold_sd": 0.014674214510261862,
+   "auc_known": 0.4605263157894737,
+   "skill": 0.05722223172627927
+  },
+  "uniform": {
+   "n_params": 3,
+   "auc": 0.6147058823529412,
+   "auc_ci": [
+    0.4068326859045505,
+    0.8069634132800355
+   ],
+   "log_loss": 0.588431329053232,
+   "auc_5fold_mean": 0.6571079484425348,
+   "auc_5fold_sd": 0.01540800110845288,
+   "auc_known": 0.4605263157894737,
+   "skill": 0.046587380427899894
+  },
+  "hand": {
+   "n_params": 2,
+   "auc": 0.6441176470588236,
+   "auc_ci": [
+    0.4356971347861178,
+    0.8363847780126848
+   ],
+   "log_loss": 0.5751450557420739,
+   "auc_5fold_mean": 0.6816004296455423,
+   "auc_5fold_sd": 0.015202699563577674,
+   "auc_known": 0.47368421052631576,
+   "skill": 0.06811461736534086
+  },
+  "hand_same": {
+   "n_params": 3,
+   "auc": 0.6352941176470588,
+   "auc_ci": [
+    0.4251540238737004,
+    0.8202683435478377
+   ],
+   "log_loss": 0.582124603669927,
+   "auc_5fold_mean": 0.6742642320085929,
+   "auc_5fold_sd": 0.015589270519081202,
+   "auc_known": 0.4605263157894737,
+   "skill": 0.05680592466872625
+  },
+  "role": {
+   "n_params": 5,
+   "auc": 0.6470588235294118,
+   "auc_ci": [
+    0.4689915797914996,
+    0.8248636846168692
+   ],
+   "log_loss": 0.5967631194444407,
+   "auc_5fold_mean": 0.6569038668098819,
+   "auc_5fold_sd": 0.022879072519742884,
+   "auc_known": 0.46710526315789475,
+   "skill": 0.03308770134828842
+  },
+  "role4": {
+   "n_params": 6,
+   "auc": 0.6294117647058823,
+   "auc_ci": [
+    0.4252160112854876,
+    0.8225943603247751
+   ],
+   "log_loss": 0.5992051112330661,
+   "auc_5fold_mean": 0.6295166487647691,
+   "auc_5fold_sd": 0.027545546699466957,
+   "auc_known": 0.4473684210526316,
+   "skill": 0.029131036104252384
+  },
+  "role4_free": {
+   "n_params": 6,
+   "auc": 0.5794117647058824,
+   "auc_ci": [
+    0.3911110804242156,
+    0.7643494359604021
+   ],
+   "log_loss": 0.6125924178596828,
+   "auc_5fold_mean": 0.5883270676691729,
+   "auc_5fold_sd": 0.037346889251785226,
+   "auc_known": 0.3026315789473684,
+   "skill": 0.007440098776979376
+  },
+  "free12": {
+   "n_params": 14,
+   "auc": 0.6088235294117647,
+   "auc_ci": [
+    0.3970550333535476,
+    0.804235679779158
+   ],
+   "log_loss": 0.6159771819042554,
+   "auc_5fold_mean": 0.6127470461868958,
+   "auc_5fold_sd": 0.028318338958343525,
+   "auc_known": 0.3684210526315789,
+   "skill": 0.0019558959566405854
+  },
+  "role4_llm_material": {
+   "n_params": 6,
+   "auc": 0.6176470588235294,
+   "auc_ci": [
+    0.41719465160195884,
+    0.8048802110361529
+   ],
+   "log_loss": 0.6071940096444295,
+   "auc_5fold_mean": 0.6280209452201935,
+   "auc_5fold_sd": 0.02694208788033128,
+   "auc_known": 0.4276315789473684,
+   "skill": 0.01618693169341401
+  },
+  "semantic_role4": {
+   "n_params": 9,
+   "auc": 0.5941176470588235,
+   "auc_ci": [
+    0.39750914660086784,
+    0.7814694019817755
+   ],
+   "log_loss": 0.6283239389737096,
+   "auc_5fold_mean": 0.6026208378088077,
+   "auc_5fold_sd": 0.029386946364836943,
+   "auc_known": 0.25,
+   "skill": -0.018049078998973567
+  }
+ },
+ "selection": {
+  "best": "context_stated",
+  "selected": "context_stated",
+  "selected_factor_model": "uniform_ctx",
+  "table": {
+   "context_stated": {
+    "n_params": 2,
+    "log_loss": 0.5443765301952619,
+    "diff_best": 0.0,
+    "se": 0.0,
+    "within": true,
+    "diff_constant": -0.07280780004501222,
+    "se_constant": 0.03870009126947698
+   },
+   "uniform_ctx": {
+    "n_params": 2,
+    "log_loss": 0.5770018819427708,
+    "diff_best": 0.03262535174750863,
+    "se": 0.03417055891486633,
+    "within": true,
+    "diff_constant": -0.04018244829750358,
+    "se_constant": 0.03616583751233333
+   },
+   "uniform_diff": {
+    "n_params": 2,
+    "log_loss": 0.5818676654774368,
+    "diff_best": 0.037491135282174876,
+    "se": 0.03861460339993872,
+    "within": true,
+    "diff_constant": -0.03531666476283733,
+    "se_constant": 0.03513714643120798
+   },
+   "hand": {
+    "n_params": 2,
+    "log_loss": 0.5751450557420739,
+    "diff_best": 0.03076852554681165,
+    "se": 0.039205134484822504,
+    "within": true,
+    "diff_constant": -0.04203927449820056,
+    "se_constant": 0.039748574852049044
+   },
+   "uniform": {
+    "n_params": 3,
+    "log_loss": 0.588431329053232,
+    "diff_best": 0.04405479885797001,
+    "se": 0.040025966967971574,
+    "within": false,
+    "diff_constant": -0.028753001187042212,
+    "se_constant": 0.03524967100302355
+   },
+   "hand_same": {
+    "n_params": 3,
+    "log_loss": 0.582124603669927,
+    "diff_best": 0.037748073474665016,
+    "se": 0.039425203836741717,
+    "within": true,
+    "diff_constant": -0.03505972657034721,
+    "se_constant": 0.04140613909647318
+   },
+   "role2": {
+    "n_params": 3,
+    "log_loss": 0.5862133700004181,
+    "diff_best": 0.041836839805156054,
+    "se": 0.03518347674472579,
+    "within": false,
+    "diff_constant": -0.030970960239856158,
+    "se_constant": 0.035358294737771995
+   },
+   "role": {
+    "n_params": 5,
+    "log_loss": 0.5967631194444407,
+    "diff_best": 0.05238658924917866,
+    "se": 0.0368836955187191,
+    "within": false,
+    "diff_constant": -0.020421210795833575,
+    "se_constant": 0.038365930485771436
+   },
+   "role4": {
+    "n_params": 6,
+    "log_loss": 0.5992051112330661,
+    "diff_best": 0.05482858103780409,
+    "se": 0.039686241065042635,
+    "within": false,
+    "diff_constant": -0.017979219007208114,
+    "se_constant": 0.03915330502342861
+   },
+   "free12": {
+    "n_params": 14,
+    "log_loss": 0.6159771819042554,
+    "diff_best": 0.07160065170899332,
+    "se": 0.03511644524615029,
+    "within": false,
+    "diff_constant": -0.0012071483360189,
+    "se_constant": 0.032140974750430894
+   }
+  }
+ },
+ "shuffled": {
+  "uniform_ctx": {
+   "real": 0.6617647058823529,
+   "a": {
+    "mean": 0.5020823529411765,
+    "lo": 0.38080882352941176,
+    "hi": 0.6605147058823527,
+    "p": 0.027944111776447105
+   },
+   "b": {
+    "mean": 0.6739588235294117,
+    "lo": 0.5645588235294118,
+    "hi": 0.7750735294117647,
+    "p": 0.5748502994011976
+   }
+  },
+  "uniform": {
+   "real": 0.6147058823529412,
+   "a": {
+    "mean": 0.48909411764705885,
+    "lo": 0.36316176470588235,
+    "hi": 0.6558823529411765,
+    "p": 0.07584830339321358
+   },
+   "b": {
+    "mean": 0.6523470588235293,
+    "lo": 0.5072794117647058,
+    "hi": 0.7855882352941174,
+    "p": 0.7145708582834331
+   }
+  },
+  "hand": {
+   "real": 0.6441176470588236,
+   "a": {
+    "mean": 0.49992941176470584,
+    "lo": 0.37058823529411766,
+    "hi": 0.6633088235294117,
+    "p": 0.041916167664670656
+   },
+   "b": {
+    "mean": 0.678535294117647,
+    "lo": 0.5529411764705883,
+    "hi": 0.7911764705882353,
+    "p": 0.7425149700598802
+   }
+  },
+  "role": {
+   "real": 0.6470588235294118,
+   "a": {
+    "mean": 0.5075529411764705,
+    "lo": 0.34551470588235295,
+    "hi": 0.6676470588235294,
+    "p": 0.05588822355289421
+   },
+   "b": {
+    "mean": 0.6686294117647059,
+    "lo": 0.5617647058823529,
+    "hi": 0.7794117647058824,
+    "p": 0.6487025948103793
+   }
+  },
+  "role4": {
+   "real": 0.6294117647058823,
+   "a": {
+    "mean": 0.4958705882352941,
+    "lo": 0.33080882352941177,
+    "hi": 0.6574264705882352,
+    "p": 0.06387225548902195
+   },
+   "b": {
+    "mean": 0.6661588235294117,
+    "lo": 0.55,
+    "hi": 0.7956617647058823,
+    "p": 0.7265469061876247
+   }
+  }
+ },
+ "coefficients": {
+  "uniform_ctx": {
+   "intercept": {
+    "value": -0.3831396331141554,
+    "ci": [
+     -1.214134786692408,
+     0.33094562091999263
+    ],
+    "share_zero": 0.0
+   },
+   "diff:context": {
+    "value": 0.8760939692119522,
+    "ci": [
+     0.08677634783338078,
+     1.8589081018130162
+    ],
+    "share_zero": 0.012
+   }
+  },
+  "hand": {
+   "intercept": {
+    "value": -0.176773782283837,
+    "ci": [
+     -1.0101642435780256,
+     0.6919212347541501
+    ],
+    "share_zero": 0.0
+   },
+   "diff:hand-weighted": {
+    "value": 0.7408134294619997,
+    "ci": [
+     0.12489209841834459,
+     1.6958291880726697
+    ],
+    "share_zero": 0.008
+   }
+  },
+  "role": {
+   "intercept": {
+    "value": -0.4415195970470933,
+    "ci": [
+     -1.240371261551173,
+     0.2399363486310518
+    ],
+    "share_zero": 0.0
+   },
+   "same": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.5205997007974589
+    ],
+    "share_zero": 0.684
+   },
+   "diff:scope": {
+    "value": 0.8712659980331386,
+    "ci": [
+     0.05482141374019495,
+     1.9106169682263574
+    ],
+    "share_zero": 0.022
+   },
+   "diff:measurement": {
+    "value": 0.4438715388126272,
+    "ci": [
+     0.0,
+     1.3576317888605147
+    ],
+    "share_zero": 0.178
+   },
+   "diff:strength": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "share_zero": 1.0
+   }
+  },
+  "role4": {
+   "intercept": {
+    "value": -0.3514497190446559,
+    "ci": [
+     -1.103668372464831,
+     0.473230519508121
+    ],
+    "share_zero": 0.0
+   },
+   "same": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.5316865330166316
+    ],
+    "share_zero": 0.726
+   },
+   "diff:scope": {
+    "value": 0.8648739910634783,
+    "ci": [
+     0.0909275951878124,
+     1.7410150224473364
+    ],
+    "share_zero": 0.012
+   },
+   "diff:measurement": {
+    "value": 0.4572706430424894,
+    "ci": [
+     0.0,
+     1.3643198508230951
+    ],
+    "share_zero": 0.222
+   },
+   "diff:strength": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "share_zero": 1.0
+   },
+   "diff:intervention": {
+    "value": 0.16958405424739073,
+    "ci": [
+     0.0,
+     1.1023798144302444
+    ],
+    "share_zero": 0.326
+   }
+  },
+  "role4_free": {
+   "intercept": {
+    "value": -0.2907237056897892,
+    "ci": [
+     -1.196311287755414,
+     0.5026872664157649
+    ],
+    "share_zero": 0.0
+   },
+   "same": {
+    "value": -0.2106765781060336,
+    "ci": [
+     -1.3545178921448093,
+     0.5629869680598045
+    ],
+    "share_zero": 0.0
+   },
+   "diff:scope": {
+    "value": 0.8566838409170284,
+    "ci": [
+     0.11878983594367545,
+     1.778791004190846
+    ],
+    "share_zero": 0.0
+   },
+   "diff:measurement": {
+    "value": 0.47212497851518226,
+    "ci": [
+     -0.6262579925682227,
+     1.4203803195397557
+    ],
+    "share_zero": 0.0
+   },
+   "diff:strength": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "share_zero": 1.0
+   },
+   "diff:intervention": {
+    "value": 0.17601115541357493,
+    "ci": [
+     -0.6049181905777052,
+     1.0821862029979359
+    ],
+    "share_zero": 0.0
+   }
+  },
+  "free12": {
+   "intercept": {
+    "value": -0.38161038043367657,
+    "ci": [
+     -1.1016566786809168,
+     0.29959343600689625
+    ],
+    "share_zero": 0.0
+   },
+   "same": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.5727803974910682
+    ],
+    "share_zero": 0.714
+   },
+   "diff:dataset": {
+    "value": 0.4728919137198478,
+    "ci": [
+     0.0,
+     1.0583655120911502
+    ],
+    "share_zero": 0.118
+   },
+   "diff:data scale": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "share_zero": 1.0
+   },
+   "diff:population": {
+    "value": 0.33868431694087564,
+    "ci": [
+     0.03944179139844055,
+     0.6275328400080952
+    ],
+    "share_zero": 0.022
+   },
+   "diff:task": {
+    "value": 0.41569821152309494,
+    "ci": [
+     0.0,
+     1.1312086985562886
+    ],
+    "share_zero": 0.142
+   },
+   "diff:experimental conditions": {
+    "value": 0.8914935326306036,
+    "ci": [
+     0.04965568523579335,
+     1.9386097212397773
+    ],
+    "share_zero": 0.024
+   },
+   "diff:training & design": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.6828810957068782
+    ],
+    "share_zero": 0.53
+   },
+   "diff:evaluation metric": {
+    "value": 0.48993830244002323,
+    "ci": [
+     0.0,
+     1.3833990034224484
+    ],
+    "share_zero": 0.176
+   },
+   "diff:methodology": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "share_zero": 1.0
+   },
+   "diff:sample size": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "share_zero": 1.0
+   },
+   "diff:time period": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "share_zero": 1.0
+   },
+   "diff:model / method": {
+    "value": 0.42160316751891824,
+    "ci": [
+     0.0,
+     1.2202989942242908
+    ],
+    "share_zero": 0.198
+   },
+   "diff:baseline": {
+    "value": 0.0,
+    "ci": [
+     0.0,
+     0.7975058406154428
+    ],
+    "share_zero": 0.616
+   }
+  }
+ },
+ "decisions": {
+  "No context (assert every opposed pair)": {
+   "asserted": 68,
+   "tp": 19,
+   "fp": 49,
+   "precision": 27.941176470588236,
+   "recall": 76.0,
+   "f1": 40.86021505376344,
+   "false_con_per_100": 27.07182320441989
+  },
+  "V1 hard gate \u2014 asserted": {
+   "asserted": 7,
+   "tp": 2,
+   "fp": 5,
+   "precision": 28.57142857142857,
+   "recall": 8.0,
+   "f1": 12.5,
+   "false_con_per_100": 2.7624309392265194
+  },
+  "V1 hard gate \u2014 asserted + unasserted (insufficient)": {
+   "asserted": 23,
+   "tp": 12,
+   "fp": 11,
+   "precision": 52.17391304347826,
+   "recall": 48.0,
+   "f1": 49.999999999999986,
+   "false_con_per_100": 6.077348066298343
+  },
+  "Typed hard gate \u2014 asserted": {
+   "asserted": 7,
+   "tp": 2,
+   "fp": 5,
+   "precision": 28.57142857142857,
+   "recall": 8.0,
+   "f1": 12.5,
+   "false_con_per_100": 2.7624309392265194
+  },
+  "Typed hard gate \u2014 asserted + insufficient": {
+   "asserted": 17,
+   "tp": 8,
+   "fp": 9,
+   "precision": 47.05882352941176,
+   "recall": 32.0,
+   "f1": 38.0952380952381,
+   "false_con_per_100": 4.972375690607735
+  },
+  "Opposed and no intervention mismatch (rule proposed for question A)": {
+   "asserted": 42,
+   "tp": 12,
+   "fp": 30,
+   "precision": 28.57142857142857,
+   "recall": 48.0,
+   "f1": 35.82089552238806,
+   "false_con_per_100": 16.574585635359117
+  },
+  "Only the pairs with no shared context (E = 0)": {
+   "asserted": 16,
+   "tp": 10,
+   "fp": 6,
+   "precision": 62.5,
+   "recall": 40.0,
+   "f1": 48.78048780487806,
+   "false_con_per_100": 3.314917127071823
+  },
+  "Semantic signals only (NLI contradiction, entailment, similarity) \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 24,
+   "tp": 3,
+   "fp": 21,
+   "precision": 12.5,
+   "recall": 12.0,
+   "f1": 12.244897959183673,
+   "false_con_per_100": 11.602209944751381
+  },
+  "Sufficiency only: is any context factor stated by both papers? \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 29,
+   "tp": 12,
+   "fp": 17,
+   "precision": 41.37931034482759,
+   "recall": 48.0,
+   "f1": 44.44444444444445,
+   "false_con_per_100": 9.392265193370166
+  },
+  "Uniform weights, scope + measurement mismatches only \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 25,
+   "tp": 10,
+   "fp": 15,
+   "precision": 40.0,
+   "recall": 40.0,
+   "f1": 40.00000000000001,
+   "false_con_per_100": 8.287292817679559
+  },
+  "Uniform weights, agreement and mismatch \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 17,
+   "tp": 7,
+   "fp": 10,
+   "precision": 41.17647058823529,
+   "recall": 28.000000000000004,
+   "f1": 33.33333333333333,
+   "false_con_per_100": 5.524861878453039
+  },
+  "V1 hand weights, mismatches only \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 25,
+   "tp": 13,
+   "fp": 12,
+   "precision": 52.0,
+   "recall": 52.0,
+   "f1": 52.0,
+   "false_con_per_100": 6.629834254143646
+  },
+  "P3: role weights (scope, measurement, strength; intervention outside) \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 22,
+   "tp": 12,
+   "fp": 10,
+   "precision": 54.54545454545454,
+   "recall": 48.0,
+   "f1": 51.06382978723404,
+   "false_con_per_100": 5.524861878453039
+  },
+  "Role weights incl. intervention \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 22,
+   "tp": 11,
+   "fp": 11,
+   "precision": 50.0,
+   "recall": 44.0,
+   "f1": 46.808510638297875,
+   "false_con_per_100": 6.077348066298343
+  },
+  "Twelve free mismatch weights + agreement (exploratory) \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 26,
+   "tp": 11,
+   "fp": 15,
+   "precision": 42.30769230769231,
+   "recall": 44.0,
+   "f1": 43.13725490196078,
+   "false_con_per_100": 8.287292817679559
+  },
+  "Role weights, LLM materiality flag honoured \u2014 no sufficiency rule, max-F1 threshold": {
+   "asserted": 22,
+   "tp": 10,
+   "fp": 12,
+   "precision": 45.45454545454545,
+   "recall": 40.0,
+   "f1": 42.55319148936171,
+   "false_con_per_100": 6.629834254143646
+  },
+  "P3 [uniform_ctx] \u2014 asserted": {
+   "asserted": 0,
+   "tp": 0,
+   "fp": 0,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "false_con_per_100": 0.0
+  },
+  "P3 [uniform_ctx] \u2014 asserted + insufficient": {
+   "asserted": 16,
+   "tp": 10,
+   "fp": 6,
+   "precision": 62.5,
+   "recall": 40.0,
+   "f1": 48.78048780487806,
+   "false_con_per_100": 3.314917127071823
+  },
+  "P3 [hand] \u2014 asserted": {
+   "asserted": 3,
+   "tp": 0,
+   "fp": 3,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "false_con_per_100": 1.6574585635359116
+  },
+  "P3 [hand] \u2014 asserted + insufficient": {
+   "asserted": 19,
+   "tp": 10,
+   "fp": 9,
+   "precision": 52.63157894736842,
+   "recall": 40.0,
+   "f1": 45.45454545454545,
+   "false_con_per_100": 4.972375690607735
+  },
+  "P3 [role2] \u2014 asserted": {
+   "asserted": 0,
+   "tp": 0,
+   "fp": 0,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "false_con_per_100": 0.0
+  },
+  "P3 [role2] \u2014 asserted + insufficient": {
+   "asserted": 16,
+   "tp": 10,
+   "fp": 6,
+   "precision": 62.5,
+   "recall": 40.0,
+   "f1": 48.78048780487806,
+   "false_con_per_100": 3.314917127071823
+  },
+  "P3 [role] \u2014 asserted": {
+   "asserted": 2,
+   "tp": 0,
+   "fp": 2,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "false_con_per_100": 1.1049723756906078
+  },
+  "P3 [role] \u2014 asserted + insufficient": {
+   "asserted": 18,
+   "tp": 10,
+   "fp": 8,
+   "precision": 55.55555555555556,
+   "recall": 40.0,
+   "f1": 46.51162790697674,
+   "false_con_per_100": 4.419889502762431
+  },
+  "P3 [role4] \u2014 asserted": {
+   "asserted": 3,
+   "tp": 0,
+   "fp": 3,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0,
+   "false_con_per_100": 1.6574585635359116
+  },
+  "P3 [role4] \u2014 asserted + insufficient": {
+   "asserted": 19,
+   "tp": 10,
+   "fp": 9,
+   "precision": 52.63157894736842,
+   "recall": 40.0,
+   "f1": 45.45454545454545,
+   "false_con_per_100": 4.972375690607735
+  }
+ },
+ "p3_parameters": {
+  "uniform_ctx": {
+   "title": "Uniform weights, scope + measurement mismatches only",
+   "out_of_fold_asserted": 0,
+   "intercept": -1.3876858301899835,
+   "columns": {
+    "diff:context": 0.1851952761472186
+   },
+   "threshold": null
+  },
+  "hand": {
+   "title": "V1 hand weights, mismatches only",
+   "out_of_fold_asserted": 3,
+   "intercept": -1.2648070166097958,
+   "columns": {
+    "diff:hand-weighted": 0.2131484842328599
+   },
+   "threshold": 0.211136
+  },
+  "role2": {
+   "title": "Role weights: scope, measurement (mismatch only)",
+   "out_of_fold_asserted": 0,
+   "intercept": -1.3914042920433076,
+   "columns": {
+    "diff:scope": 0.23374460669179561,
+    "diff:measurement": 0.0
+   },
+   "threshold": null
+  },
+  "role": {
+   "title": "P3: role weights (scope, measurement, strength; intervention outside)",
+   "out_of_fold_asserted": 2,
+   "intercept": -1.3914133799413266,
+   "columns": {
+    "same": 0.0,
+    "diff:scope": 0.23373564482842396,
+    "diff:measurement": 0.0,
+    "diff:strength": 0.0
+   },
+   "threshold": null
+  },
+  "role4": {
+   "title": "Role weights incl. intervention",
+   "out_of_fold_asserted": 3,
+   "intercept": -1.345130948755018,
+   "columns": {
+    "same": 0.0,
+    "diff:scope": 0.23608006988569485,
+    "diff:measurement": 0.0,
+    "diff:strength": 0.0,
+    "diff:intervention": 0.07779359828566981
+   },
+   "threshold": 0.200363
+  }
+ },
+ "ablations": {
+  "base": {
+   "all": 0.6147058823529412,
+   "known": 0.4605263157894737
+  },
+  "role: scope": {
+   "all": 0.5676470588235294,
+   "known": 0.5131578947368421
+  },
+  "role: measurement": {
+   "all": 0.5882352941176471,
+   "known": 0.42105263157894735
+  },
+  "role: strength": {
+   "all": 0.6147058823529412,
+   "known": 0.4605263157894737
+  },
+  "role: intervention": {
+   "all": 0.65,
+   "known": 0.48026315789473684
+  },
+  "factor: dataset": {
+   "all": 0.6147058823529412,
+   "known": 0.45394736842105265
+  },
+  "factor: population": {
+   "all": 0.611764705882353,
+   "known": 0.45394736842105265
+  },
+  "factor: task": {
+   "all": 0.5911764705882353,
+   "known": 0.4473684210526316
+  },
+  "factor: experimental conditions": {
+   "all": 0.6176470588235294,
+   "known": 0.5263157894736842
+  },
+  "factor: training & design": {
+   "all": 0.6264705882352941,
+   "known": 0.4934210526315789
+  },
+  "factor: evaluation metric": {
+   "all": 0.5882352941176471,
+   "known": 0.42105263157894735
+  },
+  "factor: model / method": {
+   "all": 0.6147058823529412,
+   "known": 0.4473684210526316
+  },
+  "factor: baseline": {
+   "all": 0.6647058823529411,
+   "known": 0.5131578947368421
+  },
+  "all but scope (keep only scope)": {
+   "all": 0.638235294117647,
+   "known": 0.47368421052631576
+  },
+  "all but measurement (keep only measurement)": {
+   "all": 0.5705882352941176,
+   "known": 0.47368421052631576
+  },
+  "all but intervention (keep only intervention)": {
+   "all": 0.4970588235294118,
+   "known": 0.47368421052631576
+  }
+ },
+ "sensitivity": {
+  "consensus (main)": {
+   "context_stated": 0.6882352941176471,
+   "uniform_ctx": 0.6617647058823529,
+   "hand": 0.6441176470588236,
+   "role": 0.6470588235294118,
+   "role4": 0.6294117647058823,
+   "semantic": 0.3352941176470588,
+   "uniform_ctx_known": 0.47368421052631576
+  },
+  "unanimous pairs only": {
+   "context_stated": 0.8148148148148148,
+   "uniform_ctx": 0.7962962962962963,
+   "hand": 0.8148148148148148,
+   "role": 0.8333333333333334,
+   "role4": 0.8518518518518519,
+   "semantic": 0.5185185185185185,
+   "uniform_ctx_known": 0.4444444444444444
+  },
+  "vote share incl. three-way splits (soft label; AUC against \u2265 2 votes)": {
+   "context_stated": 0.6893203883495146,
+   "uniform_ctx": 0.6941747572815534,
+   "hand": 0.662621359223301,
+   "role": 0.662621359223301,
+   "role4": 0.6407766990291263,
+   "semantic": 0.616504854368932,
+   "uniform_ctx_known": 0.5364583333333334
+  },
+  "annotator gemini alone": {
+   "context_stated": 0.7538461538461538,
+   "uniform_ctx": 0.7192307692307692,
+   "hand": 0.75,
+   "role": 0.6961538461538461,
+   "role4": 0.7307692307692307,
+   "semantic": 0.3384615384615385,
+   "uniform_ctx_known": 0.4444444444444444
+  },
+  "annotator qwen alone": {
+   "context_stated": 0.6204819277108434,
+   "uniform_ctx": 0.5682730923694779,
+   "hand": 0.5562248995983936,
+   "role": 0.570281124497992,
+   "role4": 0.5261044176706827,
+   "semantic": 0.6706827309236948,
+   "uniform_ctx_known": 0.42657342657342656
+  },
+  "annotator haiku alone": {
+   "context_stated": 0.5727272727272728,
+   "uniform_ctx": 0.6,
+   "hand": 0.6,
+   "role": 0.6127272727272727,
+   "role4": 0.6054545454545455,
+   "semantic": 0.43272727272727274,
+   "uniform_ctx_known": 0.5533707865168539
+  }
+ },
+ "beyond_stance": {
+  "stance": {
+   "auc": 0.6985871271585558,
+   "ci": [
+    0.5851057630994525,
+    0.8082511330311917
+   ],
+   "log_loss": 0.37511579870873557,
+   "diff": 0.0,
+   "se": 0.0
+  },
+  "stance_e": {
+   "auc": 0.7912087912087912,
+   "ci": [
+    0.6661167520392308,
+    0.8997165697674419
+   ],
+   "log_loss": 0.344349638618778,
+   "diff": -0.030766160089957546,
+   "se": 0.016067200296741933
+  },
+  "stance_mis": {
+   "auc": 0.7645211930926217,
+   "ci": [
+    0.6519292799948131,
+    0.86
+   ],
+   "log_loss": 0.3598012982976764,
+   "diff": -0.015314500411059181,
+   "se": 0.010426910640639738
+  },
+  "stance_both": {
+   "auc": 0.7629513343799058,
+   "ci": [
+    0.6433040524640516,
+    0.8717744042262924
+   ],
+   "log_loss": 0.34525920471300486,
+   "diff": -0.02985659399573064,
+   "se": 0.017617451530606922
+  }
+ }
+}

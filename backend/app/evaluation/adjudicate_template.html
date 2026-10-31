@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClaimGraph adjudication — __BATCH__</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1b1f24; --mute:#5b6570; --line:#d7dce2; --accent:#0f766e; --hi:#fff3c4; --warn:#b45309; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#14171b; --card:#1d2227; --ink:#e7eaee; --mute:#9aa5b1; --line:#333b44; --accent:#2dd4bf; --hi:#4a3f12; --warn:#fbbf24; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 system-ui, -apple-system, Segoe UI, sans-serif; }
+  header { position:sticky; top:0; background:var(--card); border-bottom:1px solid var(--line); padding:10px 16px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; z-index:2; }
+  header b { font-size:16px; }
+  .grow { flex:1; }
+  .bar { height:6px; background:var(--line); border-radius:3px; width:180px; overflow:hidden; }
+  .bar i { display:block; height:100%; background:var(--accent); }
+  main { max-width:1280px; margin:0 auto; padding:16px; }
+  .q { color:var(--mute); margin:0 0 12px; }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width: 820px) { .cols { grid-template-columns:1fr; } }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px; }
+  .tag { display:inline-block; font-weight:700; color:var(--accent); margin-right:6px; }
+  .src { color:var(--mute); font-size:13px; margin-bottom:8px; }
+  .claim { font-size:16px; background:var(--hi); border-radius:6px; padding:8px 10px; margin:0 0 10px; }
+  .passage { font-size:14px; color:var(--mute); margin:0; }
+  .passage mark { background:none; color:var(--ink); font-weight:600; }
+  details { margin-top:10px; font-size:13px; color:var(--mute); }
+  .panel { margin-top:14px; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0; }
+  .row > span.lab { width:150px; font-weight:600; }
+  button { font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:7px 12px; cursor:pointer; }
+  button:hover { border-color:var(--accent); }
+  button.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+  @media (prefers-color-scheme: dark) { button.on { color:#06201d; } }
+  button:disabled { opacity:.4; cursor:not-allowed; }
+  kbd { font:12px ui-monospace, monospace; border:1px solid var(--line); border-radius:4px; padding:0 4px; margin-left:6px; color:var(--mute); }
+  button.on kbd { color:inherit; border-color:currentColor; }
+  input[type=text] { flex:1; min-width:220px; font:inherit; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:6px; padding:7px 10px; }
+  .guide { font-size:14px; }
+  .guide dt { font-weight:700; margin-top:6px; }
+  .guide dd { margin:0 0 0 14px; color:var(--mute); }
+  .warn { color:var(--warn); font-size:13px; }
+  .nav { display:flex; gap:8px; margin-top:14px; align-items:center; }
+  .votes { font-size:14px; }
+  .votes b { color:var(--accent); }
+  .votes li { margin:4px 0; }
+</style>
+</head>
+<body>
+<header>
+  <b>ClaimGraph adjudication</b>
+  <span>__BATCH__</span>
+  <span id="count"></span>
+  <span class="bar"><i id="bar"></i></span>
+  <span class="grow"></span>
+  <button id="todo">Next undecided</button>
+  <button id="export">Export decisions</button>
+  <label><input type="file" id="import" accept=".json" hidden><button type="button" onclick="document.getElementById('import').click()">Import</button></label>
+</header>
+<main>
+  <details class="card guide" id="guide" open>
+    <summary><b>What to do</b> (click to collapse) — judge only from the text shown.</summary>
+    <dl>
+      <dt>Choose the relation yourself first, then reveal what the three annotator models said. You may change your answer after the reveal.</dt>
+      <dd><b>SUPPORTS</b>: same finding about the same relationship, same or comparable conditions.</dd>
+      <dd><b>EXTENDS</b>: consistent, and one carries the finding into a different setting or builds on it.</dd>
+      <dd><b>CONTRADICTS</b>: opposing assertions about the same relationship, and the text gives no difference in conditions that accounts for it.</dd>
+      <dd><b>QUALIFIES</b>: one claim narrows, conditions, limits or contextualizes the other; an apparent disagreement is attributable to stated differences (dataset, population, task, model, training setup, conditions, scale, metric).</dd>
+      <dd><b>UNRELATED</b>: not the same relationship (different method/factor or different outcome), even on the same topic.</dd>
+      <dt>The list mixes pairs on which the models disagreed with pairs on which they agreed (spot checks). You are not told which is which until you reveal the votes.</dt>
+    </dl>
+  </details>
+  <p class="q" id="question"></p>
+  <div class="cols">
+    <div class="card" id="A"></div>
+    <div class="card" id="B"></div>
+  </div>
+  <div class="card panel">
+    <div class="row"><span class="lab">Relation</span><span id="label"></span></div>
+    <div class="row"><span class="lab">Oppose at face value?</span><span id="fvo"></span><span class="warn">ignoring any difference in conditions</span></div>
+    <div class="row"><span class="lab">Note (optional)</span><input type="text" id="note" placeholder="why, if not obvious"></div>
+    <div class="row"><span class="lab">Model votes</span><button id="reveal">Reveal</button></div>
+    <ul class="votes" id="votes"></ul>
+    <div class="nav">
+      <button id="prev">← Previous</button>
+      <button id="next">Next →</button>
+      <span class="warn" id="msg"></span>
+    </div>
+  </div>
+</main>
+<script>
+const BATCH = "__BATCH__";
+const ITEMS = __ITEMS__;
+const KEY = `cg-adjudicate-${BATCH}`;
+const LABELS = [["SUPPORTS","1"],["EXTENDS","2"],["CONTRADICTS","3"],["QUALIFIES","4"],["UNRELATED","5"]];
+const FVO = [["yes","y"],["no","n"]];
+let labels = {}, pos = 0;
+try { const saved = JSON.parse(localStorage.getItem(KEY) || "{}"); labels = saved.labels || {}; pos = Math.min(saved.pos || 0, ITEMS.length - 1); } catch (e) {}
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function save() { try { localStorage.setItem(KEY, JSON.stringify({labels, pos})); } catch (e) { $("msg").textContent = "Could not save in this browser — export often."; } }
+function side(tag, s) {
+  let passage = esc(s.passage);
+  const c = esc(s.claim);
+  if (passage.includes(c)) passage = passage.replace(c, `<mark>${c}</mark>`);
+  return `<div class="src"><span class="tag">${tag}</span>${esc(s.citation)} — ${esc(s.title)} · section: ${esc(s.section)}</div>
+    <p class="claim">${c}</p><p class="passage">${passage}</p>
+    <details><summary>Abstract of this paper</summary>${esc(s.abstract || "not available")}</details>`;
+}
+function cur() { const id = ITEMS[pos].item_id; return labels[id] || (labels[id] = {item_id: id}); }
+function buttons(host, opts, field) {
+  const l = labels[ITEMS[pos].item_id] || {};
+  host.innerHTML = "";
+  for (const [value, key] of opts) {
+    const b = document.createElement("button");
+    b.innerHTML = `${value}<kbd>${key.toUpperCase()}</kbd>`;
+    if (l[field] === value) b.className = "on";
+    b.onclick = () => set(field, value);
+    host.appendChild(b);
+  }
+}
+function set(field, value) {
+  const l = cur();
+  if (field === "final_label" && !l.revealed) l.first_label = value;
+  l[field] = value;
+  save(); render(false);
+}
+function go(n) { pos = Math.max(0, Math.min(ITEMS.length - 1, n)); save(); render(true); window.scrollTo(0, 0); }
+function render(fresh) {
+  const it = ITEMS[pos], l = labels[it.item_id] || {};
+  const n = ITEMS.filter(i => (labels[i.item_id] || {}).final_label).length;
+  $("count").textContent = `pair ${pos + 1} / ${ITEMS.length} · ${n} decided`;
+  $("bar").style.width = (100 * n / ITEMS.length) + "%";
+  if (fresh) {
+    $("question").textContent = `Topic question: ${it.question}`;
+    $("A").innerHTML = side("A", it.a); $("B").innerHTML = side("B", it.b);
+    $("note").value = l.note || "";
+  }
+  buttons($("label"), LABELS, "final_label"); buttons($("fvo"), FVO, "face_value_opposition");
+  $("reveal").disabled = !l.final_label;
+  $("reveal").textContent = l.revealed ? "Revealed" : (l.final_label ? "Reveal" : "Choose a relation first");
+  $("votes").innerHTML = l.revealed ? it.votes.map(v => `<li><b>${esc(v.label)}</b> — ${esc(v.annotator)}: ${esc(v.justification)}</li>`).join("") + `<li>(${it.kind === "spot_check" ? "spot check: the models agreed" : "the models disagreed"})</li>` : "";
+  $("msg").textContent = n === ITEMS.length ? "All pairs decided — click “Export decisions” and save the file as adjudicated.json in the batch folder." : "";
+}
+$("reveal").onclick = () => { const l = cur(); if (l.final_label) { l.revealed = true; save(); render(false); } };
+$("note").oninput = () => { cur().note = $("note").value; save(); };
+$("prev").onclick = () => go(pos - 1); $("next").onclick = () => go(pos + 1);
+$("todo").onclick = () => { const i = ITEMS.findIndex(x => !(labels[x.item_id] || {}).final_label); if (i >= 0) go(i); };
+$("export").onclick = () => {
+  const rows = ITEMS.map(i => labels[i.item_id]).filter(l => l && l.final_label).map(l => ({item_id: l.item_id, final_label: l.final_label, first_label: l.first_label || l.final_label, face_value_opposition: l.face_value_opposition || "", note: l.note || ""}));
+  const blob = new Blob([JSON.stringify({batch: BATCH, role: "researcher adjudication", exported_at: new Date().toISOString(), total: ITEMS.length, labels: rows}, null, 1)], {type: "application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "adjudicated.json"; a.click();
+};
+$("import").onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try { for (const l of JSON.parse(await f.text()).labels) labels[l.item_id] = {...l, revealed: true}; save(); render(true); } catch (err) { $("msg").textContent = "Could not read that file."; }
+};
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT" && e.target.type === "text") return;
+  const k = e.key.toLowerCase();
+  const a = LABELS.find(x => x[1] === k), f = FVO.find(x => x[1] === k);
+  if (a) set("final_label", a[0]);
+  else if (f) set("face_value_opposition", f[0]);
+  else if (k === "r") $("reveal").onclick();
+  else if (e.key === "ArrowRight" || e.key === "Enter") go(pos + 1);
+  else if (e.key === "ArrowLeft") go(pos - 1);
+});
+render(true);
+</script>
+</body>
+</html>

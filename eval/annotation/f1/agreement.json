@@ -1,0 +1,301 @@
+{
+ "pairs": 84,
+ "stance": {
+  "n": 84,
+  "fleiss_kappa": 0.603,
+  "unanimous": 59,
+  "majority": 25,
+  "split": 0,
+  "pairwise": {
+   "gemini-qwen": {
+    "kappa": 0.757,
+    "agree": 0.881
+   },
+   "gemini-haiku": {
+    "kappa": 0.53,
+    "agree": 0.762
+   },
+   "qwen-haiku": {
+    "kappa": 0.53,
+    "agree": 0.762
+   }
+  },
+  "per_annotator": {
+   "gemini": {
+    "not_oppose": 47,
+    "oppose": 37
+   },
+   "qwen": {
+    "oppose": 35,
+    "not_oppose": 49
+   },
+   "haiku": {
+    "oppose": 42,
+    "not_oppose": 41,
+    "unclear": 1
+   }
+  }
+ },
+ "sufficiency": {
+  "n": 84,
+  "fleiss_kappa": 0.298,
+  "unanimous": 40,
+  "majority": 44,
+  "split": 0,
+  "pairwise": {
+   "gemini-qwen": {
+    "kappa": 0.44,
+    "agree": 0.714
+   },
+   "gemini-haiku": {
+    "kappa": 0.222,
+    "agree": 0.583
+   },
+   "qwen-haiku": {
+    "kappa": 0.304,
+    "agree": 0.655
+   }
+  },
+  "per_annotator": {
+   "gemini": {
+    "sufficient": 60,
+    "insufficient": 24
+   },
+   "qwen": {
+    "sufficient": 40,
+    "insufficient": 44
+   },
+   "haiku": {
+    "sufficient": 35,
+    "insufficient": 49
+   }
+  }
+ },
+ "sufficiency_given_majority_oppose": {
+  "n": 36,
+  "fleiss_kappa": 0.116,
+  "unanimous": 20,
+  "majority": 16,
+  "split": 0,
+  "pairwise": {
+   "gemini-qwen": {
+    "kappa": -0.051,
+    "agree": 0.778
+   },
+   "gemini-haiku": {
+    "kappa": 0.077,
+    "agree": 0.611
+   },
+   "qwen-haiku": {
+    "kappa": 0.381,
+    "agree": 0.722
+   }
+  },
+  "per_annotator": {
+   "gemini": {
+    "sufficient": 35,
+    "insufficient": 1
+   },
+   "qwen": {
+    "sufficient": 29,
+    "insufficient": 7
+   },
+   "haiku": {
+    "sufficient": 21,
+    "insufficient": 15
+   }
+  }
+ },
+ "comparability_all_three_answered": {
+  "n": 12,
+  "fleiss_kappa": -0.059,
+  "unanimous": 10,
+  "majority": 2,
+  "split": 0,
+  "pairwise": {
+   "gemini-qwen": {
+    "kappa": 0.0,
+    "agree": 0.833
+   },
+   "gemini-haiku": {
+    "kappa": 0.0,
+    "agree": 0.833
+   },
+   "qwen-haiku": {
+    "kappa": 1.0,
+    "agree": 1.0
+   }
+  },
+  "per_annotator": {
+   "gemini": {
+    "context_dependent": 10,
+    "comparable": 2
+   },
+   "qwen": {
+    "context_dependent": 12
+   },
+   "haiku": {
+    "context_dependent": 12
+   }
+  }
+ },
+ "status": {
+  "n": 84,
+  "fleiss_kappa": 0.42,
+  "unanimous": 42,
+  "majority": 40,
+  "split": 2,
+  "pairwise": {
+   "gemini-qwen": {
+    "kappa": 0.565,
+    "agree": 0.762
+   },
+   "gemini-haiku": {
+    "kappa": 0.323,
+    "agree": 0.571
+   },
+   "qwen-haiku": {
+    "kappa": 0.417,
+    "agree": 0.643
+   }
+  },
+  "per_annotator": {
+   "gemini": {
+    "NONE": 47,
+    "CONTEXT_DEPENDENT": 33,
+    "GENUINE": 4
+   },
+   "qwen": {
+    "CONTEXT_DEPENDENT": 27,
+    "INSUFFICIENT_EVIDENCE": 8,
+    "NONE": 49
+   },
+   "haiku": {
+    "CONTEXT_DEPENDENT": 20,
+    "INSUFFICIENT_EVIDENCE": 23,
+    "NONE": 41
+   }
+  }
+ },
+ "status_given_majority_oppose": {
+  "n": 36,
+  "fleiss_kappa": -0.014,
+  "unanimous": 10,
+  "majority": 24,
+  "split": 2,
+  "pairwise": {
+   "gemini-qwen": {
+    "kappa": -0.059,
+    "agree": 0.583
+   },
+   "gemini-haiku": {
+    "kappa": -0.018,
+    "agree": 0.389
+   },
+   "qwen-haiku": {
+    "kappa": 0.17,
+    "agree": 0.528
+   }
+  },
+  "per_annotator": {
+   "gemini": {
+    "NONE": 2,
+    "CONTEXT_DEPENDENT": 30,
+    "GENUINE": 4
+   },
+   "qwen": {
+    "CONTEXT_DEPENDENT": 26,
+    "INSUFFICIENT_EVIDENCE": 7,
+    "NONE": 3
+   },
+   "haiku": {
+    "CONTEXT_DEPENDENT": 17,
+    "INSUFFICIENT_EVIDENCE": 15,
+    "NONE": 4
+   }
+  }
+ },
+ "status_matches_derived": {
+  "gemini": {
+   "n": 84,
+   "same": 84,
+   "undetermined": 0
+  },
+  "qwen": {
+   "n": 84,
+   "same": 84,
+   "undetermined": 0
+  },
+  "haiku": {
+   "n": 84,
+   "same": 83,
+   "undetermined": 1
+  }
+ },
+ "factors": {
+  "pairs": 28,
+  "mean_pairwise_jaccard": 0.231,
+  "per_factor": {
+   "dataset": {
+    "named_by_any": 4,
+    "named_by_two": 3,
+    "fleiss_kappa": 0.377
+   },
+   "data scale": {
+    "named_by_any": 9,
+    "named_by_two": 3,
+    "fleiss_kappa": 0.272
+   },
+   "experimental conditions": {
+    "named_by_any": 24,
+    "named_by_two": 13,
+    "fleiss_kappa": 0.095
+   },
+   "training & design": {
+    "named_by_any": 7,
+    "named_by_two": 0,
+    "fleiss_kappa": -0.091
+   },
+   "task": {
+    "named_by_any": 5,
+    "named_by_two": 0,
+    "fleiss_kappa": -0.063
+   },
+   "population": {
+    "named_by_any": 4,
+    "named_by_two": 2,
+    "fleiss_kappa": 0.282
+   },
+   "evaluation metric": {
+    "named_by_any": 2,
+    "named_by_two": 0,
+    "fleiss_kappa": -0.024
+   },
+   "model / method": {
+    "named_by_any": 14,
+    "named_by_two": 4,
+    "fleiss_kappa": 0.01
+   },
+   "baseline": {
+    "named_by_any": 1,
+    "named_by_two": 0,
+    "fleiss_kappa": -0.012
+   },
+   "sample size": {
+    "named_by_any": 0,
+    "named_by_two": 0,
+    "fleiss_kappa": 1.0
+   },
+   "methodology": {
+    "named_by_any": 9,
+    "named_by_two": 2,
+    "fleiss_kappa": 0.059
+   },
+   "time period": {
+    "named_by_any": 4,
+    "named_by_two": 0,
+    "fleiss_kappa": -0.05
+   }
+  }
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "note": "Comparability-model parameters calibrated on development data. Do not refit on test pairs.",
+ "models": [
+  {
+   "name": "uniform_ctx",
+   "intercept": -1.3876858301899835,
+   "weight_same": 0.0,
+   "weights_different": {
+    "scope": 0.1851952761472186,
+    "measurement": 0.1851952761472186
+   },
+   "threshold": null,
+   "e_min": 0.5,
+   "llm_materiality": false,
+   "grounding_weight": true,
+   "provenance": {
+    "calibrated_on": "batch eval2 (run main): opposed pairs with shared context, consensus labels",
+    "fit": "penalised logistic regression, ridge 1.0, non-negative weights",
+    "threshold_rule": "lowest p at which at least half of the asserted development pairs are consensus contradictions; none -> never asserts",
+    "selected_by_rule": "context_stated",
+    "model": "Uniform weights, scope + measurement mismatches only"
+   }
+  },
+  {
+   "name": "hand",
+   "intercept": -1.2648070166097958,
+   "weight_same": 0.0,
+   "weights_different": {
+    "data scale": 0.31972272634928983,
+    "dataset": 0.25577818107943184,
+    "experimental conditions": 0.27709302950271786,
+    "training & design": 0.2131484842328599,
+    "task": 0.2131484842328599,
+    "population": 0.25577818107943184,
+    "evaluation metric": 0.17051878738628792,
+    "model / method": 0.12788909053971592,
+    "baseline": 0.12788909053971592,
+    "sample size": 0.08525939369314396,
+    "methodology": 0.10657424211642995,
+    "time period": 0.10657424211642995
+   },
+   "threshold": 0.211136,
+   "e_min": 0.5,
+   "llm_materiality": false,
+   "grounding_weight": true,
+   "provenance": {
+    "calibrated_on": "batch eval2 (run main): opposed pairs with shared context, consensus labels",
+    "fit": "penalised logistic regression, ridge 1.0, non-negative weights",
+    "threshold_rule": "lowest p at which at least half of the asserted development pairs are consensus contradictions; none -> never asserts",
+    "selected_by_rule": "context_stated",
+    "model": "V1 hand weights, mismatches only"
+   }
+  },
+  {
+   "name": "role",
+   "intercept": -1.3914133799413266,
+   "weight_same": 0.0,
+   "weights_different": {
+    "scope": 0.23373564482842396,
+    "measurement": 0.0,
+    "strength": 0.0
+   },
+   "threshold": null,
+   "e_min": 0.5,
+   "llm_materiality": false,
+   "grounding_weight": true,
+   "provenance": {
+    "calibrated_on": "batch eval2 (run main): opposed pairs with shared context, consensus labels",
+    "fit": "penalised logistic regression, ridge 1.0, non-negative weights",
+    "threshold_rule": "lowest p at which at least half of the asserted development pairs are consensus contradictions; none -> never asserts",
+    "selected_by_rule": "context_stated",
+    "model": "P3: role weights (scope, measurement, strength; intervention outside)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "_comment": "Evaluation topics. split=dev topics were used while developing rules and prompts; split=test topics are held out and must never be used for tuning. Each corpus = seed arXiv papers known to take different positions on the question + automatically discovered papers up to n_papers. Discovered papers must reach min_relevance (ranking score) to be added. split=fresh topics were added on 2026-10-07 for the one-off validation of the frozen E1 opposition detectors (eval/annotation/f1/PREREGISTRATION.md); they were never used for development.",
+ "n_papers": 10,
+ "topics": [
+  {
+   "id": "vit_pretraining",
+   "split": "dev",
+   "question": "Do vision transformers need large-scale pre-training to outperform convolutional networks?",
+   "seeds": [
+    "2010.11929",
+    "2012.12877",
+    "2106.10270",
+    "2106.01548",
+    "2112.13492",
+    "2104.05704",
+    "2106.03746",
+    "2205.01580",
+    "2201.03545",
+    "2310.16764"
+   ]
+  },
+  {
+   "id": "cot_small_models",
+   "split": "dev",
+   "question": "Does chain-of-thought prompting improve reasoning in small language models?",
+   "seeds": [
+    "2201.11903",
+    "2205.11916",
+    "2212.08410",
+    "2305.02301",
+    "2301.12726",
+    "2306.14050"
+   ]
+  },
+  {
+   "id": "large_batch_generalization",
+   "split": "test",
+   "question": "Does large-batch training hurt the generalization of deep neural networks?",
+   "seeds": [
+    "1609.04836",
+    "1705.08741",
+    "1711.00489",
+    "1706.02677",
+    "1804.07612",
+    "1710.06451",
+    "1711.04623",
+    "1703.04933",
+    "1904.00962",
+    "1708.03888",
+    "2006.15081"
+   ]
+  },
+  {
+   "id": "transformers_time_series",
+   "split": "test",
+   "question": "Are transformers more effective than linear models for long-term time series forecasting?",
+   "seeds": [
+    "2205.13504",
+    "2211.14730",
+    "2310.06625",
+    "2012.07436",
+    "2106.13008"
+   ]
+  },
+  {
+   "id": "adam_vs_sgd",
+   "split": "test",
+   "question": "Do adaptive optimizers such as Adam generalize worse than SGD?",
+   "seeds": [
+    "1705.08292",
+    "1910.05446",
+    "2007.01547",
+    "1711.05101",
+    "1712.07628",
+    "2010.05627"
+   ]
+  },
+  {
+   "id": "icl_label_correctness",
+   "split": "test",
+   "question": "Do correct labels in demonstrations matter for in-context learning in large language models?",
+   "seeds": [
+    "2202.12837",
+    "2205.12685",
+    "2303.03846",
+    "2307.12375",
+    "2305.09731",
+    "2109.01247",
+    "2210.10693",
+    "2102.09690",
+    "2305.14160"
+   ]
+  },
+  {
+   "id": "robustness_accuracy_tradeoff",
+   "split": "test",
+   "question": "Does adversarial training reduce standard accuracy of neural networks?",
+   "seeds": [
+    "1805.12152",
+    "1901.08573",
+    "1911.09665",
+    "2003.02460",
+    "2002.10716",
+    "1905.13736"
+   ]
+  },
+  {
+   "id": "label_smoothing_distillation",
+   "split": "test",
+   "question": "Is label smoothing compatible with knowledge distillation?",
+   "seeds": [
+    "1906.02629",
+    "2104.00676",
+    "1909.11723",
+    "2102.00650",
+    "2206.14532",
+    "2003.02819",
+    "1701.06548",
+    "2006.05065",
+    "2002.03532",
+    "2301.12609"
+   ]
+  },
+  {
+   "id": "lottery_ticket_pruning",
+   "split": "fresh",
+   "question": "Can sparse subnetworks found by pruning be trained in isolation to match the accuracy of the dense network (the lottery ticket hypothesis)?",
+   "seeds": [
+    "1803.03635",
+    "1810.05270",
+    "1903.01611",
+    "1905.01067",
+    "1902.09574",
+    "2009.08576",
+    "2009.11094",
+    "1810.02340",
+    "2003.02389",
+    "1912.05671"
+   ]
+  },
+  {
+   "id": "batchnorm_covariate_shift",
+   "split": "fresh",
+   "question": "Does batch normalization help neural network training by reducing internal covariate shift?",
+   "seeds": [
+    "1502.03167",
+    "1805.11604",
+    "1806.02375",
+    "1809.00846",
+    "2002.10444",
+    "1901.09321",
+    "2102.06171",
+    "1805.10694",
+    "1803.01814",
+    "1902.08129"
+   ]
+  },
+  {
+   "id": "attention_explanation",
+   "split": "fresh",
+   "question": "Do attention weights provide faithful explanations of neural model predictions?",
+   "seeds": [
+    "1902.10186",
+    "1908.04626",
+    "1906.03731",
+    "1909.11218",
+    "2010.05607",
+    "1909.07913",
+    "2004.14243",
+    "2005.00928",
+    "2004.03685"
+   ]
+  }
+ ],
+ "min_relevance": 0.5
+}

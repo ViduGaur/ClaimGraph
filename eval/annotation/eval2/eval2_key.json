@@ -1,0 +1,1466 @@
+{
+ "batch": "eval2",
+ "run": "main",
+ "seed": 2026,
+ "design": {
+  "asserted_contradiction": {
+   "pool": 8,
+   "sampled": 8
+  },
+  "abstained": {
+   "pool": 17,
+   "sampled": 17
+  },
+  "gate_rejected_nli_contra": {
+   "pool": 22,
+   "sampled": 22
+  },
+  "gate_rejected": {
+   "pool": 80,
+   "sampled": 30
+  },
+  "nli_contra_no_conflict": {
+   "pool": 116,
+   "sampled": 25
+  },
+  "direct_contra_no_conflict": {
+   "pool": 192,
+   "sampled": 23
+  },
+  "qualifies_partial": {
+   "pool": 12,
+   "sampled": 12
+  },
+  "extends": {
+   "pool": 49,
+   "sampled": 15
+  },
+  "supports": {
+   "pool": 140,
+   "sampled": 18
+  },
+  "others_relate": {
+   "pool": 448,
+   "sampled": 22
+  },
+  "all_unrelated": {
+   "pool": 116,
+   "sampled": 8
+  }
+ },
+ "strata": {
+  "asserted_contradiction": "the full system asserts CONTRADICTS",
+  "abstained": "the full system sees a conflict and abstains (insufficient evidence)",
+  "gate_rejected_nli_contra": "NLI says contradiction; the full system sees the conflict and the gate rejects it",
+  "gate_rejected": "the full system sees a face-value conflict and the gate rejects it (NLI does not flag it)",
+  "nli_contra_no_conflict": "NLI says contradiction; the full system sees no face-value conflict",
+  "direct_contra_no_conflict": "a direct-LLM baseline says contradiction; NLI and the full system do not",
+  "qualifies_partial": "the full system says QUALIFIES without a face-value conflict",
+  "extends": "the full system says EXTENDS",
+  "supports": "the full system says SUPPORTS",
+  "others_relate": "the full system says UNRELATED; another system asserts a relation",
+  "all_unrelated": "no system relates the pair"
+ },
+ "items": [
+  {
+   "item_id": "ev_507eb71113",
+   "pair_id": "pair_b68d8cadd919",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_879bd32f62",
+   "pair_id": "pair_cfafe94ef155",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_f19ea4cdbc",
+   "pair_id": "pair_0e063d7327a4",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_69c9b98f0e",
+   "pair_id": "pair_769ee6d875ca",
+   "topic": "icl_label_correctness",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_f360278280",
+   "pair_id": "pair_9e7be263a781",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_6f9cb3e33e",
+   "pair_id": "pair_0e493132ef93",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_10a9918140",
+   "pair_id": "pair_aa6962d928a4",
+   "topic": "label_smoothing_distillation",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_e0634f3fbf",
+   "pair_id": "pair_2fe531741ded",
+   "topic": "label_smoothing_distillation",
+   "stratum": "asserted_contradiction",
+   "stratum_size": 8
+  },
+  {
+   "item_id": "ev_63edaeeda2",
+   "pair_id": "pair_184c76d72da9",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_0fecc4274b",
+   "pair_id": "pair_61d4ce12e29a",
+   "topic": "large_batch_generalization",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_7b6598ab11",
+   "pair_id": "pair_e196d27edbef",
+   "topic": "label_smoothing_distillation",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_d7e8fdceaa",
+   "pair_id": "pair_bd3a97ed99a8",
+   "topic": "icl_label_correctness",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_206ca9a07b",
+   "pair_id": "pair_d46647088ef9",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_89110b2b4b",
+   "pair_id": "pair_c77268f44f96",
+   "topic": "label_smoothing_distillation",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_0d778636f0",
+   "pair_id": "pair_56e45d074c6a",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_3b375446e6",
+   "pair_id": "pair_4d015776cc0a",
+   "topic": "large_batch_generalization",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_72eacc287b",
+   "pair_id": "pair_83bde1364a31",
+   "topic": "large_batch_generalization",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_731f5542ea",
+   "pair_id": "pair_b5921daa009c",
+   "topic": "label_smoothing_distillation",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_49ab580fc7",
+   "pair_id": "pair_d1fa4b9f55b9",
+   "topic": "large_batch_generalization",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_716405474a",
+   "pair_id": "pair_2426f6800f6e",
+   "topic": "adam_vs_sgd",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_31ee46d544",
+   "pair_id": "pair_6932baf67a03",
+   "topic": "large_batch_generalization",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_4c946fe53c",
+   "pair_id": "pair_06cdb1041c95",
+   "topic": "adam_vs_sgd",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_c70c6847c0",
+   "pair_id": "pair_2895a54ba90d",
+   "topic": "label_smoothing_distillation",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_b6aebea74a",
+   "pair_id": "pair_c0c02eb21633",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_985c2e2605",
+   "pair_id": "pair_cafa26caf64a",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "abstained",
+   "stratum_size": 17
+  },
+  {
+   "item_id": "ev_abb24341c7",
+   "pair_id": "pair_14d0fe0bcf74",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_b5b8dd2e5a",
+   "pair_id": "pair_740dbc832c5b",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_13cc36fd90",
+   "pair_id": "pair_fa14d9eaca08",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_a227fdbf26",
+   "pair_id": "pair_5352dd194710",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_bd2cdaa46f",
+   "pair_id": "pair_1b4f23489045",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_8ea8f0996c",
+   "pair_id": "pair_ba8004bbd26c",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_035e219e20",
+   "pair_id": "pair_110ba653fa67",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_993f0ce4b9",
+   "pair_id": "pair_b487cde70e1d",
+   "topic": "label_smoothing_distillation",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_cb7e614eff",
+   "pair_id": "pair_c998af39aa78",
+   "topic": "label_smoothing_distillation",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_eb25e3ecf0",
+   "pair_id": "pair_32e6168f861e",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_52c34aaeb8",
+   "pair_id": "pair_23e1e369ba54",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_3b10a0f978",
+   "pair_id": "pair_80946562070c",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_87951be46b",
+   "pair_id": "pair_dfafd0fdfc4b",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_7d54034fab",
+   "pair_id": "pair_e203c6657abc",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_535f2b6561",
+   "pair_id": "pair_5e47a39a5c2c",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_0f3efb471b",
+   "pair_id": "pair_6ae7074fdeb3",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_de3cd3d3a9",
+   "pair_id": "pair_6145ec8066d2",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_e9f5f64a41",
+   "pair_id": "pair_b70774328ab2",
+   "topic": "label_smoothing_distillation",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_63d29fdb70",
+   "pair_id": "pair_a106924cd1d7",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_1e8a43ce66",
+   "pair_id": "pair_6328d41e52a2",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_0b72045cd5",
+   "pair_id": "pair_928a67b1a9e4",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_828d5d6fa7",
+   "pair_id": "pair_42a46fb274eb",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected_nli_contra",
+   "stratum_size": 22
+  },
+  {
+   "item_id": "ev_d411fadaff",
+   "pair_id": "pair_252c2439d3a7",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_fc51a75d32",
+   "pair_id": "pair_5f7d1bfa3bf8",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_32d4bc6965",
+   "pair_id": "pair_21e7f7809d5c",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_52bd8e2f0f",
+   "pair_id": "pair_8b2703d36a60",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_b2dfe14273",
+   "pair_id": "pair_b3c75e338727",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_b6fed660ca",
+   "pair_id": "pair_1bb976d98b1d",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_7079bd45a1",
+   "pair_id": "pair_313b0f815c35",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_7b460ba650",
+   "pair_id": "pair_b59495102dbf",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_ceda7f483c",
+   "pair_id": "pair_2b4f1b31d7e1",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_64e2c35010",
+   "pair_id": "pair_d3b8b8d20e8c",
+   "topic": "label_smoothing_distillation",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_050b8bda95",
+   "pair_id": "pair_a3e9d8e0d365",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_3cfbee1165",
+   "pair_id": "pair_8a804ef4e2fc",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_ea5eab8283",
+   "pair_id": "pair_49019391b64e",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_23268a489a",
+   "pair_id": "pair_44d23f3e0b04",
+   "topic": "label_smoothing_distillation",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_b266f7aa0d",
+   "pair_id": "pair_895ab19f1ebc",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_205af5eb24",
+   "pair_id": "pair_ab620b2f7099",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_75c1926dd2",
+   "pair_id": "pair_b7c22f084c65",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_06a235bb3f",
+   "pair_id": "pair_022b9ea69fc4",
+   "topic": "transformers_time_series",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_089a7920d3",
+   "pair_id": "pair_f3ac705a5ee8",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_f3f74f48b9",
+   "pair_id": "pair_e537cc993b2f",
+   "topic": "transformers_time_series",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_5a62affcee",
+   "pair_id": "pair_6e0032fe311b",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_b0c6ea8054",
+   "pair_id": "pair_b1592e2137f0",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_9c60bb0cca",
+   "pair_id": "pair_5384d9d0abe8",
+   "topic": "large_batch_generalization",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_153e78834a",
+   "pair_id": "pair_e0ab0b5288c2",
+   "topic": "label_smoothing_distillation",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_09f4f77e26",
+   "pair_id": "pair_9daeda169cbb",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_b5c485f6aa",
+   "pair_id": "pair_9b5d7b0d1b4a",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_953512e68a",
+   "pair_id": "pair_867a05bb5349",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_9a7d301561",
+   "pair_id": "pair_0f9e9b537941",
+   "topic": "adam_vs_sgd",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_a6da861a91",
+   "pair_id": "pair_9f6f92c52ec5",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_e852fe88ff",
+   "pair_id": "pair_ec0a0978709a",
+   "topic": "icl_label_correctness",
+   "stratum": "gate_rejected",
+   "stratum_size": 80
+  },
+  {
+   "item_id": "ev_e4b3161949",
+   "pair_id": "pair_28c9116f8679",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_8289c7a940",
+   "pair_id": "pair_e94f1881a6fd",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_4df0cca55e",
+   "pair_id": "pair_9071d159e6a9",
+   "topic": "transformers_time_series",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_acb65664c9",
+   "pair_id": "pair_d6a8fdfcee8e",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_1c023b2590",
+   "pair_id": "pair_95f487159780",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_5df910121e",
+   "pair_id": "pair_7d29a4b3acb0",
+   "topic": "transformers_time_series",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_df48ed54bd",
+   "pair_id": "pair_115444a0c735",
+   "topic": "label_smoothing_distillation",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_2d4a084f1f",
+   "pair_id": "pair_8f808d101edc",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_21d0ba438a",
+   "pair_id": "pair_439c46e0646f",
+   "topic": "icl_label_correctness",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_2dd52c3146",
+   "pair_id": "pair_011ed2640a50",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_8439be17d8",
+   "pair_id": "pair_73e129afa00c",
+   "topic": "icl_label_correctness",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_f21cbbb6f0",
+   "pair_id": "pair_0cf766368d15",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_7433ca52bf",
+   "pair_id": "pair_7d0017ac6b69",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_4e331a20b9",
+   "pair_id": "pair_3e9894392fa7",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_263d3fb756",
+   "pair_id": "pair_881b763fe8f4",
+   "topic": "transformers_time_series",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_64d7935d40",
+   "pair_id": "pair_b6e76cd5b07d",
+   "topic": "label_smoothing_distillation",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_d2216b2d20",
+   "pair_id": "pair_590349453d67",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_287d932b1c",
+   "pair_id": "pair_bdba4fd8ed1d",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_e64995e48b",
+   "pair_id": "pair_fdf3021c0cb9",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_466445b54c",
+   "pair_id": "pair_dbc1aa3b024a",
+   "topic": "transformers_time_series",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_008fcc68d2",
+   "pair_id": "pair_9ab7e9915c79",
+   "topic": "label_smoothing_distillation",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_bfbc5d8c50",
+   "pair_id": "pair_875264ab4a8f",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_481091b47d",
+   "pair_id": "pair_551e3df19257",
+   "topic": "large_batch_generalization",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_44b13d2d56",
+   "pair_id": "pair_161d998bad7f",
+   "topic": "adam_vs_sgd",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_f298027211",
+   "pair_id": "pair_b588dac2b843",
+   "topic": "label_smoothing_distillation",
+   "stratum": "nli_contra_no_conflict",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_0b64621d4b",
+   "pair_id": "pair_aa75bce9861f",
+   "topic": "icl_label_correctness",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_29bf034cbf",
+   "pair_id": "pair_77bfb7f760f2",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_49df2fb4da",
+   "pair_id": "pair_24cb04693869",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_eafb162cb3",
+   "pair_id": "pair_77e9d090ef1b",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_4bc70b9e50",
+   "pair_id": "pair_774c58ce1c4f",
+   "topic": "label_smoothing_distillation",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_aed14a2094",
+   "pair_id": "pair_82ec428f84e1",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_a4391377be",
+   "pair_id": "pair_fae199a8d826",
+   "topic": "large_batch_generalization",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_b886453d28",
+   "pair_id": "pair_65ad430e04e5",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_4fdcd4201d",
+   "pair_id": "pair_bf6353ac512b",
+   "topic": "large_batch_generalization",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_e95fc8bff8",
+   "pair_id": "pair_66286b305c3d",
+   "topic": "icl_label_correctness",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_52544a8e72",
+   "pair_id": "pair_7a2f28d0bc09",
+   "topic": "icl_label_correctness",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_e0b45e79e6",
+   "pair_id": "pair_f922824c8a8d",
+   "topic": "large_batch_generalization",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_396dd9e240",
+   "pair_id": "pair_d1a09108cf25",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_6423a4cd3e",
+   "pair_id": "pair_86c462922830",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_c68de609d8",
+   "pair_id": "pair_1bc64503a987",
+   "topic": "icl_label_correctness",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_a831155df6",
+   "pair_id": "pair_1bd5377bb0d9",
+   "topic": "large_batch_generalization",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_7604540ebe",
+   "pair_id": "pair_746952b60f50",
+   "topic": "large_batch_generalization",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_fe559df601",
+   "pair_id": "pair_292f77711a34",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_0c11eb135c",
+   "pair_id": "pair_3ceef15a99bf",
+   "topic": "adam_vs_sgd",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_bff659479a",
+   "pair_id": "pair_e02aa150eadc",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_3945541454",
+   "pair_id": "pair_fff7b59e0e6e",
+   "topic": "adam_vs_sgd",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_4e30fa6b03",
+   "pair_id": "pair_afb16d598ce9",
+   "topic": "transformers_time_series",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_bf4e89c73a",
+   "pair_id": "pair_211a699210b2",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "direct_contra_no_conflict",
+   "stratum_size": 192
+  },
+  {
+   "item_id": "ev_388e3cc108",
+   "pair_id": "pair_0983f966fc9f",
+   "topic": "icl_label_correctness",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_7724c25bad",
+   "pair_id": "pair_9cb132a83928",
+   "topic": "large_batch_generalization",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_70dd10f717",
+   "pair_id": "pair_ee1c69308376",
+   "topic": "large_batch_generalization",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_5023d96b0a",
+   "pair_id": "pair_34f1e5c0fb6f",
+   "topic": "label_smoothing_distillation",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_fba1854ee7",
+   "pair_id": "pair_f5ce797f2249",
+   "topic": "icl_label_correctness",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_6b58b50167",
+   "pair_id": "pair_0f9e5a868935",
+   "topic": "icl_label_correctness",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_2d7afc5ac6",
+   "pair_id": "pair_3afa57b88405",
+   "topic": "icl_label_correctness",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_6af2ea3345",
+   "pair_id": "pair_ae91b8e780a2",
+   "topic": "icl_label_correctness",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_f61f46fa64",
+   "pair_id": "pair_45af0aa94eb7",
+   "topic": "label_smoothing_distillation",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_ee34d6f016",
+   "pair_id": "pair_476a9cc180b9",
+   "topic": "icl_label_correctness",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_810af6708f",
+   "pair_id": "pair_f2037ef055bb",
+   "topic": "icl_label_correctness",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_d366a5b2ed",
+   "pair_id": "pair_2eb990155865",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "qualifies_partial",
+   "stratum_size": 12
+  },
+  {
+   "item_id": "ev_c47cf11461",
+   "pair_id": "pair_9b9bca115068",
+   "topic": "icl_label_correctness",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_f30fd0907d",
+   "pair_id": "pair_38b2fecb3ddf",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_65bd20d682",
+   "pair_id": "pair_b00b170545fb",
+   "topic": "label_smoothing_distillation",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_0d8a431739",
+   "pair_id": "pair_ea75c3b969fe",
+   "topic": "icl_label_correctness",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_d46969547e",
+   "pair_id": "pair_5f4910a753a2",
+   "topic": "label_smoothing_distillation",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_8b5deb8b77",
+   "pair_id": "pair_f6a3840ba4c4",
+   "topic": "adam_vs_sgd",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_72de25ac85",
+   "pair_id": "pair_0ba3c80d5194",
+   "topic": "label_smoothing_distillation",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_cefe4d6183",
+   "pair_id": "pair_af7e9f5da231",
+   "topic": "icl_label_correctness",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_85dff63d6a",
+   "pair_id": "pair_aa9d2318df96",
+   "topic": "icl_label_correctness",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_cf83ddce31",
+   "pair_id": "pair_9ed90bacadee",
+   "topic": "transformers_time_series",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_0e5486d487",
+   "pair_id": "pair_5afee7e723a2",
+   "topic": "large_batch_generalization",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_25f03ce8c4",
+   "pair_id": "pair_d0f5a2742e49",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_528c1b5ca1",
+   "pair_id": "pair_8b1c62052c29",
+   "topic": "icl_label_correctness",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_3f98c4cbe0",
+   "pair_id": "pair_ddb485f9b160",
+   "topic": "large_batch_generalization",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_20c35ecae6",
+   "pair_id": "pair_f6cb3f8042a1",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "extends",
+   "stratum_size": 49
+  },
+  {
+   "item_id": "ev_bdd93e60a9",
+   "pair_id": "pair_a2d797f83e90",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_9d17dd94b2",
+   "pair_id": "pair_12e8b7f7f918",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_21b1bdbae7",
+   "pair_id": "pair_4ac058d5fe33",
+   "topic": "label_smoothing_distillation",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_a4e169d1e8",
+   "pair_id": "pair_3496007df8d5",
+   "topic": "icl_label_correctness",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_ac5cbd7229",
+   "pair_id": "pair_0a49b3b1d179",
+   "topic": "transformers_time_series",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_8d26de619b",
+   "pair_id": "pair_2a33c9b2166e",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_8609a12016",
+   "pair_id": "pair_930a6aadb858",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_4e5c7a7534",
+   "pair_id": "pair_18a8a116d26f",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_8f1e6b5074",
+   "pair_id": "pair_2b8d1db6388c",
+   "topic": "large_batch_generalization",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_6c40ccf48a",
+   "pair_id": "pair_f8615b52475b",
+   "topic": "label_smoothing_distillation",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_1a9001734b",
+   "pair_id": "pair_a3f7ca794038",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_79922ce61d",
+   "pair_id": "pair_25c7e3a79b20",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_9635095f97",
+   "pair_id": "pair_4f62f76be0d5",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_35ec468f3c",
+   "pair_id": "pair_d72f53b3bc4c",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_625e5039ec",
+   "pair_id": "pair_1ce3c87979f5",
+   "topic": "label_smoothing_distillation",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_ee142fdad1",
+   "pair_id": "pair_60d21e39eed5",
+   "topic": "large_batch_generalization",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_20bb3c2d97",
+   "pair_id": "pair_b0d6ce6c4288",
+   "topic": "adam_vs_sgd",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_08be5425f6",
+   "pair_id": "pair_fe6116330a40",
+   "topic": "large_batch_generalization",
+   "stratum": "supports",
+   "stratum_size": 140
+  },
+  {
+   "item_id": "ev_30ad252a1b",
+   "pair_id": "pair_0b50c959eccc",
+   "topic": "transformers_time_series",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_763eec608d",
+   "pair_id": "pair_6feea0d1e7ca",
+   "topic": "label_smoothing_distillation",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_447bda4d5b",
+   "pair_id": "pair_e167c6192cb3",
+   "topic": "icl_label_correctness",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_2a82cc01a0",
+   "pair_id": "pair_682817b392ec",
+   "topic": "large_batch_generalization",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_2a00f01ed5",
+   "pair_id": "pair_fc8fac0a84b6",
+   "topic": "large_batch_generalization",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_c3f57ae403",
+   "pair_id": "pair_c170b75879b4",
+   "topic": "icl_label_correctness",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_ae34cfc29f",
+   "pair_id": "pair_209e4382a87b",
+   "topic": "adam_vs_sgd",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_1e566eef46",
+   "pair_id": "pair_ba5fb32986de",
+   "topic": "label_smoothing_distillation",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_1df24fead3",
+   "pair_id": "pair_51ad2b9bf6a0",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_6313bea37f",
+   "pair_id": "pair_2bb306ace22b",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_90aba998d2",
+   "pair_id": "pair_e21f402b0ac6",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_d5a4540e4d",
+   "pair_id": "pair_a308279aa50a",
+   "topic": "label_smoothing_distillation",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_46a48696df",
+   "pair_id": "pair_db3dba4d7147",
+   "topic": "large_batch_generalization",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_e61388d988",
+   "pair_id": "pair_809d108352bc",
+   "topic": "label_smoothing_distillation",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_7cc4a1d3ba",
+   "pair_id": "pair_e49baa1886c5",
+   "topic": "label_smoothing_distillation",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_ad8a4015bb",
+   "pair_id": "pair_c88748cc2fdb",
+   "topic": "icl_label_correctness",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_d94f448fba",
+   "pair_id": "pair_461361ac7ca0",
+   "topic": "label_smoothing_distillation",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_a07c005de0",
+   "pair_id": "pair_0c9e0f620fd3",
+   "topic": "label_smoothing_distillation",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_87c0c821f9",
+   "pair_id": "pair_92d480c80969",
+   "topic": "transformers_time_series",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_c6c3db5870",
+   "pair_id": "pair_8946d19d8360",
+   "topic": "adam_vs_sgd",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_382e09211e",
+   "pair_id": "pair_382280c33af9",
+   "topic": "large_batch_generalization",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_5eac174bb9",
+   "pair_id": "pair_6eda115aa754",
+   "topic": "icl_label_correctness",
+   "stratum": "others_relate",
+   "stratum_size": 448
+  },
+  {
+   "item_id": "ev_704d556dab",
+   "pair_id": "pair_69c1c4ae9088",
+   "topic": "transformers_time_series",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_5d0c40e262",
+   "pair_id": "pair_f06a31635f94",
+   "topic": "robustness_accuracy_tradeoff",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_5eaedbbe64",
+   "pair_id": "pair_33fa4d98d3ba",
+   "topic": "transformers_time_series",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_57399d9f46",
+   "pair_id": "pair_b96a7e945fa5",
+   "topic": "large_batch_generalization",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_9a89bfa59c",
+   "pair_id": "pair_6bb1fe9aec77",
+   "topic": "transformers_time_series",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_d6e68e0d49",
+   "pair_id": "pair_5be26fabce3f",
+   "topic": "icl_label_correctness",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_a9b00e47c5",
+   "pair_id": "pair_06d1e083adf7",
+   "topic": "label_smoothing_distillation",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  },
+  {
+   "item_id": "ev_1e9e9944ec",
+   "pair_id": "pair_b4106ed9b49a",
+   "topic": "label_smoothing_distillation",
+   "stratum": "all_unrelated",
+   "stratum_size": 116
+  }
+ ]
+}

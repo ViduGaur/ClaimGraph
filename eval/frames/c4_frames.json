@@ -1,0 +1,3005 @@
+{
+ "batch": "c4",
+ "model": "inclusionai/ling-3.0-flash",
+ "protocol": "one call per claim; the model sees one claim, its passage and its abstract",
+ "frames": {
+  "dev/cot_small_models/clm_5b18c705345d": {
+   "intervention": "chain-of-thought prompting",
+   "intervention_is_new": false,
+   "comparator": "ablations",
+   "outcome": "arithmetic reasoning performance",
+   "effect": "positive",
+   "effect_quote": "chain-of-thought prompting improves performance by a large margin on arithmetic reasoning",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "GSM8K benchmark",
+     "quote": "state of the art accuracy on the GSM8K benchmark of math word problems"
+    },
+    {
+     "factor": "sample size",
+     "value": "eight chain of thought exemplars",
+     "quote": "prompting a 540B-parameter language model with just eight chain of thought exemplars"
+    },
+    {
+     "factor": "population",
+     "value": "large language models",
+     "quote": "in large language models"
+    }
+   ]
+  },
+  "dev/cot_small_models/clm_9be46e906f1a": {
+   "intervention": "Chain-of-Thought prompting",
+   "intervention_is_new": false,
+   "comparator": "direct answers (no CoT)",
+   "outcome": "accuracy",
+   "effect": "mixed",
+   "effect_quote": "only marginal improvements in accuracy",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "reasoning models",
+     "quote": "For reasoning models"
+    },
+    {
+     "factor": "dataset",
+     "value": "Figure 3",
+     "quote": "(see Figure 3)"
+    }
+   ]
+  },
+  "dev/cot_small_models/clm_a1c51c587883": {
+   "intervention": "Chain-of-Thought prompting",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "effectiveness of Chain-of-Thought prompting",
+   "effect": "mixed",
+   "effect_quote": "The effectiveness of Chain-of-Thought prompting can vary greatly depending on the type of task and model",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "type of task",
+     "quote": "depending on the type of task"
+    },
+    {
+     "factor": "population",
+     "value": "model type",
+     "quote": "and model"
+    }
+   ]
+  },
+  "dev/cot_small_models/clm_4b99bf1b12fe": {
+   "intervention": "Zero-shot-CoT prompting with 'Let's think step by step'",
+   "intervention_is_new": true,
+   "comparator": "zero-shot LLM without the prompt",
+   "outcome": "reasoning performance",
+   "effect": "positive",
+   "effect_quote": "LLMs are decent zero-shot reasoners by simply adding \"Let's think step by step\" before each answer",
+   "conditional": false,
+   "conditions": []
+  },
+  "dev/cot_small_models/clm_e048f6806705": {
+   "intervention": "Plan-and-Solve (PS) Prompting and PS+ prompting",
+   "intervention_is_new": true,
+   "comparator": "Zero-shot-CoT, Zero-shot-Program-of-Thought Prompting, 8-shot CoT prompting",
+   "outcome": "reasoning task accuracy",
+   "effect": "positive",
+   "effect_quote": "consistently outperforms Zero-shot-CoT across all datasets by a large margin, is comparable to or exceeds Zero-shot-Program-of-Thought Prompting, and has comparable performance with 8-shot CoT prompting on the math reasoning problem",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ten datasets across three reasoning problems",
+     "quote": "We evaluate our proposed prompting strategy on ten datasets across three reasoning problems"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "zero-shot prompting over GPT-3",
+     "quote": "The experimental results over GPT-3 show that our proposed zero-shot prompting"
+    }
+   ]
+  },
+  "dev/cot_small_models/clm_33befbba1f11": {
+   "intervention": "self-consistency decoding",
+   "intervention_is_new": true,
+   "comparator": "standard prompting (Brown et al., 2020)",
+   "outcome": "performance on common NLP tasks",
+   "effect": "positive",
+   "effect_quote": "self-consistency is able to robustly boost the performance and outperform standard prompting",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "ANLI-R1, e-SNLI, RTE",
+     "quote": "For some tasks (e.g., ANLI-R1, e-SNLI, RTE)"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "few-shot in-context learning",
+     "quote": "making it a reliable way to add rationales in few-shot in-context learning"
+    }
+   ]
+  },
+  "dev/cot_small_models/clm_2403e98eaf85": {
+   "intervention": "Symbolic Chain-of-Thought Distillation (SCoTD)",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "student model performance and chain-of-thought quality",
+   "effect": "positive",
+   "effect_quote": "SCoTD enhances the performance of the student model in both supervised and few-shot settings, and especially for challenge sets",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "several commonsense benchmarks",
+     "quote": "Experiments across several commonsense benchmarks"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "supervised and few-shot settings",
+     "quote": "in both supervised and few-shot settings"
+    },
+    {
+     "factor": "training & design",
+     "value": "sampling many reasoning chains per instance from the teacher",
+     "quote": "sampling many reasoning chains per instance from the teacher is paramount"
+    },
+    {
+     "factor": "population",
+     "value": "student models with orders of magnitude fewer parameters",
+     "quote": "despite orders of magnitude fewer parameters"
+    }
+   ]
+  },
+  "dev/cot_small_models/clm_9264ebbb2039": {
+   "intervention": "Zero-shot-CoT",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "commonsense reasoning quality",
+   "effect": "positive",
+   "effect_quote": "Zero-shot-CoT does elicit for better commonsense reasoning even when the task metrics do not directly reflect it",
+   "conditional": false,
+   "conditions": []
+  },
+  "dev/cot_small_models/clm_03491269493e": {
+   "intervention": "Chain-of-Thought prompting",
+   "intervention_is_new": false,
+   "comparator": "unprompted (no CoT instruction)",
+   "outcome": "CoT reasoning performance",
+   "effect": "none",
+   "effect_quote": "many non-reasoning models perform a version of Chain-of-Thought even if unprompted, which makes a CoT prompt less helpful",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "non-reasoning models",
+     "quote": "many non-reasoning models perform a version of Chain-of-Thought even if unprompted"
+    }
+   ]
+  },
+  "dev/cot_small_models/clm_8c390ce1b965": {
+   "intervention": "PS+ prompting",
+   "intervention_is_new": true,
+   "comparator": "previous zero-shot baselines and few-shot CoT prompting",
+   "outcome": "reasoning performance",
+   "effect": "positive",
+   "effect_quote": "PS+ prompting outperforms the previous zero-shot baselines and performs on par with few-shot CoT prompting",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ten datasets across three types of reasoning problems",
+     "quote": "Evaluation on ten datasets across three types of reasoning problems"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "zero-shot setting",
+     "quote": "zero-shot baselines"
+    },
+    {
+     "factor": "task",
+     "value": "arithmetic reasoning",
+     "quote": "multiple arithmetic reasoning datasets"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_cd9c81bc6bb5": {
+   "intervention": "Vision Transformer (ViT)",
+   "intervention_is_new": false,
+   "comparator": "ResNet-based baselines",
+   "outcome": "image classification performance",
+   "effect": "positive",
+   "effect_quote": "ViT pre-trained on the smaller public ImageNet-21k dataset performs well too",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet-21k",
+     "quote": "pre-trained on the smaller public ImageNet-21k dataset"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_af5b8b79e175": {
+   "intervention": "Visual Transformers (VTs)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "robustness in a small training-set regime",
+   "effect": "mixed",
+   "effect_quote": "their performance on smaller datasets can be largely different",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "comparable accuracy when trained on ImageNet"
+    },
+    {
+     "factor": "data scale",
+     "value": "small training-set regime",
+     "quote": "small training-set regime"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_2e2ed55d525d": {
+   "intervention": "Vision Transformer (ViT)",
+   "intervention_is_new": true,
+   "comparator": "ResNet-based baselines",
+   "outcome": "image classification accuracy",
+   "effect": "positive",
+   "effect_quote": "Vision Transformer models pre-trained on the JFT-300M dataset outperform ResNet-based baselines on all datasets",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "JFT-300M",
+     "quote": "pre-trained on the JFT-300M dataset"
+    },
+    {
+     "factor": "evaluation metric",
+     "value": "mean and standard deviation of the accuracies, averaged over three fine-tuning runs",
+     "quote": "We report mean and standard deviation of the accuracies, averaged over three ﬁne-tuning runs"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_962283bf5833": {
+   "intervention": "Vision Transformers (ViTs)",
+   "intervention_is_new": false,
+   "comparator": "ResNets",
+   "outcome": "performance",
+   "effect": "positive",
+   "effect_quote": "outperform ResNets of comparable size and throughput",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "no pre-training or strong augmentations",
+     "quote": "when learned with no pre-training or strong augmentations"
+    },
+    {
+     "factor": "population",
+     "value": "comparable size and throughput",
+     "quote": "of comparable size and throughput"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_45811be51691": {
+   "intervention": "Vision Transformer (ViT)",
+   "intervention_is_new": true,
+   "comparator": "state-of-the-art convolutional networks",
+   "outcome": "image classification performance",
+   "effect": "positive",
+   "effect_quote": "attains excellent results compared to state-of-the-art convolutional networks",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "pre-trained on large amounts of data and transferred",
+     "quote": "When pre-trained on large amounts of data and transferred"
+    },
+    {
+     "factor": "dataset",
+     "value": "ImageNet, CIFAR-100, VTAB",
+     "quote": "multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.)"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_7747d851c5de": {
+   "intervention": "NFNets",
+   "intervention_is_new": false,
+   "comparator": "Vision Transformers",
+   "outcome": "Top-1 accuracy on ImageNet",
+   "effect": "positive",
+   "effect_quote": "NFNets match the reported performance of Vision Transformers",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "After fine-tuning on ImageNet"
+    },
+    {
+     "factor": "data scale",
+     "value": "comparable compute budgets",
+     "quote": "with comparable compute budgets"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_72a1be6cde5a": {
+   "intervention": "Vision Transformer (ViT)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "high performance",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "data scale",
+     "value": "large-size dataset such as JFT-300M",
+     "quote": "pre-training using a large-size dataset such as JFT-300M"
+    }
+   ]
+  },
+  "dev/vit_pretraining/clm_95bd961c2be6": {
+   "intervention": "AugReg (data augmentation and regularization)",
+   "intervention_is_new": false,
+   "comparator": "models trained on an order of magnitude more training data (JFT-300M)",
+   "outcome": "model performance",
+   "effect": "positive",
+   "effect_quote": "the combination of increased compute and AugReg can yield models with the same performance as models trained on an order of magnitude more training data",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet-21k",
+     "quote": "we train ViT models of various sizes on the public ImageNet-21k dataset"
+    },
+    {
+     "factor": "data scale",
+     "value": "order of magnitude more training data",
+     "quote": "models trained on an order of magnitude more training data"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "increased compute",
+     "quote": "the combination of increased compute and AugReg"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_8568ebc780d1": {
+   "intervention": "decoupled weight decay regularization",
+   "intervention_is_new": true,
+   "comparator": "standard L2 regularization (weight decay) in adaptive gradient algorithms",
+   "outcome": "Adam's generalization performance",
+   "effect": "positive",
+   "effect_quote": "substantially improves Adam's generalization performance",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "image classification",
+     "quote": "on image classification datasets"
+    },
+    {
+     "factor": "comparator",
+     "value": "SGD with momentum",
+     "quote": "allowing it to compete with SGD with momentum"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "adaptive gradient algorithms (Adam)",
+     "quote": "for both standard SGD and Adam"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_8172a871b161": {
+   "intervention": "ADAM-alike adaptive algorithms",
+   "intervention_is_new": false,
+   "comparator": "SGD",
+   "outcome": "generalization performance",
+   "effect": "negative",
+   "effect_quote": "analyzed the generalization performance degeneration of ADAM-alike adaptive algorithms over SGD",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/adam_vs_sgd/clm_af00b9100a8d": {
+   "intervention": "ND-Adam with regularized softmax",
+   "intervention_is_new": true,
+   "comparator": "Adam and SGD",
+   "outcome": "generalization performance",
+   "effect": "positive",
+   "effect_quote": "significantly improved generalization performance, eliminating the gap between Adam and SGD",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "combining ND-Adam and regularized softmax",
+     "quote": "Combining ND-Adam and regularized softmax"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_608ea2cd9eeb": {
+   "intervention": "normalized direction-preserving Adam (ND-Adam)",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "generalization performance",
+   "effect": "positive",
+   "effect_quote": "leading to significantly improved generalization performance",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/adam_vs_sgd/clm_4f236e3e73ae": {
+   "intervention": "decoupled weight decay regularization",
+   "intervention_is_new": true,
+   "comparator": "standard L2 regularization (weight decay) in SGD and Adam",
+   "outcome": "hyperparameter tuning simplicity and Adam generalization performance",
+   "effect": "positive",
+   "effect_quote": "improves Adam’s performance to be competitive w.r.t. SGD with momentum",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "image classification datasets",
+     "quote": "image classification datasets (on which it was previously typically outperformed by the latter)"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "longer runs of 1800 epochs",
+     "quote": "much longer runs of 1800 epochs to compare the generalization capabilities"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_e292de4804a1": {
+   "intervention": "adaptive gradient methods",
+   "intervention_is_new": false,
+   "comparator": "stochastic gradient descent (SGD) with momentum",
+   "outcome": "generalization",
+   "effect": "negative",
+   "effect_quote": "have been observed to generalize worse than stochastic gradient descent (SGD) with momentum",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "training deep neural networks",
+     "quote": "in training deep neural networks"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_f4d97b206cd1": {
+   "intervention": "adaptive gradient methods",
+   "intervention_is_new": false,
+   "comparator": "momentum or gradient descent",
+   "outcome": "performance",
+   "effect": "positive",
+   "effect_quote": "the popular adaptive gradient methods never underperform momentum or gradient descent",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "inclusion relationships between optimizers",
+     "quote": "inclusion relationships between optimizers matter in practice and always predict optimizer comparisons"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_8c2e8970fc10": {
+   "intervention": "adaptive optimization methods (Adam, Adagrad, RMSprop)",
+   "intervention_is_new": false,
+   "comparator": "Stochastic gradient descent (SGD)",
+   "outcome": "generalization performance",
+   "effect": "negative",
+   "effect_quote": "generalize poorly compared to Stochastic gradient descent (SGD)",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/adam_vs_sgd/clm_07ac977bb078": {
+   "intervention": "decoupled weight decay",
+   "intervention_is_new": true,
+   "comparator": "L2 regularization",
+   "outcome": "test error",
+   "effect": "positive",
+   "effect_quote": "achieving 15% relative improvement in test error",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10 and ImageNet32x32",
+     "quote": "various image recognition datasets (CIFAR-10 and ImageNet32x32)"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "training budgets from 100 to 1800 epochs",
+     "quote": "training budgets (ranging from 100 to 1800 epochs)"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "learning rate schedules: fixed, drop-step, and cosine annealing",
+     "quote": "learning rate schedules (ﬁxed, drop-step, and cosine annealing)"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_79a6564a1204": {
+   "intervention": "AdaBelief optimizer",
+   "intervention_is_new": true,
+   "comparator": "adaptive methods (e.g. Adam) and SGD",
+   "outcome": "convergence speed, generalization, and training stability",
+   "effect": "positive",
+   "effect_quote": "We propose AdaBelief to simultaneously achieve three goals: fast convergence as in adaptive methods, good generalization as in SGD, and training stability",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "convolutional neural networks (CNNs)",
+     "quote": "For many models such as convolutional neural networks (CNNs)"
+    },
+    {
+     "factor": "population",
+     "value": "generative adversarial networks (GANs)",
+     "quote": "for complex settings such as generative adversarial networks (GANs)"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_936fb9bda344": {
+   "intervention": "more general optimizers",
+   "intervention_is_new": false,
+   "comparator": "their special cases",
+   "outcome": "performance",
+   "effect": "positive",
+   "effect_quote": "more general optimizers never underperform their special cases",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "tuning all available hyperparameters under a realistic protocol at scales common in deep learning",
+     "quote": "When tuning all available hyperparameters under a realistic protocol at scales common in deep learning"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_c52ec82a5d92": {
+   "intervention": "Adam optimizer",
+   "intervention_is_new": false,
+   "comparator": "SGD optimizer",
+   "outcome": "hyperparameter performance",
+   "effect": "negative",
+   "effect_quote": "Adam’s best hyperparameter settings performed clearly worse than SGD’s best ones",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "with L2 regularization",
+     "quote": "While both methods used L2 regularization"
+    },
+    {
+     "factor": "dataset",
+     "value": "image classification datasets",
+     "quote": "on image classification datasets"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_45657b5795ee": {
+   "intervention": "Adam optimizer",
+   "intervention_is_new": false,
+   "comparator": "Momentum optimizer",
+   "outcome": "performance ranking",
+   "effect": "positive",
+   "effect_quote": "ADAM does better than MOMENTUM",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "all optimizer hyperparameters tuned",
+     "quote": "once we tune the all the optimizer hyperparameters"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_b715208b6667": {
+   "intervention": "Partially adaptive momentum estimation method (Padam)",
+   "intervention_is_new": true,
+   "comparator": "SGD with momentum and existing adaptive gradient methods (Adam, Amsgrad)",
+   "outcome": "generalization performance and convergence rate",
+   "effect": "positive",
+   "effect_quote": "generalization performance is as good as SGD with momentum and much better than existing adaptive gradient methods",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "training deep neural networks",
+     "quote": "for training various modern deep learning models"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "nonconvex loss functions in deep learning",
+     "quote": "for nonconvex loss functions in deep learning"
+    },
+    {
+     "factor": "dataset",
+     "value": "several standard benchmarks",
+     "quote": "test them on several standard benchmarks"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_e091e78025d3": {
+   "intervention": "Adam optimizer",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "convergence and generalization",
+   "effect": "negative",
+   "effect_quote": "Adam can fail to converge and might cause poor generalization",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/icl_label_correctness/clm_05a0f4d2b706": {
+   "intervention": "correct input-label mappings",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "downstream in-context learning performances",
+   "effect": "mixed",
+   "effect_quote": "correct input-label mappings can have varying impacts on the downstream in-context learning performances",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "depending on the experimental configuration",
+     "quote": "depending on the experimental configuration"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_c090096e134c": {
+   "intervention": "in-context learning with demonstrations",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "performance gains",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "using either the inputs only or the label set only with the right format",
+     "quote": "the models can still retain up to 95% of performance gains by using either the inputs only or the label set only if the right format is used"
+    },
+    {
+     "factor": "training & design",
+     "value": "meta-training with an in-context learning objective",
+     "quote": "meta-training with an in-context learning objective magnifies these trends"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_240a5cd803ce": {
+   "intervention": "randomly replacing labels in demonstrations",
+   "intervention_is_new": false,
+   "comparator": "ground truth demonstrations",
+   "outcome": "performance on classification and multi-choice tasks",
+   "effect": "none",
+   "effect_quote": "randomly replacing labels in the demonstrations barely hurts performance",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "12 different models including GPT-3",
+     "quote": "consistently over 12 different models including GPT-3"
+    },
+    {
+     "factor": "task",
+     "value": "classification and multi-choice tasks",
+     "quote": "on a range of classification and multi-choce tasks"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_3d4c1e9edc08": {
+   "intervention": "in-context learning (ICL)",
+   "intervention_is_new": false,
+   "comparator": "conventional learning",
+   "outcome": "prediction improvement on flipped labels",
+   "effect": "negative",
+   "effect_quote": "predictions on flipped labels should continue to improve as observations continue to contradict pre-training preference",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "flipped labels",
+     "quote": "predictions on flipped labels"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_48898dfcc4aa": {
+   "intervention": "large language models",
+   "intervention_is_new": false,
+   "comparator": "small language models",
+   "outcome": "overriding semantic priors using in-context input-label mappings",
+   "effect": "positive",
+   "effect_quote": "large models can override prior knowledge from pretraining with input– label mappings presented in-context",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "large models",
+     "quote": "large models can override prior knowledge"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "ICL with flipped labels",
+     "quote": "overriding semantic priors is an emergent ability of model scale"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_1df6408a7ea1": {
+   "intervention": "prior-free labels",
+   "intervention_is_new": false,
+   "comparator": "random labels",
+   "outcome": "in-context learning performance",
+   "effect": "positive",
+   "effect_quote": "results on prior-free labels outperform that of the random labels",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "absence of label-space demonstrations",
+     "quote": "even in the absence of label-space demonstrations"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_164161f65a2a": {
+   "intervention": "semantically-unrelated targets (SUL-ICL)",
+   "intervention_is_new": false,
+   "comparator": "natural language targets",
+   "outcome": "performance drop in in-context learning",
+   "effect": "negative",
+   "effect_quote": "using semantically-unrelated targets results in a greater performance drop",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "small models",
+     "quote": "Because small models are heavily affected"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_f4df82f74f9f": {
+   "intervention": "in-context learning (ICL)",
+   "intervention_is_new": false,
+   "comparator": "default label scenario",
+   "outcome": "prediction gap between default and flipped labels",
+   "effect": "negative",
+   "effect_quote": "a significant gap between predictions on default and flipped labels remains, even at maximum input size",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "maximum input size",
+     "quote": "even at maximum input size"
+    },
+    {
+     "factor": "dataset",
+     "value": "flipped label scenario",
+     "quote": "predictions on flipped labels"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_2483b9a78298": {
+   "intervention": "instruction tuning",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "reliance on semantic priors",
+   "effect": "positive",
+   "effect_quote": "instruction tuning either increases the extent to which models rely on semantic priors when they are available or gives models more semantic priors",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "flipped labels",
+     "quote": "when presented with 100% ﬂipped labels"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_d172f8c7b517": {
+   "intervention": "channel models with random English word pairing",
+   "intervention_is_new": false,
+   "comparator": "in-context learning with gold labels",
+   "outcome": "retained improvements from in-context learning",
+   "effect": "positive",
+   "effect_quote": "it is possible to retain 82%, 87%, 86% and 75% of improvements from in-context learning",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "unlabeled training data",
+     "quote": "each input from the unlabeled training data"
+    },
+    {
+     "factor": "task",
+     "value": "MetaICL classification, GPT-J classification, MetaICL multi-choice, GPT-J multi-choice",
+     "quote": "in MetaICL classiﬁcation, GPT- J classiﬁcation, MetaICL multi-choice and GPT-J multi-choice"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "random English word pairing instead of gold labels",
+     "quote": "by simply pairing each input from the unlabeled training data with a random English word"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_77f985870ae0": {
+   "intervention": "model scaling",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "ability to override prior knowledge with input–label mappings",
+   "effect": "positive",
+   "effect_quote": "this ability to override prior knowledge with input–label mappings only appears in large models",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "large models",
+     "quote": "only appears in large models"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_b7bb76262d9e": {
+   "intervention": "Direct MetaICL with random sentence-label pairing",
+   "intervention_is_new": false,
+   "comparator": "in-context learning with gold labels",
+   "outcome": "retained performance improvement",
+   "effect": "positive",
+   "effect_quote": "retain 95% and 82% of improvements from in-context learning",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "classification and multi-choice",
+     "quote": "in classiﬁcation and multi-choice, respectively"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "sampling random sentences from a corpus and randomly pairing them with the label set",
+     "quote": "by simply sampling random sentences from a corpus and randomly pairing them with the label set"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_8d29504cd62b": {
+   "intervention": "in-context learning (ICL)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "incorporation of in-context label information and learning of truly novel tasks",
+   "effect": "positive",
+   "effect_quote": "ICL does incorporate in-context label information and can even learn truly novel tasks in-context",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "against expectations set by prior work",
+     "quote": "against expectations set by prior work"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_b25c7bcdf1bb": {
+   "intervention": "input-label mapping integrity",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "in-context learning performance",
+   "effect": "positive",
+   "effect_quote": "the integrity of the input-label mapping is a crucial factor in performing ICL",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/icl_label_correctness/clm_84e745db8ab8": {
+   "intervention": "alphabetical and numerical labels",
+   "intervention_is_new": false,
+   "comparator": "random-token labels",
+   "outcome": "performance in prior-free in-context learning",
+   "effect": "positive",
+   "effect_quote": "alphabetical and numerical labels outperform random-token labels",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "prior-free labels",
+     "quote": "Among the prior-free results"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_836afc7b579b": {
+   "intervention": "incorrect labels in demonstrations",
+   "intervention_is_new": false,
+   "comparator": "no demonstrations",
+   "outcome": "classification performance",
+   "effect": "negative",
+   "effect_quote": "nearly 10% drop in performance when always using incorrect labels",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "GPT-J",
+     "quote": "GPT-J in classiﬁcation"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "always using incorrect labels",
+     "quote": "when always using incorrect labels"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_955c94350357": {
+   "intervention": "GPT-3 models",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "semantic prior removal and override",
+   "effect": "mixed",
+   "effect_quote": "can remove semantic priors (i.e., perform at guessing accuracy) but cannot override them (i.e., perform significantly worse than guessing)",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "100% flipped labels",
+     "quote": "even when presented with 100% flipped labels"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_ad27e6e945ae": {
+   "intervention": "in-context learning (ICL)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "prediction preferences and in-context information utilization",
+   "effect": "mixed",
+   "effect_quote": "ICL struggles to fully overcome prediction preferences acquired from pre-training data and, further, that ICL does not consider all in-context information equally",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "pre-training data",
+     "quote": "prediction preferences acquired from pre-training data"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_05ea61f33fa1": {
+   "intervention": "balanced demonstrations",
+   "intervention_is_new": false,
+   "comparator": "demonstrations sampled from data distributions",
+   "outcome": "performance and sensitivity",
+   "effect": "negative",
+   "effect_quote": "using balanced demonstrations degrade the performance and sensitivity",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "hate_speech18, ethos-race, ethos-national_origin, ethos-religion",
+     "quote": "bel balanced demonstrations for imbalanced dataset (hate_speech18, ethos-race, ethos-national_origin, ethos-religion)"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "balanced vs. distribution-sampled demonstrations",
+     "quote": "using balanced demonstrations degrade the performance and sensitivity when compared to demonstrations sampled from data distributions"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_8e1e72440b0b": {
+   "intervention": "mean-aggregated results and proposed experimental settings in existing work",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "over-generalization of the existing claim",
+   "effect": "negative",
+   "effect_quote": "the existing claim suffers from over-generalization in two regards",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "mean-aggregated results",
+     "quote": "the mean-aggregated results fails to capture the insensitivity behavior in individual tasks"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "proposed experimental settings in existing work",
+     "quote": "the proposed experimental settings in the existing work is not general enough to be fully supportive of the claim"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_9eb528720057": {
+   "intervention": "in-context learning (ICL)",
+   "intervention_is_new": false,
+   "comparator": "conventional learning",
+   "outcome": "prediction behavior on flipped labels",
+   "effect": "mixed",
+   "effect_quote": "Crucially, we observe this behavior across models and tasks",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "across models and tasks",
+     "quote": "Crucially, we observe this behavior across models and tasks"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_0bba7dc54fc1": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": "no label smoothing (hard targets)",
+   "outcome": "model calibration and distillation effectiveness",
+   "effect": "mixed",
+   "effect_quote": "label smoothing implicitly calibrates learned models so that the conﬁdences of their predictions are more aligned with the accuracies of their predictions",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "multi-class neural network training",
+     "quote": "generalization and learning speed of a multi-class neural network"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_e2cbf0b6c7c4": {
+   "intervention": "label smoothing of the teacher",
+   "intervention_is_new": false,
+   "comparator": "no label smoothing (or noise-free settings)",
+   "outcome": "benefit in distillation from noisy data",
+   "effect": "positive",
+   "effect_quote": "label smoothing of the teacher is beneficial",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "distilling models from noisy data",
+     "quote": "when distilling models from noisy data"
+    },
+    {
+     "factor": "dataset",
+     "value": "noisy data",
+     "quote": "from noisy data"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_8f0791d4b453": {
+   "intervention": "knowledge distillation (KD)",
+   "intervention_is_new": false,
+   "comparator": "label smoothing",
+   "outcome": "student logit layer geometry",
+   "effect": "positive",
+   "effect_quote": "KD, as an adaptive label smoothing, encourages differences in inter-class distances",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "knowledge distillation",
+     "quote": "knowledge distillation"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_a471982e9c65": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": "no label smoothing",
+   "outcome": "student model quality",
+   "effect": "negative",
+   "effect_quote": "results in a worse student model when applying KD",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-100",
+     "quote": "Verified on CIFAR-100 in Table 4"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_706c43ed3690": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "ability to distinguish semantically similar classes",
+   "effect": "positive",
+   "effect_quote": "consider this erasing relative information function within class from label smoothing as a merit to distinguish semantically similar classes",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/label_smoothing_distillation/clm_fc2499fccd00": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": "no label smoothing",
+   "outcome": "distillation performance",
+   "effect": "mixed",
+   "effect_quote": "label smoothing can harm distillation, we show an opposite picture in noisy settings",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "noisy settings",
+     "quote": "in noisy settings"
+    },
+    {
+     "factor": "dataset",
+     "value": "noisy data",
+     "quote": "distilling models from noisy data"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_5534345a0458": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": "loss-correction techniques",
+   "outcome": "denoising performance and distillation performance",
+   "effect": "positive",
+   "effect_quote": "smoothing is competitive with such techniques in denoising, and that it improves performance of distillation",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "under label noise",
+     "quote": "under label noise"
+    },
+    {
+     "factor": "task",
+     "value": "distillation from noisy data",
+     "quote": "when distilling models from noisy data"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_aff1792b6e6c": {
+   "intervention": "confidence penalty and label smoothing",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "model performance",
+   "effect": "positive",
+   "effect_quote": "both the confidence penalty and label smoothing improve a wide range of state-of-the-art models",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "without modifying hyper-parameters",
+     "quote": "without the need to modify hyper-parameters"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_1287fc411edf": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": "Latent Sequence Decompositions (LSD) method",
+   "outcome": "word error rate (WER) reduction",
+   "effect": "positive",
+   "effect_quote": "benefits of label smoothing (WER reduction from 14.2 to 11) improve over the recently proposed Latent Sequence Decompositions (LSD) method",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "WSJ",
+     "quote": "Validation and test word error rates (WER) for WSJ"
+    },
+    {
+     "factor": "task",
+     "value": "speech recognition",
+     "quote": "speech recognition (TIMIT and WSJ)"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_26be73caf2ac": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "effectiveness of label smoothing",
+   "effect": "negative",
+   "effect_quote": "label smoothing will lose or impair its effectiveness",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "long-tailed class distribution",
+     "quote": "Long-tailed class distribution"
+    },
+    {
+     "factor": "dataset",
+     "value": "increased number of classes",
+     "quote": "increased number of classes"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_d35b123b65e7": {
+   "intervention": "knowledge distillation (KD)",
+   "intervention_is_new": false,
+   "comparator": "label smoothing (LS)",
+   "outcome": "model confidence",
+   "effect": "negative",
+   "effect_quote": "KD lacks the defining property of LS regularization",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "text classification tasks",
+     "quote": "specifically on text classification tasks"
+    },
+    {
+     "factor": "population",
+     "value": "models of different sizes",
+     "quote": "involving models of different sizes"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_9b72f9f1fe80": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": "no label smoothing",
+   "outcome": "student model generalization",
+   "effect": "positive",
+   "effect_quote": "label smoothing (LS) improves student model’s generalization",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-100",
+     "quote": "On both datasets"
+    },
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10",
+     "quote": "On both datasets"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_3ef9bbe51c83": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "distillation performance",
+   "effect": "negative",
+   "effect_quote": "LS destroys class relationship information",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-100",
+     "quote": "Verified on CIFAR-100 in Table 4"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_3b9104716eba": {
+   "intervention": "teacher trained with label smoothing",
+   "intervention_is_new": false,
+   "comparator": "teacher without label smoothing",
+   "outcome": "distillation performance",
+   "effect": "negative",
+   "effect_quote": "using the teacher trained with label smoothing still performs worse than that without label smoothing",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/label_smoothing_distillation/clm_dd4842aa5d8d": {
+   "intervention": "label smoothing and confidence penalty",
+   "intervention_is_new": false,
+   "comparator": "dropout baseline",
+   "outcome": "absolute improvement",
+   "effect": "positive",
+   "effect_quote": "Label smoothing led to an absolute improvement over the dropout baseline of 1.6%, while the conﬁdence penalty led to an absolute improvement of 1.2%",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "TIMIT",
+     "quote": "Validation and test phoneme error rates (PER) for TIMIT"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "grid search over values of [0.125, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0]",
+     "quote": "For the conﬁdence penalty, we performed a grid search over values of [0.125, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0] and found a value of 1.0 to work best"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_0fc946af8044": {
+   "intervention": "soft labels (distillation with soft labels)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "distillation performance",
+   "effect": "negative",
+   "effect_quote": "distillation performance is negatively associated with the number of some specific samples",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "same distillation temperature setting",
+     "quote": "under the same distillation temperature setting"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_2184cea91eb2": {
+   "intervention": "large-batch methods",
+   "intervention_is_new": false,
+   "comparator": "small-batch methods",
+   "outcome": "generalization quality",
+   "effect": "negative",
+   "effect_quote": "convergence to sharp minimizers gives rise to the poor generalization of large-batch methods",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "numerical experiments",
+     "quote": "we present numerical experiments"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_60f4c88efc9b": {
+   "intervention": "set of remedies: SGD with momentum, gradient clipping, decreasing learning rate schedule, learning rate scaled with batch size (square root scaling), ghost batch-norm, and sufficient high learning rate training iterations",
+   "intervention_is_new": true,
+   "comparator": "small batch training strategies",
+   "outcome": "generalization gap",
+   "effect": "positive",
+   "effect_quote": "close down the generalization gap between the small and large batch training strategies",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "MNIST, CIFAR-10, CIFAR-100 and ImageNet",
+     "quote": "To validate our findings we conduct several additional experiments on MNIST, CIFAR-10, CIFAR-100 and ImageNet."
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "large batch training of neural networks",
+     "quote": "closing the generalization gap in large batch training of neural networks"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_d2fa6058c257": {
+   "intervention": "large minibatch SGD training",
+   "intervention_is_new": false,
+   "comparator": "small minibatch training",
+   "outcome": "generalization",
+   "effect": "positive",
+   "effect_quote": "when these are addressed the trained networks exhibit good generalization",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet dataset",
+     "quote": "on the ImageNet dataset"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "large minibatch sizes up to 8192 images",
+     "quote": "large minibatch sizes up to 8192 images"
+    },
+    {
+     "factor": "training & design",
+     "value": "hyper-parameter-free linear scaling rule and warmup scheme",
+     "quote": "we adopt a hyper-parameter-free linear scaling rule for adjusting learning rates as a function of minibatch size and develop a new warmup scheme"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_c386aa150750": {
+   "intervention": "large-batch methods",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "generalization gap",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "large-batch regime",
+     "quote": "when using a larger batch there is a degradation in the quality of the model"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_37573b9f8d3e": {
+   "intervention": "Ghost Batch Normalization",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "generalization gap",
+   "effect": "positive",
+   "effect_quote": "enables significant decrease in the generalization gap without increasing the number of updates",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "MNIST, CIFAR-10, CIFAR-100 and ImageNet",
+     "quote": "To validate our findings we conduct several additional experiments on MNIST, CIFAR-10, CIFAR-100 and ImageNet."
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_a2e2cdc022b1": {
+   "intervention": "remedy strategies (data augmentation, conservative training, robust optimization)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "generalization of large-batch methods and sharpness of minima",
+   "effect": "mixed",
+   "effect_quote": "these strategies do not correct the problem; they improve the generalization of large-batch methods but still lead to relatively sharp minima",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "large-batch regime",
+     "quote": "generalization of large-batch methods"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_4db82b9451d3": {
+   "intervention": "flatness-based generalization hypothesis",
+   "intervention_is_new": false,
+   "comparator": "sharp minima",
+   "outcome": "generalization quality",
+   "effect": "mixed",
+   "effect_quote": "the conclusion that flat minima should generalize better than sharp ones cannot be applied as is without further context",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "when following several definitions of flatness",
+     "quote": "when following several definitions of flatness"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_cb38bbb24ffb": {
+   "intervention": "small mini-batches",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "evidence of minima",
+   "effect": "positive",
+   "effect_quote": "the noise introduced by small mini-batches drives the parameters towards minima whose evidence is large",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/large_batch_generalization/clm_466fc693bc79": {
+   "intervention": "Ghost Batch Normalization (Ghost-BN)",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "generalization performance",
+   "effect": "positive",
+   "effect_quote": "improves the generalization performance significantly",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "training & design",
+     "value": "keeping the training time intact",
+     "quote": "while keeping the training time intact"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_40886389424a": {
+   "intervention": "large minibatch training",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "generalization performance",
+   "effect": "none",
+   "effect_quote": "observed no generalization issues",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet to COCO",
+     "quote": "transferring across datasets (from ImageNet to COCO)"
+    },
+    {
+     "factor": "task",
+     "value": "classification to detection/segmentation",
+     "quote": "across tasks (from classiﬁcation to detection/segmentation)"
+    },
+    {
+     "factor": "training & design",
+     "value": "models trained with large minibatches",
+     "quote": "using models trained with large minibatches"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_01c077f23206": {
+   "intervention": "LARS",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "training with batch above 32K without accuracy loss",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "Alexnet and Resnet-50",
+     "quote": "Training of these networks"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_447679cc6c03": {
+   "intervention": "increasing the batch size during training",
+   "intervention_is_new": false,
+   "comparator": "decaying the learning rate",
+   "outcome": "learning curve on training and test sets",
+   "effect": "none",
+   "effect_quote": "obtain the same learning curve on both training and test sets by instead increasing the batch size",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "during training",
+     "quote": "increasing the batch size during training"
+    },
+    {
+     "factor": "training & design",
+     "value": "stochastic gradient descent (SGD), SGD with momentum, Nesterov momentum, and Adam",
+     "quote": "This procedure is successful for stochastic gradient descent (SGD), SGD with momentum, Nesterov momentum, and Adam"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_cd203058651b": {
+   "intervention": "small batch sizes",
+   "intervention_is_new": false,
+   "comparator": "large batch sizes",
+   "outcome": "range of learning rates that provides stable convergence",
+   "effect": "positive",
+   "effect_quote": "the use of small batch sizes corresponds to the largest range of learning rates that provides stable convergence",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10, CIFAR-100 and ImageNet",
+     "quote": "The collected experimental results for the CIFAR-10, CIFAR-100 and ImageNet datasets"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "constant average weight update per gradient calculation",
+     "quote": "We adopt a learning rate that corresponds to a constant average weight update per gradient calculation"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_64e239a0eafd": {
+   "intervention": "increasing batch size with learning rate and momentum scaling",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "validation accuracy",
+   "effect": "positive",
+   "effect_quote": "train Inception-ResNet-V2 on ImageNet to 77% validation accuracy in under 2500 parameter updates",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "on ImageNet"
+    },
+    {
+     "factor": "training & design",
+     "value": "batches of 65536 images, under 2500 parameter updates",
+     "quote": "using batches of 65536 images"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_e43ca344e431": {
+   "intervention": "improving the estimate of the full-batch gradient",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "performance",
+   "effect": "negative",
+   "effect_quote": "improving our estimate of the full-batch gradient can harm performance",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/large_batch_generalization/clm_433c25554cab": {
+   "intervention": "LAMB optimizer",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "state-of-the-art accuracy on ImageNet training with ResNet-50",
+   "effect": "positive",
+   "effect_quote": "LAMB is also the first large batch adaptive solver that can achieve state-of-the-art accuracy on ImageNet training with RESNET-50",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/large_batch_generalization/clm_8ecc04bb114f": {
+   "intervention": "ADAMW optimizer",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "reasonable training result",
+   "effect": "negative",
+   "effect_quote": "we fail to get any reasonable result with ADAMW optimizer",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "64K/32K mixed-batch training",
+     "quote": "For 64K/32K mixed-batch training"
+    },
+    {
+     "factor": "training & design",
+     "value": "extensive hyperparameter tuning",
+     "quote": "even after extensive tuning of the hyperparameters"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_62ee694e399e": {
+   "intervention": "large-batch training",
+   "intervention_is_new": false,
+   "comparator": "small-batch training",
+   "outcome": "generalization gap",
+   "effect": "negative",
+   "effect_quote": "the drop in generalization (also called generalization gap) to be as high as 5%",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "smaller networks",
+     "quote": "even for smaller networks"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_aacde36d43a8": {
+   "intervention": "extensive gradient updates",
+   "intervention_is_new": false,
+   "comparator": "common practice (early stopping based on validation error)",
+   "outcome": "generalization",
+   "effect": "positive",
+   "effect_quote": "good generalization can result from extensive amount of gradient updates",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "no apparent validation error change and training error continues to drop",
+     "quote": "in which there is no apparent validation error change and training error continues to drop"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_3f55068289e0": {
+   "intervention": "reducing the batch size",
+   "intervention_is_new": false,
+   "comparator": "increasing the batch size",
+   "outcome": "convergence robustness and generalization performance",
+   "effect": "positive",
+   "effect_quote": "both the convergence robustness and the corresponding generalization performance consistently improve by reducing the batch size",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10, CIFAR-100 and ImageNet",
+     "quote": "The collected experimental results for the CIFAR-10, CIFAR-100 and ImageNet datasets"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_50b1c5d7e9fb": {
+   "intervention": "large-batch training",
+   "intervention_is_new": false,
+   "comparator": "small-batch training",
+   "outcome": "generalization quality",
+   "effect": "negative",
+   "effect_quote": "when using a larger batch there is a degradation in the quality of the model, as measured by its ability to generalize",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "large-batch regime",
+     "quote": "when using a larger batch"
+    },
+    {
+     "factor": "evaluation metric",
+     "value": "ability to generalize",
+     "quote": "as measured by its ability to generalize"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_46a090ffa835": {
+   "intervention": "LAMB optimizer",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "BERT training performance with large batch sizes",
+   "effect": "positive",
+   "effect_quote": "enables use of very large batch sizes of 32868 without any degradation of performance",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "BERT training",
+     "quote": "for BERT training"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "batch size of 32868",
+     "quote": "very large batch sizes of 32868"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_396488076b38": {
+   "intervention": "large batch training",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "accuracy loss",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "Alexnet-BN",
+     "quote": "Alexnet-BN baseline was trained using SGD with momentum=0.9, weight decay=0.0005 for 128 epochs."
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_184a53baa60f": {
+   "intervention": "notion of flatness for a minimum in the loss function",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "generalization ability",
+   "effect": "none",
+   "effect_quote": "the notion of ﬂatness for a minimum in the loss function by itself is not sufﬁcient to determine its generalization ability",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/large_batch_generalization/clm_c807b4c2928e": {
+   "intervention": "previously used definitions of flatness",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "accounting for the complex geometry of deep architectures",
+   "effect": "negative",
+   "effect_quote": "fail to account for the complex geometry of some commonly used deep architectures",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/robustness_accuracy_tradeoff/clm_bda8fd2fb0ce": {
+   "intervention": "classification-calibrated loss theory",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "trade-off between accuracy and robustness",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "classification problems",
+     "quote": "for classiﬁcation problems"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_c6aa5f66c509": {
+   "intervention": "robustness methods",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "gap between theory and practice",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "methodology",
+     "value": "extensive experiments",
+     "quote": "Through extensive experiments with robustness methods"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_53bc7ca05ee7": {
+   "intervention": "adversarially robust training",
+   "intervention_is_new": false,
+   "comparator": "standard training (absence of adversarial robustness)",
+   "outcome": "standard accuracy",
+   "effect": "mixed",
+   "effect_quote": "training models to be adversarially robust can be beneficial in the regime of limited training data, in general, there can be an inherent trade-off between the standard accuracy and adversarially robust accuracy",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "data scale",
+     "value": "limited training data",
+     "quote": "in the regime of limited training data"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_37e5248e290e": {
+   "intervention": "current methods for training robust networks",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "robustness-accuracy tradeoff",
+   "effect": "none",
+   "effect_quote": "the robustness-accuracy tradeoff in deep learning is not inherent",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/robustness_accuracy_tradeoff/clm_80dd5cadd09e": {
+   "intervention": "adversarial robustness training",
+   "intervention_is_new": false,
+   "comparator": "standard generalization training",
+   "outcome": "standard accuracy",
+   "effect": "negative",
+   "effect_quote": "training robust models may not only be more resource-consuming, but also lead to a reduction of standard accuracy",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "a fairly simple and natural setting",
+     "quote": "provably exists in a fairly simple and natural setting"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_14d9023880cc": {
+   "intervention": "adversarial robustness training",
+   "intervention_is_new": false,
+   "comparator": "standard generalization",
+   "outcome": "inherent tension between robustness and generalization",
+   "effect": "mixed",
+   "effect_quote": "there may exist an inherent tension between the goal of adversarial robustness and that of standard generalization",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/robustness_accuracy_tradeoff/clm_abc0093e7f8a": {
+   "intervention": "robust classification methods",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "generalization gap",
+   "effect": "negative",
+   "effect_quote": "all robust methods that produce locally smooth classifiers also suffer from fairly large generalization gaps",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "training & design",
+     "value": "locally smooth classifiers",
+     "quote": "robust methods that produce locally smooth classifiers"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_6092eb110fc8": {
+   "intervention": "combining robust classification methods with dropout",
+   "intervention_is_new": false,
+   "comparator": "robust classification methods without dropout",
+   "outcome": "generalization gap",
+   "effect": "positive",
+   "effect_quote": "combining robust classiﬁcation methods with dropout and see that this leads to a narrowing of the generalization gaps",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "robust learning setting",
+     "quote": "generalization may be a particular challenge in robust learning"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_73887e8dc1b2": {
+   "intervention": "locally Lipschitz function rounding",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "robust and perfectly accurate classifier existence",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "many image datasets",
+     "quote": "many image datasets follow a natural separation property"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_e5767f70f5f1": {
+   "intervention": "Interpolated Adversarial Training",
+   "intervention_is_new": true,
+   "comparator": "standard adversarial training",
+   "outcome": "generalization on unperturbed data",
+   "effect": "positive",
+   "effect_quote": "substantially improves generalization on unperturbed data while preserving adversarial robustness",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10",
+     "quote": "On CIFAR-10, adversarial training increases the standard test error"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_d68fb2b62ebf": {
+   "intervention": "methods that impose local Lipschitzness and deep learning generalization techniques",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "achieving robustness and accuracy in practice",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "in practice",
+     "quote": "achieving robustness and accuracy in practice"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_6a38ff348287": {
+   "intervention": "alternative perspective on accuracy-robustness tradeoff",
+   "intervention_is_new": true,
+   "comparator": "previous work that speculates on the inevitability of an accuracy-robustness tradeoff",
+   "outcome": "motivation for investigating accuracy and robustness",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": []
+  },
+  "main/robustness_accuracy_tradeoff/clm_f59890654783": {
+   "intervention": "robust self-training (RST)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "standard and robust error",
+   "effect": "positive",
+   "effect_quote": "RST improves both the standard and robust error",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "noiseless linear regression",
+     "quote": "for noiseless linear regression"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_5e75e751b062": {
+   "intervention": "TRADES",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "adversarial defense formulation",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "methodology",
+     "value": "theoretical analysis",
+     "quote": "inspired by our theoretical analysis"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_d6896f34e273": {
+   "intervention": "Interpolated Adversarial Training",
+   "intervention_is_new": true,
+   "comparator": "adversarial training",
+   "outcome": "standard test error under no adversary",
+   "effect": "positive",
+   "effect_quote": "achieving a standard test error of only 6.45%",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10",
+     "quote": "On CIFAR-10"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_b3ab18dd28c9": {
+   "intervention": "adversarial robustness training",
+   "intervention_is_new": false,
+   "comparator": "standard (non-robust) models",
+   "outcome": "standard accuracy",
+   "effect": "negative",
+   "effect_quote": "this can lead to a decrease in standard accuracy for robust models",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "adversarial robustness",
+     "quote": "robustness to adversarial perturbations"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_f65a39c86dcd": {
+   "intervention": "robust self-training",
+   "intervention_is_new": false,
+   "comparator": "VAT approach",
+   "outcome": "adversarial robustness accuracy",
+   "effect": "positive",
+   "effect_quote": "robust self-training oﬀers 3–6% higher accuracy",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "VAT approach vs robust self-training",
+     "quote": "We train models using adversarial- and stability- ﬂavored adaptations of VAT, and compare them to their robust self-training counterparts"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_86d25490b809": {
+   "intervention": "adversarial training",
+   "intervention_is_new": false,
+   "comparator": "absence of adversarial training",
+   "outcome": "robust generalization",
+   "effect": "mixed",
+   "effect_quote": "Even though adversarial training helps when enough data is available, it may hurt robust generalization in the small sample size regime",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "data scale",
+     "value": "small sample size regime",
+     "quote": "in the small sample size regime"
+    },
+    {
+     "factor": "data scale",
+     "value": "enough data",
+     "quote": "when enough data is available"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_a0ec6ade03a3": {
+   "intervention": "traditional adversarial training",
+   "intervention_is_new": false,
+   "comparator": "AdvProp",
+   "outcome": "EfficientNet-B7 accuracy",
+   "effect": "negative",
+   "effect_quote": "applying such attacker to traditional adversarial training decreases EfﬁcientNet-B7’s accuracy to 85.0%",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "EfficientNet-B7’s accuracy"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_928cbcf14528": {
+   "intervention": "adversarial training",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "standard error",
+   "effect": "negative",
+   "effect_quote": "it often leads to an increase in the standard error",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "worst-case perturbations",
+     "quote": "to improve the robust error (over worst-case perturbations)"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_f7d9305dd6d1": {
+   "intervention": "adversarial training (AdvProp)",
+   "intervention_is_new": true,
+   "comparator": "vanilla training",
+   "outcome": "top-1 accuracy on ImageNet",
+   "effect": "positive",
+   "effect_quote": "beats the vanilla training baseline by 0.6%",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "top-1 accuracy on ImageNet"
+    },
+    {
+     "factor": "population",
+     "value": "EfficientNet-B7",
+     "quote": "our adversarially trained EfﬁcientNet-B7"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_97247098ae08": {
+   "intervention": "PatchTST",
+   "intervention_is_new": true,
+   "comparator": "SOTA Transformer-based models",
+   "outcome": "long-term forecasting accuracy",
+   "effect": "positive",
+   "effect_quote": "can improve the long-term forecasting accuracy significantly",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "long-term forecasting",
+     "quote": "long-term forecasting accuracy"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_c6c2fceb4ace": {
+   "intervention": "Cross-Attention-only Time Series transformer (CATS)",
+   "intervention_is_new": true,
+   "comparator": "existing models",
+   "outcome": "forecasting performance",
+   "effect": "positive",
+   "effect_quote": "demonstrates superior performance in multivariate long-term forecasting tasks",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "Traffic dataset",
+     "quote": "on the Traffic dataset for all forecast horizons"
+    },
+    {
+     "factor": "task",
+     "value": "multivariate long-term forecasting",
+     "quote": "in multivariate long-term forecasting tasks"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_8cc2c3f9eb30": {
+   "intervention": "PatchTST",
+   "intervention_is_new": true,
+   "comparator": "DLinear model",
+   "outcome": "forecasting accuracy",
+   "effect": "positive",
+   "effect_quote": "PatchTST can still outperform it in general",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "large datasets (Weather, Traffic, Electricity) and ILI dataset",
+     "quote": "especially on large datasets (Weather, Trafﬁc, Electricity) and ILI dataset"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_0bec4364ab8e": {
+   "intervention": "iTransformer",
+   "intervention_is_new": true,
+   "comparator": "PatchTST",
+   "outcome": "forecasting performance on PEMS datasets",
+   "effect": "positive",
+   "effect_quote": "the proposed model aggregating the whole series variations for series representations can better cope with this situation",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "PEMS",
+     "quote": "fails in many cases of PEMS"
+    },
+    {
+     "factor": "data scale",
+     "value": "extremely fluctuating series",
+     "quote": "extremely fluctuating series of the dataset"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_15887f8c537e": {
+   "intervention": "FEDformer-f and FEDformer-w",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "long-term forecasting performance",
+   "effect": "positive",
+   "effect_quote": "FEDformer-f and FEDformer-w perform well on different datasets",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "different datasets",
+     "quote": "perform well on different datasets"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_d9367f212d67": {
+   "intervention": "LTSF-Linear",
+   "intervention_is_new": true,
+   "comparator": "FEDformer",
+   "outcome": "multivariate forecasting performance",
+   "effect": "positive",
+   "effect_quote": "surpasses the SOTA FEDformer in most cases by 20% ∼50% improvements",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "nine real-life datasets",
+     "quote": "Experimental results on nine real-life datasets"
+    },
+    {
+     "factor": "task",
+     "value": "long-term time series forecasting",
+     "quote": "long-term time series forecasting (LTSF) task"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "multivariate forecasting",
+     "quote": "on the multivariate forecasting"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_e62320012c82": {
+   "intervention": "Autoformer",
+   "intervention_is_new": true,
+   "comparator": "baselines",
+   "outcome": "MSE reduction",
+   "effect": "positive",
+   "effect_quote": "achieves 14% (0.180→0.145) MSE reduction",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ETT dataset",
+     "quote": "on the ETT dataset"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "input-96-predict-336 setting",
+     "quote": "for the input-96-predict-336 setting"
+    },
+    {
+     "factor": "population",
+     "value": "series with obvious periodicity",
+     "quote": "with obvious periodicity"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_c38be261f65a": {
+   "intervention": "PatchTST",
+   "intervention_is_new": true,
+   "comparator": "best results that Transformer-based models can offer",
+   "outcome": "MSE and MAE reduction",
+   "effect": "positive",
+   "effect_quote": "PatchTST/64 achieves an overall 21.0% reduction on MSE and 16.7% reduction on MAE",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "multivariate time series forecasting benchmarks",
+     "quote": "long-term forecasting with Transformers"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_78bc3e5c60b3": {
+   "intervention": "PatchTST",
+   "intervention_is_new": true,
+   "comparator": "SOTA Transformer-based models",
+   "outcome": "long-term forecasting accuracy",
+   "effect": "positive",
+   "effect_quote": "Results from Table 6 strongly indicates the superior performance of PatchTST",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ETTh1",
+     "quote": "We test the forecasting performance on ETTh1 dataset"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "linear probing after learned representation is obtained",
+     "quote": "where we only apply linear probing after the learned representation is obtained (only ﬁne-tune the last linear layer) to make the comparison fair"
+    },
+    {
+     "factor": "training & design",
+     "value": "self-supervised pre-training on ETTh1 or transferred from Traffic",
+     "quote": "both from pre-training on its own ETTh1 data (self-supervised columns) or pre-training on Trafﬁc (transferred columns)"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_e4957481a8d8": {
+   "intervention": "LTSF-Linear",
+   "intervention_is_new": true,
+   "comparator": "Transformer-based LTSF solutions",
+   "outcome": "forecasting accuracy",
+   "effect": "positive",
+   "effect_quote": "LTSF-Linear still consistently outperforms Transformer-based LTSF solutions by a large margin",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ETT datasets",
+     "quote": "univariate forecasting of ETT datasets"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "Appendix",
+     "quote": "in the Appendix"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_8e4245860e18": {
+   "intervention": "LARS",
+   "intervention_is_new": true,
+   "comparator": "baseline (standard large-batch training recipe)",
+   "outcome": "ResNet-50 accuracy at batch size 32K",
+   "effect": "positive",
+   "effect_quote": "with LARS we can scale up Resnet-50 up to batch B=32K with almost the same (-0.7%) accuracy as baseline",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet (implied by ResNet-50 and AlexNet-BN context)",
+     "quote": "scale up Resnet-50 up to batch B=32K"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "large batch size B=32K with LARS and large learning rate",
+     "quote": "even training with LARS and using large LR does not reach baseline accuracy"
+    },
+    {
+     "factor": "training & design",
+     "value": "Layer-wise Adaptive Rate Scaling (LARS) algorithm",
+     "quote": "we propose a new training algorithm based on Layer-wise Adaptive Rate Scaling (LARS)"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_52ad31b5f7c5": {
+   "intervention": "weighted soft labels",
+   "intervention_is_new": true,
+   "comparator": "standard soft labels (without weighting)",
+   "outcome": "distillation performance",
+   "effect": "positive",
+   "effect_quote": "weighted soft labels significantly improve the distillation performance",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "teacher trained with label smoothing",
+     "quote": "especially for distillation from the teacher trained with label smoothing"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_a9c248178a0d": {
+   "intervention": "LTSF-Linear",
+   "intervention_is_new": true,
+   "comparator": "existing sophisticated Transformer-based LTSF models",
+   "outcome": "forecasting performance",
+   "effect": "positive",
+   "effect_quote": "LTSF-Linear surprisingly outperforms existing sophisticated Transformer-based LTSF models in all cases, and often by a large margin",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "nine real-life datasets",
+     "quote": "Experimental results on nine real-life datasets"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_c140dc9a172d": {
+   "intervention": "FEDformer",
+   "intervention_is_new": true,
+   "comparator": "state-of-the-art methods",
+   "outcome": "prediction error reduction",
+   "effect": "positive",
+   "effect_quote": "reduce prediction error by $14.8\\%$ and $22.6\\%$",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "six benchmark datasets",
+     "quote": "Our empirical studies with six benchmark datasets"
+    },
+    {
+     "factor": "population",
+     "value": "multivariate and univariate time series",
+     "quote": "for multivariate and univariate time series, respectively"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_a5abd2cc2044": {
+   "intervention": "Informer",
+   "intervention_is_new": true,
+   "comparator": "other baselines",
+   "outcome": "prediction performance",
+   "effect": "positive",
+   "effect_quote": "The Informer outperforms other baselines even if the sequences are at different granularity levels.",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ETTm1 and ETTh1",
+     "quote": "The sequences {96, 288, 672} of ETTm1 (minutes-level) are aligned with {24, 48, 168} of ETTh1 (hour-level)."
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_71356c9b5696": {
+   "intervention": "LRU-type models",
+   "intervention_is_new": false,
+   "comparator": "transformers",
+   "outcome": "timeseries prediction performance",
+   "effect": "positive",
+   "effect_quote": "LRU-type models perform significantly better than transformers on timeseries predictions",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/large_batch_generalization/clm_806b9be891fd": {
+   "intervention": "increasing mini-batch size",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "range of learning rates that provide stable convergence",
+   "effect": "negative",
+   "effect_quote": "increasing the batch size progressively reduces the range of learning rates that provide stable convergence",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10, CIFAR-100 and ImageNet",
+     "quote": "The collected experimental results for the CIFAR-10, CIFAR-100 and ImageNet datasets"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_bfa2c398c691": {
+   "intervention": "Informer",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "inference performance (winning-counts) and prediction error",
+   "effect": "positive",
+   "effect_quote": "significantly improves the inference performance (wining-counts in the last column) across all datasets, and their predict error rises smoothly and slowly",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "four large-scale datasets",
+     "quote": "Extensive experiments on four large-scale datasets"
+    },
+    {
+     "factor": "task",
+     "value": "univariate time-series forecasting",
+     "quote": "Univariate Time-series Forecasting"
+    },
+    {
+     "factor": "evaluation metric",
+     "value": "winning-counts and prediction error",
+     "quote": "inference performance (wining-counts in the last column)"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_e95d96e20650": {
+   "intervention": "simpler linear models",
+   "intervention_is_new": false,
+   "comparator": "complex Transformer-based approaches",
+   "outcome": "forecasting performance",
+   "effect": "positive",
+   "effect_quote": "simpler linear models might outperform complex Transformer-based approaches",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/transformers_time_series/clm_1e84e5aaa88b": {
+   "intervention": "transferring masked pre-trained representation",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "forecasting accuracy",
+   "effect": "positive",
+   "effect_quote": "produces SOTA forecasting accuracy",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "transferring masked pre-trained representation on one dataset to others",
+     "quote": "Transferring of masked pre-trained representation on one dataset to others"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_2aa7de89d41a": {
+   "intervention": "ratio of learning rate to batch size",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "width of final minima and generalization",
+   "effect": "positive",
+   "effect_quote": "higher values of the ratio lead to wider minima and often better generalization",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "SGD applied to Deep Neural Networks",
+     "quote": "stochastic gradient descent (SGD) applied to Deep Neural Networks (DNNs)"
+    }
+   ]
+  },
+  "main/transformers_time_series/clm_6b8a1b9f23f4": {
+   "intervention": "Cross-Attention-only Time Series transformer (CATS)",
+   "intervention_is_new": true,
+   "comparator": "existing models",
+   "outcome": "forecasting accuracy and parameter efficiency",
+   "effect": "positive",
+   "effect_quote": "achieves superior performance with the lowest mean squared error and uses fewer parameters compared to existing models",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "various datasets",
+     "quote": "Extensive experiment across various datasets"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_068e598eba4c": {
+   "intervention": "pathological demonstrations",
+   "intervention_is_new": true,
+   "comparator": "standard demonstrations",
+   "outcome": "robustness of demonstration-based sequence labeling",
+   "effect": "mixed",
+   "effect_quote": "demonstrations composed of random tokens still make the model a better few-shot learner; (2) the length of random demonstrations and the relevance of random tokens are the main factors affecting the performance; (3) demonstrations increase the confidence of model predictions on captured superficial patterns",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "data scale",
+     "value": "limited data scenario",
+     "quote": "under limited data scenario"
+    },
+    {
+     "factor": "task",
+     "value": "few-shot NER",
+     "quote": "improve performance on few-shot NER"
+    },
+    {
+     "factor": "training & design",
+     "value": "gradually removing intuitively useful information",
+     "quote": "by gradually removing intuitively useful information from the standard ones"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_93ac5c595b9b": {
+   "intervention": "confidence penalty and label smoothing",
+   "intervention_is_new": true,
+   "comparator": "state-of-the-art models without these regularizers",
+   "outcome": "model performance",
+   "effect": "positive",
+   "effect_quote": "both label smoothing and the confidence penalty improve state-of-the-art models across benchmarks",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "MNIST, Cifar-10, Penn Treebank, WMT'14 English-to-German, TIMIT, WSJ",
+     "quote": "6 common benchmarks: image classification (MNIST and Cifar-10), language modeling (Penn Treebank), machine translation (WMT'14 English-to-German), and speech recognition (TIMIT and WSJ)"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "without modifying existing hyperparameters",
+     "quote": "without modifying existing hyperparameters"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_1677623c5eea": {
+   "intervention": "Beta smoothing",
+   "intervention_is_new": true,
+   "comparator": "label smoothing",
+   "outcome": "confidence diversity",
+   "effect": "positive",
+   "effect_quote": "improvements of Beta smoothing over label smoothing also serve direct evidence on the importance of confidence diversity",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/adam_vs_sgd/clm_c96fcb29ca61": {
+   "intervention": "normalized direction-preserving Adam (ND-Adam)",
+   "intervention_is_new": true,
+   "comparator": "Adam and SGD",
+   "outcome": "generalization performance",
+   "effect": "positive",
+   "effect_quote": "we obtain the best generalization performance with ND-Adam",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10 and CIFAR-100",
+     "quote": "The scaling factor of the logits, γC, is set to 2.5 for CIFAR-10, and 1 for CIFAR-100."
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "softmax logits regularization with γC",
+     "quote": "The scaling factor of the logits, γC, is set to 2.5 for CIFAR-10, and 1 for CIFAR-100."
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_c666f8237de1": {
+   "intervention": "instance-specific label smoothing",
+   "intervention_is_new": true,
+   "comparator": "classical label smoothing",
+   "outcome": "performance",
+   "effect": "positive",
+   "effect_quote": "often outperforms classical label smoothing",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "multiple datasets",
+     "quote": "using multiple datasets"
+    },
+    {
+     "factor": "population",
+     "value": "neural network architectures",
+     "quote": "neural network architectures"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_7d6936ec1986": {
+   "intervention": "label smoothing",
+   "intervention_is_new": false,
+   "comparator": "confidence penalty",
+   "outcome": "performance",
+   "effect": "positive",
+   "effect_quote": "label smoothing slightly outperformed conﬁdence penalty",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "machine translation",
+     "quote": "For machine translation"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_d4f29d1bfae6": {
+   "intervention": "tuned ADAM (or a variant)",
+   "intervention_is_new": false,
+   "comparator": "untuned optimizers",
+   "outcome": "stability and performance improvement",
+   "effect": "positive",
+   "effect_quote": "provides stable and slightly improved results across many problems in our benchmark",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "many problems in our benchmark",
+     "quote": "across many problems in our benchmark"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "combining untuned optimizer runs with a tuned ADAM variant",
+     "quote": "Combining these runs with a tuned version of ADAM (or a variant thereof)"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_8622a40fc1a4": {
+   "intervention": "adversarial training",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "robust accuracy",
+   "effect": "negative",
+   "effect_quote": "increasing ϵtr increases the standard error too drastically compared to the decrease in susceptibility, leading to an effective drop in robust accuracy",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "data scale",
+     "value": "small sample size regime",
+     "quote": "it may hurt robust generalization in the small sample size regime"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "increasing ϵtr",
+     "quote": "increasing ϵtr increases the standard error too drastically"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_8e168c445171": {
+   "intervention": "Interpolated Adversarial Training",
+   "intervention_is_new": true,
+   "comparator": "standard adversarial training",
+   "outcome": "relative increase in standard error for the robust model",
+   "effect": "positive",
+   "effect_quote": "the relative increase in the standard error for the robust model is reduced from 178.1% to just 45.5%",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-10",
+     "quote": "On CIFAR-10"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_26fcddfd0c3b": {
+   "intervention": "contextual calibration",
+   "intervention_is_new": true,
+   "comparator": null,
+   "outcome": "average and worst-case accuracy, variance",
+   "effect": "positive",
+   "effect_quote": "Contextual calibration improves the average and worst-case accuracy for both datasets, and reduces the variance for SST-2.",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "SST-2 and LAMA",
+     "quote": "for both datasets"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_c24fe95e0f7b": {
+   "intervention": "increasing batch sizes",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "ImageNet validation accuracy",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "ImageNet validation set accuracy"
+    },
+    {
+     "factor": "population",
+     "value": "ResNet-50",
+     "quote": "train ResNet-50"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "on TPU in under 30 minutes",
+     "quote": "on TPU in under 30 minutes"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_c25b81f8fba6": {
+   "intervention": "linear scaling rule with warmup strategy",
+   "intervention_is_new": true,
+   "comparator": "small minibatch training",
+   "outcome": "training accuracy",
+   "effect": "none",
+   "effect_quote": "matching the accuracy of small minibatch training",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "on ImageNet [33]"
+    },
+    {
+     "factor": "model",
+     "value": "ResNet-50",
+     "quote": "train ResNet-50 [16]"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "256 workers, one hour",
+     "quote": "using 256 workers in one hour"
+    },
+    {
+     "factor": "training & design",
+     "value": "linear scaling rule and warmup strategy",
+     "quote": "Applying the linear scaling rule along with a warmup strategy"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_5405b5ee3acd": {
+   "intervention": "adaptive gradient methods (Adam, Amsgrad)",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "generalization gap",
+   "effect": "not_stated",
+   "effect_quote": null,
+   "conditional": false,
+   "conditions": []
+  },
+  "main/adam_vs_sgd/clm_edbab58843a9": {
+   "intervention": "SGD",
+   "intervention_is_new": false,
+   "comparator": "ADAM",
+   "outcome": "generalization performance",
+   "effect": "positive",
+   "effect_quote": "our result explains the better generalization performance of SGD over ADAM",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "deep learning optimization",
+     "quote": "Towards Theoretically Understanding Why SGD Generalizes Better Than ADAM in Deep Learning"
+    },
+    {
+     "factor": "population",
+     "value": "sharp minima with small Radon measure",
+     "quote": "sharp minima defined as the minima whose local basins have small Radon measure"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_6e2ac182808b": {
+   "intervention": "large minibatch training with linear learning rate scaling",
+   "intervention_is_new": false,
+   "comparator": "small minibatch training",
+   "outcome": "transfer learning performance",
+   "effect": "none",
+   "effect_quote": "large minibatches do not degrade transfer learning performance",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "as long as ImageNet error is matched"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "linear learning rate scaling applied to Mask R-CNN",
+     "quote": "Linear learning rate scaling applied to Mask R-CNN"
+    }
+   ]
+  },
+  "main/icl_label_correctness/clm_43c1895dabb3": {
+   "intervention": "flipped labels in-context learning",
+   "intervention_is_new": false,
+   "comparator": "0% flipped labels",
+   "outcome": "performance",
+   "effect": "negative",
+   "effect_quote": "performance drops to well-below random guessing",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "model scale",
+     "value": "large models",
+     "quote": "Large models, on the other hand"
+    },
+    {
+     "factor": "dataset",
+     "value": "flipped labels setup",
+     "quote": "with 100% ﬂipped labels"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_56e37488ecca": {
+   "intervention": "L2 regularization",
+   "intervention_is_new": false,
+   "comparator": "weight decay regularization",
+   "outcome": "generalization performance",
+   "effect": "negative",
+   "effect_quote": "L2 regularization is not nearly as effective for it as for SGD",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "population",
+     "value": "the most popular adaptive gradient method, Adam",
+     "quote": "the most popular adaptive gradient method, Adam"
+    },
+    {
+     "factor": "task",
+     "value": "training deep neural networks",
+     "quote": "to train deep neural networks"
+    }
+   ]
+  },
+  "main/adam_vs_sgd/clm_b3e0e8457b72": {
+   "intervention": "normalized direction-preserving Adam (ND-Adam)",
+   "intervention_is_new": true,
+   "comparator": "Adam",
+   "outcome": "generalization performance",
+   "effect": "positive",
+   "effect_quote": "leading to significantly improved generalization performance",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "task",
+     "value": "training deep neural networks (DNNs)",
+     "quote": "especially for training deep neural networks (DNNs)"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_27babd4c88dc": {
+   "intervention": "Ghost Batch Normalization",
+   "intervention_is_new": true,
+   "comparator": "large-batch training with modified learning rate (+LR)",
+   "outcome": "generalization gap",
+   "effect": "positive",
+   "effect_quote": "additional improvement by using the Ghost-BN method (+GBN)",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "MNIST, CIFAR-10, CIFAR-100 and ImageNet",
+     "quote": "To validate our findings we conduct several additional experiments on MNIST, CIFAR-10, CIFAR-100 and ImageNet."
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "large-batch training with modified learning rate",
+     "quote": "modifying the learning-rate used for large-batch (+LR)"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_e9393c58df0a": {
+   "intervention": "SGD noise",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "generalization after memorizing the training set",
+   "effect": "positive",
+   "effect_quote": "larger noise in SGD ... leads to solutions which generalize better after having memorized the training set",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "after memorizing the training set (≥99.9% accuracy on random labels)",
+     "quote": "after memorizing the training set (defined here as achieving ≥99.9% accuracy on random labels)"
+    },
+    {
+     "factor": "population",
+     "value": "MLPs",
+     "quote": "Fig. 6 reports the MLPs performances"
+    }
+   ]
+  },
+  "main/large_batch_generalization/clm_e5918b23082c": {
+   "intervention": "Alexnet-BN",
+   "intervention_is_new": false,
+   "comparator": null,
+   "outcome": "accuracy loss",
+   "effect": "negative",
+   "effect_quote": "Alexnet-BN trained with B=16K lost 0.9% in accuracy, and trained with B=32K lost 2.6%",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "Alexnet-BN trained with B=16K lost 0.9% in accuracy, and trained with B=32K lost 2.6%"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "B=16K and B=32K batch sizes",
+     "quote": "Alexnet-BN trained with B=16K lost 0.9% in accuracy, and trained with B=32K lost 2.6%"
+    },
+    {
+     "factor": "training & design",
+     "value": "LARS optimizer",
+     "quote": "Alexnet-BN trained with B=16K lost 0.9% in accuracy, and trained with B=32K lost 2.6%"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_0064cb946d86": {
+   "intervention": "adversarial training",
+   "intervention_is_new": false,
+   "comparator": "standard training (no adversarial training)",
+   "outcome": "robust error",
+   "effect": "positive",
+   "effect_quote": "the robust error increases monotonically with adversarial training budget",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "sample size",
+     "value": "small sample-size (n < d − 1)",
+     "quote": "for small sample-size (n < d −1)"
+    },
+    {
+     "factor": "data conditions",
+     "value": "noiseless data",
+     "quote": "noiseless data"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "adversarial training budget ϵtr > 0",
+     "quote": "with adversarial training budget ϵtr > 0"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_9bd1fa351bc0": {
+   "intervention": "label smoothing and confidence penalty",
+   "intervention_is_new": false,
+   "comparator": "dropout regularization",
+   "outcome": "gradient norm and convergence speed",
+   "effect": "positive",
+   "effect_quote": "label smoothing and conﬁdence penalty had smaller gradient norms and converged more quickly than models regularized with dropout",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "experimental conditions",
+     "value": "training progression",
+     "quote": "as training progressed"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_608629899733": {
+   "intervention": "Beta smoothing",
+   "intervention_is_new": true,
+   "comparator": "label smoothing",
+   "outcome": "performance",
+   "effect": "positive",
+   "effect_quote": "Outperforming label smoothing in all but the CIFAR-100 ResNet experiment",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "CIFAR-100",
+     "quote": "all but the CIFAR-100 ResNet experiment"
+    },
+    {
+     "factor": "dataset",
+     "value": "CUB-200",
+     "quote": "comparable performance to that of self-distillation for the CUB-200 dataset"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "no separate teacher model",
+     "quote": "with no separate teacher model required"
+    }
+   ]
+  },
+  "main/label_smoothing_distillation/clm_67faa0fa555c": {
+   "intervention": "weighted soft labels",
+   "intervention_is_new": true,
+   "comparator": "soft labels",
+   "outcome": "distillation performance",
+   "effect": "positive",
+   "effect_quote": "weighted soft labels can tune sample-wise bias-variance tradeoff globally and lead to an improved distillation performance",
+   "conditional": false,
+   "conditions": []
+  },
+  "main/robustness_accuracy_tradeoff/clm_97f1131e9af9": {
+   "intervention": "AdvProp",
+   "intervention_is_new": true,
+   "comparator": "vanilla training and adversarial training",
+   "outcome": "accuracy on ResNet models",
+   "effect": "positive",
+   "effect_quote": "AdvProp consistently leads to better accuracy on all ResNet models",
+   "conditional": false,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "ImageNet",
+     "quote": "We report model performance on ImageNet in Tab. 8."
+    },
+    {
+     "factor": "population",
+     "value": "ResNet models",
+     "quote": "on all ResNet models"
+    }
+   ]
+  },
+  "main/robustness_accuracy_tradeoff/clm_5f5bd4107640": {
+   "intervention": "Amata (annealing mechanism for adversarial training acceleration)",
+   "intervention_is_new": true,
+   "comparator": "state-of-the-art adversarial training acceleration algorithm alone",
+   "outcome": "computational cost reduction",
+   "effect": "positive",
+   "effect_quote": "Amata can still help reducing the computational cost almost without performance degradation",
+   "conditional": true,
+   "conditions": [
+    {
+     "factor": "dataset",
+     "value": "large-scale dataset",
+     "quote": "on the large-scale dataset"
+    },
+    {
+     "factor": "experimental conditions",
+     "value": "combined with state-of-the-art adversarial training acceleration algorithm",
+     "quote": "even when combined with the state-of-the art adversarial training acceleration algorithm"
+    }
+   ]
+  }
+ }
+}

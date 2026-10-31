@@ -1,0 +1,70 @@
+{
+ "method": "blinded model-assisted consensus labels with researcher adjudication",
+ "items": 200,
+ "complete": 200,
+ "agreement_levels": {
+  "majority": 106,
+  "unanimous": 75,
+  "split": 19
+ },
+ "final_sources": {
+  "majority (pending adjudication)": 106,
+  "unanimous": 75,
+  "unresolved": 19
+ },
+ "label_distribution": {
+  "gemini": {
+   "QUALIFIES": 60,
+   "UNRELATED": 42,
+   "CONTRADICTS": 12,
+   "SUPPORTS": 21,
+   "EXTENDS": 65
+  },
+  "qwen": {
+   "CONTRADICTS": 32,
+   "UNRELATED": 76,
+   "QUALIFIES": 53,
+   "SUPPORTS": 33,
+   "EXTENDS": 6
+  },
+  "haiku": {
+   "QUALIFIES": 42,
+   "UNRELATED": 48,
+   "CONTRADICTS": 46,
+   "SUPPORTS": 34,
+   "EXTENDS": 30
+  }
+ },
+ "final_distribution": {
+  "QUALIFIES": 49,
+  "UNRELATED": 54,
+  "CONTRADICTS": 25,
+  "SUPPORTS": 28,
+  "null": 19,
+  "EXTENDS": 25
+ },
+ "fleiss_kappa": 0.428,
+ "pairwise": {
+  "gemini-qwen": {
+   "agreement": 0.535,
+   "kappa": 0.422
+  },
+  "gemini-haiku": {
+   "agreement": 0.515,
+   "kappa": 0.398
+  },
+  "qwen-haiku": {
+   "agreement": 0.605,
+   "kappa": 0.496
+  }
+ },
+ "spot_check": {
+  "checked": 0,
+  "researcher_agrees": 0
+ },
+ "adjudication": {
+  "flagged": 125,
+  "adjudicated": 0,
+  "researcher_kept_majority": 0
+ }
+}

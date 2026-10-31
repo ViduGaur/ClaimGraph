@@ -1,0 +1,230 @@
+{
+  "question": "Do vision transformers need large-scale pre-training to outperform convolutional networks?",
+  "papers": [
+    {
+      "source_ids": {
+        "arxiv": "2010.11929"
+      },
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+      "authors": [
+        "Alexey Dosovitskiy",
+        "Lucas Beyer",
+        "Alexander Kolesnikov",
+        "Dirk Weissenborn",
+        "Xiaohua Zhai",
+        "Thomas Unterthiner",
+        "Mostafa Dehghani",
+        "Matthias Minderer",
+        "Georg Heigold",
+        "Sylvain Gelly",
+        "Jakob Uszkoreit",
+        "Neil Houlsby"
+      ],
+      "year": 2020,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2010.11929",
+      "url": "https://arxiv.org/abs/2010.11929",
+      "pdf_url": "https://arxiv.org/pdf/2010.11929",
+      "abstract": "While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. In vision, attention is either applied in conjunction with convolutional networks, or used to replace certain components of convolutional networks while keeping their overall structure in place. We show that this reliance on CNNs is not necessary and a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks. When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2012.12877"
+      },
+      "title": "Training data-efficient image transformers & distillation through attention",
+      "authors": [
+        "Hugo Touvron",
+        "Matthieu Cord",
+        "Matthijs Douze",
+        "Francisco Massa",
+        "Alexandre Sablayrolles",
+        "Hervé Jégou"
+      ],
+      "year": 2020,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2012.12877",
+      "url": "https://arxiv.org/abs/2012.12877",
+      "pdf_url": "https://arxiv.org/pdf/2012.12877",
+      "abstract": "Recently, neural networks purely based on attention were shown to address image understanding tasks such as image classification. However, these visual transformers are pre-trained with hundreds of millions of images using an expensive infrastructure, thereby limiting their adoption. In this work, we produce a competitive convolution-free transformer by training on Imagenet only. We train them on a single computer in less than 3 days. Our reference vision transformer (86M parameters) achieves top-1 accuracy of 83.1% (single-crop evaluation) on ImageNet with no external data. More importantly, we introduce a teacher-student strategy specific to transformers. It relies on a distillation token ensuring that the student learns from the teacher through attention. We show the interest of this token-based distillation, especially when using a convnet as a teacher. This leads us to report results competitive with convnets for both Imagenet (where we obtain up to 85.2% accuracy) and when transferring to other tasks. We share our code and models.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2106.10270"
+      },
+      "title": "How to train your ViT? Data, Augmentation, and Regularization in Vision Transformers",
+      "authors": [
+        "Andreas Steiner",
+        "Alexander Kolesnikov",
+        "Xiaohua Zhai",
+        "Ross Wightman",
+        "Jakob Uszkoreit",
+        "Lucas Beyer"
+      ],
+      "year": 2021,
+      "venue": "Transactions on Machine Learning Research (05/2022)",
+      "doi": "10.48550/arXiv.2106.10270",
+      "url": "https://arxiv.org/abs/2106.10270",
+      "pdf_url": "https://arxiv.org/pdf/2106.10270",
+      "abstract": "Vision Transformers (ViT) have been shown to attain highly competitive performance for a wide range of vision applications, such as image classification, object detection and semantic image segmentation. In comparison to convolutional neural networks, the Vision Transformer's weaker inductive bias is generally found to cause an increased reliance on model regularization or data augmentation (\"AugReg\" for short) when training on smaller training datasets. We conduct a systematic empirical study in order to better understand the interplay between the amount of training data, AugReg, model size and compute budget. As one result of this study we find that the combination of increased compute and AugReg can yield models with the same performance as models trained on an order of magnitude more training data: we train ViT models of various sizes on the public ImageNet-21k dataset which either match or outperform their counterparts trained on the larger, but not publicly available JFT-300M dataset.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2106.01548"
+      },
+      "title": "When Vision Transformers Outperform ResNets without Pre-training or Strong Data Augmentations",
+      "authors": [
+        "Xiangning Chen",
+        "Cho-Jui Hsieh",
+        "Boqing Gong"
+      ],
+      "year": 2021,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2106.01548",
+      "url": "https://arxiv.org/abs/2106.01548",
+      "pdf_url": "https://arxiv.org/pdf/2106.01548",
+      "abstract": "Vision Transformers (ViTs) and MLPs signal further efforts on replacing hand-wired features or inductive biases with general-purpose neural architectures. Existing works empower the models by massive data, such as large-scale pre-training and/or repeated strong data augmentations, and still report optimization-related problems (e.g., sensitivity to initialization and learning rates). Hence, this paper investigates ViTs and MLP-Mixers from the lens of loss geometry, intending to improve the models' data efficiency at training and generalization at inference. Visualization and Hessian reveal extremely sharp local minima of converged models. By promoting smoothness with a recently proposed sharpness-aware optimizer, we substantially improve the accuracy and robustness of ViTs and MLP-Mixers on various tasks spanning supervised, adversarial, contrastive, and transfer learning (e.g., +5.3\\% and +11.0\\% top-1 accuracy on ImageNet for ViT-B/16 and Mixer-B/16, respectively, with the simple Inception-style preprocessing). We show that the improved smoothness attributes to sparser active neurons in the first few layers. The resultant ViTs outperform ResNets of similar size and throughput when trained from scratch on ImageNet without large-scale pre-training or strong data augmentations. Model checkpoints are available at \\url{https://github.com/google-research/vision_transformer}.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2112.13492"
+      },
+      "title": "Vision Transformer for Small-Size Datasets",
+      "authors": [
+        "Seung Hoon Lee",
+        "Seunghyun Lee",
+        "Byung Cheol Song"
+      ],
+      "year": 2021,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2112.13492",
+      "url": "https://arxiv.org/abs/2112.13492",
+      "pdf_url": "https://arxiv.org/pdf/2112.13492",
+      "abstract": "Recently, the Vision Transformer (ViT), which applied the transformer structure to the image classification task, has outperformed convolutional neural networks. However, the high performance of the ViT results from pre-training using a large-size dataset such as JFT-300M, and its dependence on a large dataset is interpreted as due to low locality inductive bias. This paper proposes Shifted Patch Tokenization (SPT) and Locality Self-Attention (LSA), which effectively solve the lack of locality inductive bias and enable it to learn from scratch even on small-size datasets. Moreover, SPT and LSA are generic and effective add-on modules that are easily applicable to various ViTs. Experimental results show that when both SPT and LSA were applied to the ViTs, the performance improved by an average of 2.96% in Tiny-ImageNet, which is a representative small-size dataset. Especially, Swin Transformer achieved an overwhelming performance improvement of 4.08% thanks to the proposed SPT and LSA.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2104.05704"
+      },
+      "title": "Escaping the Big Data Paradigm with Compact Transformers",
+      "authors": [
+        "Ali Hassani",
+        "Steven Walton",
+        "Nikhil Shah",
+        "Abulikemu Abuduweili",
+        "Jiachen Li",
+        "Humphrey Shi"
+      ],
+      "year": 2021,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2104.05704",
+      "url": "https://arxiv.org/abs/2104.05704",
+      "pdf_url": "https://arxiv.org/pdf/2104.05704",
+      "abstract": "With the rise of Transformers as the standard for language processing, and their advancements in computer vision, there has been a corresponding growth in parameter size and amounts of training data. Many have come to believe that because of this, transformers are not suitable for small sets of data. This trend leads to concerns such as: limited availability of data in certain scientific domains and the exclusion of those with limited resource from research in the field. In this paper, we aim to present an approach for small-scale learning by introducing Compact Transformers. We show for the first time that with the right size, convolutional tokenization, transformers can avoid overfitting and outperform state-of-the-art CNNs on small datasets. Our models are flexible in terms of model size, and can have as little as 0.28M parameters while achieving competitive results. Our best model can reach 98% accuracy when training from scratch on CIFAR-10 with only 3.7M parameters, which is a significant improvement in data-efficiency over previous Transformer based models being over 10x smaller than other transformers and is 15% the size of ResNet50 while achieving similar performance. CCT also outperforms many modern CNN based approaches, and even some recent NAS-based approaches. Additionally, we obtain a new SOTA result on Flowers-102 with 99.76% top-1 accuracy, and improve upon the existing baseline on ImageNet (82.71% accuracy with 29% as many parameters as ViT), as well as NLP tasks. Our simple and compact design for transformers makes them more feasible to study for those with limited computing resources and/or dealing with small datasets, while extending existing research efforts in data efficient transformers. Our code and pre-trained models are publicly available at https://github.com/SHI-Labs/Compact-Transformers.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2106.03746"
+      },
+      "title": "Efficient Training of Visual Transformers with Small Datasets",
+      "authors": [
+        "Yahui Liu",
+        "Enver Sangineto",
+        "Wei Bi",
+        "Nicu Sebe",
+        "Bruno Lepri",
+        "Marco De Nadai"
+      ],
+      "year": 2021,
+      "venue": "Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS) 2021",
+      "doi": "10.48550/arXiv.2106.03746",
+      "url": "https://arxiv.org/abs/2106.03746",
+      "pdf_url": "https://arxiv.org/pdf/2106.03746",
+      "abstract": "Visual Transformers (VTs) are emerging as an architectural paradigm alternative to Convolutional networks (CNNs). Differently from CNNs, VTs can capture global relations between image elements and they potentially have a larger representation capacity. However, the lack of the typical convolutional inductive bias makes these models more data-hungry than common CNNs. In fact, some local properties of the visual domain which are embedded in the CNN architectural design, in VTs should be learned from samples. In this paper, we empirically analyse different VTs, comparing their robustness in a small training-set regime, and we show that, despite having a comparable accuracy when trained on ImageNet, their performance on smaller datasets can be largely different. Moreover, we propose a self-supervised task which can extract additional information from images with only a negligible computational overhead. This task encourages the VTs to learn spatial relations within an image and makes the VT training much more robust when training data are scarce. Our task is used jointly with the standard (supervised) training and it does not depend on specific architectural choices, thus it can be easily plugged in the existing VTs. Using an extensive evaluation with different VTs and datasets, we show that our method can improve (sometimes dramatically) the final accuracy of the VTs. Our code is available at: https://github.com/yhlleo/VTs-Drloc.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2205.01580"
+      },
+      "title": "Better plain ViT baselines for ImageNet-1k",
+      "authors": [
+        "Lucas Beyer",
+        "Xiaohua Zhai",
+        "Alexander Kolesnikov"
+      ],
+      "year": 2022,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2205.01580",
+      "url": "https://arxiv.org/abs/2205.01580",
+      "pdf_url": "https://arxiv.org/pdf/2205.01580",
+      "abstract": "It is commonly accepted that the Vision Transformer model requires sophisticated regularization techniques to excel at ImageNet-1k scale data. Surprisingly, we find this is not the case and standard data augmentation is sufficient. This note presents a few minor modifications to the original Vision Transformer (ViT) vanilla training setting that dramatically improve the performance of plain ViT models. Notably, 90 epochs of training surpass 76% top-1 accuracy in under seven hours on a TPUv3-8, similar to the classic ResNet50 baseline, and 300 epochs of training reach 80% in less than one day.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2201.03545"
+      },
+      "title": "A ConvNet for the 2020s",
+      "authors": [
+        "Zhuang Liu",
+        "Hanzi Mao",
+        "Chao-Yuan Wu",
+        "Christoph Feichtenhofer",
+        "Trevor Darrell",
+        "Saining Xie"
+      ],
+      "year": 2022,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2201.03545",
+      "url": "https://arxiv.org/abs/2201.03545",
+      "pdf_url": "https://arxiv.org/pdf/2201.03545",
+      "abstract": "The \"Roaring 20s\" of visual recognition began with the introduction of Vision Transformers (ViTs), which quickly superseded ConvNets as the state-of-the-art image classification model. A vanilla ViT, on the other hand, faces difficulties when applied to general computer vision tasks such as object detection and semantic segmentation. It is the hierarchical Transformers (e.g., Swin Transformers) that reintroduced several ConvNet priors, making Transformers practically viable as a generic vision backbone and demonstrating remarkable performance on a wide variety of vision tasks. However, the effectiveness of such hybrid approaches is still largely credited to the intrinsic superiority of Transformers, rather than the inherent inductive biases of convolutions. In this work, we reexamine the design spaces and test the limits of what a pure ConvNet can achieve. We gradually \"modernize\" a standard ResNet toward the design of a vision Transformer, and discover several key components that contribute to the performance difference along the way. The outcome of this exploration is a family of pure ConvNet models dubbed ConvNeXt. Constructed entirely from standard ConvNet modules, ConvNeXts compete favorably with Transformers in terms of accuracy and scalability, achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation, while maintaining the simplicity and efficiency of standard ConvNets.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    },
+    {
+      "source_ids": {
+        "arxiv": "2310.16764"
+      },
+      "title": "ConvNets Match Vision Transformers at Scale",
+      "authors": [
+        "Samuel L. Smith",
+        "Andrew Brock",
+        "Leonard Berrada",
+        "Soham De"
+      ],
+      "year": 2023,
+      "venue": "arXiv (cs.CV)",
+      "doi": "10.48550/arXiv.2310.16764",
+      "url": "https://arxiv.org/abs/2310.16764",
+      "pdf_url": "https://arxiv.org/pdf/2310.16764",
+      "abstract": "Many researchers believe that ConvNets perform well on small or moderately sized datasets, but are not competitive with Vision Transformers when given access to datasets on the web-scale. We challenge this belief by evaluating a performant ConvNet architecture pre-trained on JFT-4B, a large labelled dataset of images often used for training foundation models. We consider pre-training compute budgets between 0.4k and 110k TPU-v4 core compute hours, and train a series of networks of increasing depth and width from the NFNet model family. We observe a log-log scaling law between held out loss and compute budget. After fine-tuning on ImageNet, NFNets match the reported performance of Vision Transformers with comparable compute budgets. Our strongest fine-tuned model achieves a Top-1 accuracy of 90.4%.",
+      "is_open_access": true,
+      "oa_status": "green",
+      "license_note": "arXiv metadata (CC0)"
+    }
+  ]
+}

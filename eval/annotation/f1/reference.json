@@ -1,0 +1,4390 @@
+{
+ "method": "blinded model-assisted consensus labels (four-state protocol v2), unadjudicated",
+ "protocol": "four-state conflict annotation v2",
+ "annotators": [
+  {
+   "id": "gemini",
+   "model": "google/gemini-3-flash-preview",
+   "family": "Google Gemini 3 Flash"
+  },
+  {
+   "id": "qwen",
+   "model": "qwen/qwen3.7-plus",
+   "family": "Alibaba Qwen 3.7 Plus"
+  },
+  {
+   "id": "haiku",
+   "model": "anthropic/claude-haiku-4.5",
+   "family": "Anthropic Claude Haiku 4.5"
+  }
+ ],
+ "items": {
+  "f1_8aa6988024": {
+   "pair_id": "pair_05e6fff5b5f5",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A argues standard attention is not explanatory. Claim B agrees that standard LSTMs lack transparency but proposes specific new models (Diversity/Orthogonal LSTMs) that provide more faithful explanations, thus complementing rather than opposing."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Claim A critiques standard attention, while Claim B supports modified Diversity/Orthogonal LSTMs. The opposition is explained by the different model architectures (standard vs. modified) assessed."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "training & design",
+      "model / method"
+     ],
+     "justification": "Claim A states attention provides questionable explanations in complex encoders. Claim B shows Diversity and Orthogonal LSTMs provide more faithful explanations. The opposition is explained by different encoder architectures: Paper A uses standard complex encoders; Paper B proposes modified LSTM variants designed to improve explanation faithfulness."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "NONE",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "model / method"
+   ],
+   "factor_votes": {
+    "model / method": 2,
+    "training & design": 1
+   }
+  },
+  "f1_d9a29fd39b": {
+   "pair_id": "pair_063b688fbf96",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "methodology"
+     ],
+     "justification": "Paper A uses adversarial training to find alternative distributions, while Paper B uses multi-weight tests (ablation/manipulation) on pre-trained models, leading to different conclusions about attention's reliability as an explanation."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on attention's explanatory value. However, differences in datasets, specific RNN architectures, and adversarial vs. manipulation methods prevent determining if this is a genuine contradiction."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on whether attention learns meaningful relationships. However, texts differ in methodology (adversarial training vs. weight manipulation), tasks, datasets, and evaluation approaches. Insufficient detail to determine if opposition reflects genuine contradiction or context-dependent findings."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "INSUFFICIENT_EVIDENCE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "INSUFFICIENT_EVIDENCE",
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "methodology": 1
+   }
+  },
+  "f1_a62f8590ae": {
+   "pair_id": "pair_0892699f6c9c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A refers to subnetworks with specific 'winning' initializations that allow effective training, while Claim B refers to the general difficulty of training sparse networks directly without such specific initialization techniques."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A refers to specific 'winning tickets' with fortuitous initializations. Claim B refers to general direct training of sparse networks, which 'often fails'. The opposition is explained by the specific initialization condition in A."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states that lottery ticket subnetworks reach comparable test accuracy when trained in isolation. Claim B states that training sparse networks directly often fails. These are not opposing: Claim A describes a specific finding about lottery tickets (which have special initializations), while Claim B describes general difficulty with sparse networks. They address different phenomena."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "NONE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2
+   }
+  },
+  "f1_fb1d540b7e": {
+   "pair_id": "pair_189c0b91129b",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "training & design"
+     ],
+     "justification": "Claim A states weight normalization is 'nearly comparable' to BN, while Claim B states their normalizer-free models 'substantially exceed' BN, enabled by a new Adaptive Gradient Clipping technique."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states a method is 'nearly comparable' to BN. Claim B states unnormalized models 'match... and substantially exceed' BN. These are consistent; exceeding includes matching, and neither denies the other's specific performance level."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "time period"
+     ],
+     "justification": "Claim A (2018) proposes bounded weight normalization as nearly comparable to BN on ImageNet. Claim B (2021) demonstrates normalization-free models substantially exceed batch-normalized models on ImageNet. The opposition reflects methodological evolution: different normalization approaches tested at different times with different techniques (adaptive gradient clipping introduced in B)."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "NONE",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [],
+   "factor_votes": {
+    "training & design": 1,
+    "experimental conditions": 1,
+    "time period": 1
+   }
+  },
+  "f1_afb6b6473a": {
+   "pair_id": "pair_1d044516054d",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method",
+      "time period"
+     ],
+     "justification": "Claim A asserts Batch Normalization improves ImageNet performance, while Claim B asserts Normalizer-Free models outperform batch-normalized counterparts, specifically when using large-scale pre-training and adaptive gradient clipping in a later study."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "data scale",
+      "experimental conditions"
+     ],
+     "justification": "Claim B specifies 'finetuning... after large-scale pre-training on a dataset of 300 million labeled images', whereas Claim A refers to training from scratch. This difference in experimental conditions and data scale explains the opposing performance results."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports ensemble results achieving state-of-the-art on ImageNet (4.9% top-5 error). Claim B reports single-model results on a different task (fine-tuning after large-scale pre-training, 89.2% top-1 accuracy). These address different experimental settings and metrics, not opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "NONE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2,
+    "model / method": 1,
+    "time period": 1,
+    "data scale": 1
+   }
+  },
+  "f1_8c7e7d2143": {
+   "pair_id": "pair_2002613e5aa6",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states a weight normalization method is nearly comparable to BN, while Claim B states a normalizer-free method outperforms BN. These are different methods and not directly opposing."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states bounded weight normalization is 'nearly comparable' to BN. Claim B states Normalizer-Free models are 'significantly better' than BN. Both agree BN is a strong baseline; they do not contradict each other."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims address different methods (bounded weight normalization vs. Normalizer-Free without normalization) on ImageNet. Claim A reports weight normalization is 'nearly comparable with BN'; Claim B reports Normalizer-Free outperforms batch-normalized models. Insufficient detail on experimental conditions, hyperparameters, and model architectures to determine if opposition reflects genuine contradict"
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_a06b1b94bc": {
+   "pair_id": "pair_21cef0bda960",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses activation growth in unnormalized networks, while Claim B discusses gradient explosion in batch-normalized networks. They address different network architectures and different phenomena (activations vs gradients)."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A concerns unnormalized networks; Claim B concerns batch-normalized networks. They address different subjects (with vs without BN), so they do not state opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes activation magnitude growth in unnormalized networks limiting learning rates. Claim B describes gradient explosion in batch-normalized networks at initialization. These address different phenomena (activations vs gradients) in different network types (unnormalized vs batch-normalized), not opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_fe4d2e434e": {
+   "pair_id": "pair_232ccb8a77a2",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "The claims are not opposing; Paper A shows Batch Normalization improves performance, while Paper B shows an alternative method (Fixup) can also achieve state-of-the-art performance without normalization."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states Batch Normalization achieves SOTA. Claim B states Fixup (without normalization) also achieves SOTA. Both claim to reach the same performance level using different methods; they do not contradict each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports ensemble results with normalization; Claim B reports single-model results without normalization. These address different questions (ensemble vs. single-model performance) and are not directly comparable claims about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_ad0dae003c": {
+   "pair_id": "pair_2cbbb1795f81",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares LTR to pruning at initialization/early training, while Claim B compares retraining techniques (rewinding vs fine-tuning) after pruning at completion. They address different stages and methods of pruning."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares LTR to magnitude pruning early in training. Claim B compares learning rate rewinding to fine-tuning and other techniques after iterative pruning. They address different methods and contexts."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A addresses pruning at initialization and early training phases, showing magnitude pruning underperforms LTR initially. Claim B addresses post-training pruning with rewinding techniques, achieving competitive accuracy. These address different pruning paradigms and stages, not the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_b5a997a3b2": {
+   "pair_id": "pair_2e198711df62",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A finds that attention is a noisy indicator of importance compared to gradients. Claim B agrees by arguing for a shift from attention to saliency methods (which include gradients)."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports empirical findings on attention's reliability. Claim B is a normative recommendation to prefer saliency methods. They address related topics but do not state opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports empirical findings that attention weights imperfectly predict model importance. Claim B advocates shifting focus to saliency methods as better alternatives. These are complementary positions, not opposing claims about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_93cf66387f": {
+   "pair_id": "pair_2f923777d85e",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A provides empirical evidence that attention weights are not always reliable indicators of importance, while Claim B discusses how such problems have motivated research into improving attention faithfulness."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports empirical findings on attention's reliability. Claim B states that faithfulness problems inspired attempts to improve attention. They address related topics but do not state opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports empirical findings that attention weights sometimes but not always correlate with model predictions. Claim B states that problems with attention's faithfulness have motivated attempts to improve it. These are complementary observations about attention's limitations, not opposing claims about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_7ddbd57d6a": {
+   "pair_id": "pair_2ff1c659710c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A identifies the existence of trainable subnetworks (winning tickets) via pruning after training, while Claim B discusses the limitations of specific pruning-at-initialization methods (SNIP, GraSP, SynFlow). They address different pruning paradigms."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states pruning uncovers trainable subnetworks via initialization. Claim B states shuffling weights in initialization-pruning methods preserves accuracy. They address different pruning regimes (post-training vs. at-init) and do not contradict."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "task"
+     ],
+     "justification": "Claim A concerns pruning after training to find effective initializations. Claim B concerns pruning at initialization before training. These address different experimental conditions (post-training vs. at-initialization pruning), explaining why initialization quality matters in one case but not the other."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "task": 1
+   }
+  },
+  "f1_ee3294d9de": {
+   "pair_id": "pair_3b83838ee9fd",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A suggests finding alternatives to batch normalization to recover its benefits, while Claim B reports instability of specific large models when using batch normalization. These are complementary observations, not opposing conclusions."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A is a recommendation for future work, not an empirical result. Claim B reports instability in specific large models. They do not state opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A expresses a belief that future work should find alternatives to batch normalization. Claim B reports empirical findings about instability with batch normalization in large models. These are not opposing conclusions about the same relationship; rather, B's findings support the motivation for A's stated research direction."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_7184084127": {
+   "pair_id": "pair_3d77cf31bd4c",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "evaluation metric",
+      "methodology"
+     ],
+     "justification": "Paper A empirically demonstrates attention's interpretability via correlation with feature importance, while Paper B argues normatively that saliency methods are better suited for identifying relevant input tokens for developers."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A asserts attention is interpretable under specific conditions. Claim B argues saliency is better for a specific goal/user. They address different aspects (validity vs. utility/preference) and do not directly contradict."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A asserts attention weights are interpretable under certain conditions. Claim B advocates shifting focus to saliency methods as better alternatives. These are not opposing claims about the same relationship; B is a methodological recommendation, not a contradictory empirical claim about attention interpretability."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {
+    "evaluation metric": 1,
+    "methodology": 1
+   }
+  },
+  "f1_df7a0bd5f2": {
+   "pair_id": "pair_4049930ee009",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method"
+     ],
+     "justification": "Claim A states batch-normalized networks achieve state-of-the-art results, while Claim B states Normalizer-Free models outperform batch-normalized counterparts when using large-scale pre-training and adaptive gradient clipping."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "data scale",
+      "experimental conditions"
+     ],
+     "justification": "Claim B specifies 'finetuning... after large-scale pre-training on a dataset of 300 million labeled images', whereas Claim A refers to training from scratch. This difference in experimental conditions and data scale explains the performance reversal."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports ensemble batch-normalized networks achieving 4.9% top-5 error on ImageNet. Claim B reports normalizer-free models achieving 89.2% top-1 accuracy after large-scale pre-training. These measure different metrics (top-5 vs top-1) and different conditions (ensemble vs single model, different pre-training), so they do not oppose the same relationship."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "NONE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2,
+    "model / method": 1,
+    "data scale": 1
+   }
+  },
+  "f1_e5a8dde992": {
+   "pair_id": "pair_413883da7b0f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Paper A claims attention is interpretable when essential for prediction, while Paper B argues attention in LSTM-based encoders specifically fails to provide plausible explanations due to high conicity in hidden representations."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "training & design"
+     ],
+     "justification": "Claim A finds attention interpretable when 'essential for model’s prediction'. Claim B finds it uninterpretable in 'LSTM based encoders' with 'high conicity', where weights lack meaning. The architectural condition explains the opposition."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method"
+     ],
+     "justification": "Claim A demonstrates attention interpretability across diverse NLP tasks generally. Claim B identifies failure cases in LSTM-based encoders specifically, where high conicity makes attention weights meaningless. Both can be true in their respective contexts."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "model / method"
+   ],
+   "factor_votes": {
+    "model / method": 2,
+    "training & design": 1,
+    "experimental conditions": 1
+   }
+  },
+  "f1_6935bf6983": {
+   "pair_id": "pair_428633bda9df",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "methodology"
+     ],
+     "justification": "Paper A argues attention is meaningful because adversarial distributions perform poorly in diagnostics, while Paper B argues it isn't because alternative distributions can yield equivalent predictions."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A relies on adversarial training showing attention is meaningful; Claim B uses counterfactual experiments showing alternative heatmaps yield equivalent predictions, indicating different experimental protocols."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "methodology"
+     ],
+     "justification": "Claim A uses adversarial training on diagnostic MLPs and finds adversarial distributions perform poorly. Claim B uses counterfactual experiments finding alternative attention distributions yield equivalent predictions. Different experimental methodologies and conditions explain the opposing conclusions about whether alternative attention distributions exist and matter."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions",
+    "methodology"
+   ],
+   "factor_votes": {
+    "experimental conditions": 3,
+    "methodology": 2
+   }
+  },
+  "f1_7fde3bbd4d": {
+   "pair_id": "pair_43b92625a870",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Claim A finds attention is not a fail-safe indicator in existing models, while Claim B establishes faithfulness in their specifically 'proposed models' designed to address the limitations of vanilla LSTMs."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Claim A critiques standard attention as unreliable. Claim B asserts 'proposed models' provide faithful explanations. The opposition is explained by the different models: standard vs. modified/proposed."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A states attention is not a fail-safe indicator; Claim B claims proposed models provide faithful explanations. However, B describes modified attention mechanisms, while A tests standard attention. The text lacks sufficient detail about whether B's modifications address A's concerns or operate under different conditions."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "model / method"
+   ],
+   "factor_votes": {
+    "model / method": 2
+   }
+  },
+  "f1_8dee3a20f7": {
+   "pair_id": "pair_447af0cd01de",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states Batch Normalization improves image classification models. Claim B states Fixup allows models without normalization to also achieve state-of-the-art performance. These are complementary methods, not opposing conclusions about one relationship."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states Batch Normalization improves training efficiency. Claim B states Fixup (without normalization) achieves similar performance. They address different methods achieving similar goals, not opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states batch normalization achieves good accuracy with fewer steps. Claim B states Fixup without normalization achieves state-of-the-art performance. These address different methods and don't directly oppose—both can achieve strong results through different approaches."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_ab7203734a": {
+   "pair_id": "pair_452d6d647822",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A introduces a new diagnostic protocol for evaluating attention, while Claim B reports experimental results on how permuting attention weights affects specific LSTM variants. They do not make opposing claims."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes a proposed method/protocol. Claim B reports an experimental observation on specific models. They address different aspects (methodology vs. result) and do not state opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes introducing a post-hoc training protocol as a methodological approach. Claim B reports an empirical observation about permuting attention weights in specific LSTM variants. These address different aspects (methodology vs. observation) and are not opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_c3756eb337": {
+   "pair_id": "pair_455316b89302",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "training & design"
+     ],
+     "justification": "Claim A reports success in training deep networks with Batch Normalization, while Claim B specifies that 'vanilla' networks without skip connections are untrainable at large depths due to gradient explosion."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports success on image classification (likely CNNs), while Claim B identifies failure in deep vanilla fully-connected networks. They address different architectures/conditions, so they do not contradict."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "population"
+     ],
+     "justification": "Claim A reports successful training and state-of-the-art results with batch normalization on image classification. Claim B states batch-normalized networks without skip connections are not trainable at large depths. The opposition is explained by different network architectures: A uses models with skip connections (implied by success), while B explicitly studies vanilla networks without skip conne"
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "NONE",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [],
+   "factor_votes": {
+    "training & design": 1,
+    "experimental conditions": 1,
+    "population": 1
+   }
+  },
+  "f1_c0d2c857ea": {
+   "pair_id": "pair_4d665c97b067",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports an experimental observation about specific LSTM variants, while Claim B is a general methodological proposal to favor saliency methods over attention for interpretability. They do not address the same relationship."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports an experimental observation about specific LSTM variants. Claim B is a normative proposal to shift focus to saliency methods. They address different aspects (empirical behavior vs. methodological recommendation) and do not contradict."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports empirical findings about attention weight permutations in specific LSTM variants. Claim B advocates methodological preference for saliency methods over attention. These address different aspects (empirical observation vs. methodological recommendation) and do not directly oppose each other."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_677707ffb4": {
+   "pair_id": "pair_4e1533a56f4f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Claim A finds attention weights fail to identify important representations in existing models, while Claim B establishes that their 'proposed models' (designed to fix LSTM issues) provide faithful explanations."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Claim A critiques standard attention mechanisms, while Claim B asserts faithfulness for specific 'proposed models'. The opposition is explained by the difference in the model/method evaluated."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A states attention weights often fail to identify important representations. Claim B states proposed attention models provide faithful explanations. However, B describes modified/proposed models while A examines standard attention mechanisms, making direct comparison unclear without knowing if B's improvements address A's findings."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "model / method"
+   ],
+   "factor_votes": {
+    "model / method": 2
+   }
+  },
+  "f1_79f5eb75b6": {
+   "pair_id": "pair_511864be7c0e",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes an experimental procedure to study BN's benefits, while Claim B asserts that a specific initialization (Fixup) allows training deep networks at the same learning rate as BN."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes an experimental setup to analyze BN benefits. Claim B states Fixup matches BN's learning rate capability. They address different methods and do not contradict each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes an experimental procedure (training BN networks with specific learning rates). Claim B states Fixup can train deep networks with the same learning rate as BN. These address different aspects and do not directly oppose each other."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_377017aeb2": {
+   "pair_id": "pair_517635ebbfa6",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A introduces a diagnostic training protocol to test attention's explanatory power, while Claim B demonstrates a method to manipulate attention weights. They describe different methodologies and objectives without opposing conclusions."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes a methodological protocol introduced by the authors. Claim B reports an empirical result of a different method. They address different aspects and do not state opposing conclusions."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes introducing a post-hoc training protocol as a complementary approach. Claim B describes manipulating attention weights with little accuracy cost. These address different aspects—A proposes a method for testing attention, B demonstrates attention can be manipulated—without directly opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_3a05f8b543": {
+   "pair_id": "pair_51e43722b0a6",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim B states that with an 'optimal learning rate', winning ticket initialization does not improve over random initialization, whereas Claim A finds initialization matters at high sparsity levels."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A states initialization matters at high sparsity (98.5%), while Claim B finds no improvement with optimal learning rate. The difference in hyperparameter tuning (optimal LR) explains the opposition."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims directly oppose on whether winning ticket initialization improves over random initialization. However, passage A specifies sparsity levels (up to 98.5%) and overparameterization conditions where initialization matters, while passage B mentions 'optimal learning rate' without specifying comparable sparsity levels or experimental conditions, making it unclear if they tested identical scenario"
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2
+   }
+  },
+  "f1_b8230182a4": {
+   "pair_id": "pair_5403f55588bd",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states that Batch Normalization improves ImageNet performance. Claim B states that Fixup can train deep networks as effectively as Batch Normalization. These are complementary findings about different methods, not opposing ones."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports superior accuracy on ImageNet using Batch Normalization. Claim B states Fixup allows similar learning rates to Batch Normalization on CIFAR-10. They address different metrics and datasets, not opposing conclusions."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A addresses ensemble performance on ImageNet classification accuracy. Claim B addresses training stability and learning rate capability on CIFAR-10. These concern different outcomes (ensemble accuracy vs. training capability), different datasets, and different aspects of model performance, not opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_2e3705ae84": {
+   "pair_id": "pair_5b53536c1ce6",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes a method to intentionally manipulate attention weights without losing accuracy, while Claim B explains why standard LSTM attention weights are inherently uninformative due to hidden state similarity."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses manipulating attention to deceive while maintaining accuracy. Claim B states attention lacks meaning in LSTMs due to high conicity. They address different aspects of attention reliability without directly contradicting each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes successfully manipulating attention weights with minimal accuracy cost. Claim B describes a technical limitation (high conicity in LSTMs) where attention weights don't carry meaning. These address different phenomena—one about deliberate manipulation, one about inherent architectural limitations—and do not oppose each other."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_3551bd8d88": {
+   "pair_id": "pair_604f6fc4e073",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses the performance of training pruned sub-networks from scratch versus original initialization, while Claim B describes the discovery of 'Supermasks' in untrained networks. They address different phenomena."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares random vs original initialization for training. Claim B reports performance of untrained networks with Supermasks. They address different methods and outcomes, so they do not oppose."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A addresses whether random re-initialization performs worse than original initialization. Claim B demonstrates that supermasks on randomly initialized networks achieve above-chance performance. These address different questions about random initialization and do not directly oppose each other."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_7931aa91c8": {
+   "pair_id": "pair_6139a4ff694f",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "E",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "The claims are not opposing; Paper A attributes BN's success to enabling higher learning rates, while Paper B discusses the mechanism of weight norm disentanglement and proposes alternative normalization variants."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A explains BN's benefit via learning rates; Claim B proposes a mechanism (norm decoupling) and alternatives. They address different aspects/mechanisms without stating opposing conclusions."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A explains BN's generalization benefits through enabling higher learning rates. Claim B explains BN's benefits through decoupling weight norm from the objective. These are complementary mechanistic explanations, not opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_187f4128b3": {
+   "pair_id": "pair_68ec4d211483",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares training from scratch to magnitude pruning. Claim B compares LTR (Lottery Ticket Rewinding) to magnitude pruning early in training. They address different methods and comparisons."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares training from scratch to magnitude pruning. Claim B compares LTR to magnitude pruning during early training iterations. They address different comparisons and models, so they do not oppose each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Both claims address different aspects of training dynamics. Claim A discusses training from scratch with learned sparse architectures versus magnitude pruning. Claim B discusses lottery ticket hypothesis (LTR) versus magnitude pruning early in training. They describe different experimental setups and comparisons, not opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_cee47a10de": {
+   "pair_id": "pair_69be32ef366c",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares BN to unnormalized networks at low learning rates, while Claim B compares BN to a specific 'Normalizer-Free' (NF) architecture using adaptive gradient clipping."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A states BN offers no benefit over unnormalized nets with low learning rates. Claim B states BN is slower and less accurate than Normalizer-Free nets. The specific 'unnormalized' methods and experimental settings differ significantly, preventing a direct contradiction judgment."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states BN with low learning rates performs no better than unnormalized networks. Claim B states BN models achieve lower accuracy than normalizer-free counterparts. These address different aspects: A concerns learning rate dependency, B concerns overall performance comparison. They do not oppose the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "INSUFFICIENT_EVIDENCE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_eede2d49d7": {
+   "pair_id": "pair_6b413cebb286",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Paper A argues attention is interpretable when essential for prediction and not just a gating unit, while Paper B argues it is not, based on the existence of alternative heatmaps."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A limits interpretability to cases where attention is 'essential' and not a 'gating unit', whereas Claim B relies on 'counterfactual' experiments showing alternative heatmaps. The opposition is explained by the specific condition of attention necessity."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "task"
+     ],
+     "justification": "Claim A asserts attention is interpretable when essential for prediction; Claim B shows alternative attention distributions yield equivalent predictions, suggesting attention isn't explanatory. Paper A explicitly conditions interpretability on attention being essential, while Paper B's counterfactual experiments test cases where attention may not be essential, explaining the apparent opposition."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 3,
+    "task": 1
+   }
+  },
+  "f1_5288eaaa05": {
+   "pair_id": "pair_6baa09b69ec7",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states Batch Normalization improves training speed and accuracy. Claim B states Fixup achieves similar stability and learning rates as Batch Normalization; they do not contradict each other's findings."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states Batch Normalization reduces training steps. Claim B states Fixup allows the same learning rate as Batch Normalization. These address different aspects (speed vs. hyperparameter setting) and do not contradict."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states batch normalization achieves better accuracy with fewer training steps versus a baseline. Claim B states Fixup can train deep networks with the same learning rate as batch normalization. These address different comparisons and outcomes (accuracy/convergence vs. learning rate capability), not the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_464e6b7064": {
+   "pair_id": "pair_6ea79cd737d0",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A identifies the existence of 'winning tickets' (specific initializations), while Claim B compares 'random tickets' to 'initial tickets'. They address different aspects of subnetwork performance and do not directly contradict."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports the size of winning tickets. Claim B compares the performance of random tickets to initial tickets. They address different aspects (size vs. relative performance) and do not contradict."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims A and B address different aspects: A reports winning ticket sizes (10-20%), B compares random vs initial ticket performance. The opposition is unclear—B's random tickets may achieve similar performance despite different mechanisms. Insufficient detail on whether B's random tickets match A's size specifications or experimental setup."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_00bf89626e": {
+   "pair_id": "pair_706a267391b8",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A explicitly disputes the Lottery Ticket Hypothesis (Claim B), noting that with an 'optimal learning rate', the 'winning ticket' initialization provides no improvement over random initialization, suggesting the effect is hyperparameter-dependent."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A finds no improvement with 'optimal learning rate', while Claim B asserts effectiveness. The specific tuning condition (optimal LR) in A explains the divergence from B's general hypothesis."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A states winning ticket initialization doesn't improve over random initialization with optimal learning rate. Claim B states winning tickets reach comparable accuracy. The text doesn't specify whether Frankle et al. used optimal learning rates or how their training conditions compare to Liu et al.'s evaluation."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2
+   }
+  },
+  "f1_6a8a93d29c": {
+   "pair_id": "pair_7191e3314a5d",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "methodology"
+     ],
+     "justification": "Claim A argues attention is generally not explanatory. Claim B identifies specific conditions (when attention is essential and not just a gating unit) under which attention weights become interpretable, explaining the discrepancy."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A questions attention's explanatory value, especially with complex encoders. Claim B asserts interpretability holds when attention is essential and not a gating unit. The condition in B explains the discrepancy."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "task"
+     ],
+     "justification": "Claim A states attention provides questionable explanations especially with complex encoders. Claim B states attention is interpretable when essential for prediction and not reducible to gating. The opposition is explained by different experimental conditions: Jain et al. tested cases where attention may not be essential; Vashishth et al. specifically examined cases where attention is essential."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 3,
+    "methodology": 1,
+    "task": 1
+   }
+  },
+  "f1_ae52feb708": {
+   "pair_id": "pair_7a4e3a8a0146",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "training & design"
+     ],
+     "justification": "Claim A argues attention is not a meaningful explanation because permuting weights has little effect. Claim B shows that specific architectural changes (Diversity/Orthogonal LSTM) make attention meaningful by making outputs sensitive to permutations."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states attention generally lacks explanatory power. Claim B states specific modified models (Diversity/Orthogonal LSTM) show significant output changes when attention is permuted, implying they *do* have explanatory power. However, Claim A allows for exceptions ('at best, questionable'), and Claim B confirms vanilla LSTMs align with A. They address different model variants."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A questions attention's explanatory ability in complex encoders. Claim B shows modified LSTM models (Diversity and Orthogonal) produce different outputs with permuted attention weights, supporting improved meaningfulness. These complement rather than oppose each other."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {
+    "training & design": 1
+   }
+  },
+  "f1_33e847c36b": {
+   "pair_id": "pair_7b180d554a83",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports specific accuracy results for BiLSTM and Embedding models under manipulated attention, while Claim B introduces a new post-hoc training protocol for non-contextual models. They do not address the same relationship."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports specific accuracy results for BiLSTM/Embedding models. Claim B describes a proposed experimental protocol. They address different aspects (results vs. method) and do not state opposing conclusions."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports empirical results from a specific experiment (accuracy after zeroing attention). Claim B describes a methodological approach for testing attention. They address different aspects and do not state opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_ca11c8a36d": {
+   "pair_id": "pair_7beb8c2cb580",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "methodology"
+     ],
+     "justification": "Paper A finds training from scratch matches/outperforms fine-tuning for structured pruning, while Paper B finds it cannot match performance for unstructured sparse architectures at scale."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "dataset",
+      "data scale"
+     ],
+     "justification": "Claim A finds scratch training comparable/better on smaller datasets; Claim B finds it worse on large-scale tasks (ImageNet, WMT). The difference in data scale/dataset explains the opposing results."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "dataset",
+      "experimental conditions",
+      "population",
+      "model / method"
+     ],
+     "justification": "Liu et al. use structured pruning with predefined architectures; Gale et al. examine unstructured sparse architectures learned through pruning. Gale et al. explicitly replicate Liu et al. 'at scale' on large-scale tasks (Transformer on WMT, ResNet-50 on ImageNet), suggesting scale and task differences explain the opposing findings."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "dataset"
+   ],
+   "factor_votes": {
+    "methodology": 1,
+    "dataset": 2,
+    "data scale": 1,
+    "experimental conditions": 1,
+    "population": 1,
+    "model / method": 1
+   }
+  },
+  "f1_cc99d39677": {
+   "pair_id": "pair_7c56d95b23f6",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states Batch Normalization improves training and performance. Claim B states a new method (Fixup) can match those benefits without normalization. They describe different methods achieving similar goals, not opposing conclusions."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states Batch Normalization beats state-of-the-art. Claim B states Fixup (without normalization) matches normalization and achieves state-of-the-art. They agree on achieving SOTA; B does not deny A's success."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states batch normalization beats state-of-the-art in image classification. Claim B states Fixup (without normalization) achieves state-of-the-art with proper regularization. These are compatible: both can achieve SOTA under different conditions/regularization schemes. No direct opposition."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_0a8ccddc50": {
+   "pair_id": "pair_7f04305cdaf3",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A introduces a new diagnostic protocol for evaluating attention, while Claim B makes a specific observation about hidden state similarity in LSTMs. They address different aspects of attention interpretability."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes a proposed experimental protocol, not a finding. Claim B reports an observation about LSTM encoders. They address different aspects (method vs. result) and do not state opposing conclusions."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on whether attention weights carry meaning in LSTMs. Paper A proposes methods to show attention can explain; Paper B claims attention weights don't carry meaning due to high conicity. However, insufficient detail on experimental conditions, model architectures, tasks, and datasets to determine if opposition reflects genuine contradiction or context differences."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_01e3e93b3e": {
+   "pair_id": "pair_836b4593d008",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A proposes methods to improve attention-based explanations, while Claim B argues for using saliency methods instead. They address the same problem with different solutions rather than making opposing factual claims."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A advocates for improved attention methods, while Claim B argues against using attention entirely in favor of saliency. They address different questions: improving attention vs. replacing it."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A shows attention methods correlate with saliency/ablation scores. Claim B advocates using saliency methods instead of attention. These are complementary positions about different aspects (empirical correlation vs. methodological recommendation), not opposing claims about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_a938a706fb": {
+   "pair_id": "pair_83835e0773bf",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "methodology"
+     ],
+     "justification": "Paper A finds training from scratch matches or beats fine-tuning for structured pruning, while Paper B finds it fails to match magnitude pruning (unstructured) at scale, especially as sparsity increases."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "dataset",
+      "data scale",
+      "population"
+     ],
+     "justification": "Paper A uses smaller datasets/architectures where scratch matches pruning. Paper B uses large-scale tasks (ImageNet, WMT) where scratch fails to match pruning performance, indicating scale-dependent results."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "data scale",
+      "experimental conditions",
+      "population"
+     ],
+     "justification": "Liu et al. tested on smaller datasets with structured pruning; Gale et al. tested at large scale (ImageNet, WMT 2014) with unstructured magnitude pruning. The text explicitly states Gale et al. replicated Liu et al.'s experiments 'at scale' and found different results, indicating scale and pruning type differences explain the opposition."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "data scale",
+    "experimental conditions",
+    "population"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2,
+    "methodology": 1,
+    "dataset": 1,
+    "data scale": 2,
+    "population": 2
+   }
+  },
+  "f1_be88f61ab5": {
+   "pair_id": "pair_8485226af21f",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Both claims agree that training sparse networks from scratch typically fails to match the performance of models trained with sparsification or their dense counterparts."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares training from scratch to joint sparsification. Claim B compares direct sparse training to dense counterparts. They address different baselines and relationships, so they do not oppose each other."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims A and B appear to oppose on whether sparse architectures can train from scratch. However, they may address different scenarios: A discusses learned sparse architectures from pruning; B discusses training sparse networks directly. The text lacks sufficient detail about whether these refer to identical procedures or different sparsification methods."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_90b7c04144": {
+   "pair_id": "pair_8925e529ab3f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A critiques the interpretability of standard attention weights, while Claim B asserts that specific modified LSTM architectures (Diversity and Orthogonal) provide more faithful explanations than vanilla LSTMs."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Claim A finds standard attention unfaithful. Claim B finds Diversity/Orthogonal LSTMs provide faithful explanations. The opposition is explained by the different model architectures/methods evaluated."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states attention weights often don't correlate with prediction impact. Claim B proposes modified LSTM architectures provide more faithful explanations. These address different aspects: A diagnoses a problem in standard attention; B proposes a solution via architectural changes. They are complementary, not opposing."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "CONTEXT_DEPENDENT",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {
+    "model / method": 1
+   }
+  },
+  "f1_781a399014": {
+   "pair_id": "pair_89f23c0cd5df",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "comparable",
+     "status": "GENUINE",
+     "factors": [],
+     "justification": "Paper A explicitly challenges Paper B's claim that attention is not explanation, using an adversarial training protocol to show that alternative attention distributions do not perform as well as the base model."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A describes a training method to diverge attention while keeping predictions similar. Claim B concludes attention lacks explanatory power. The texts do not provide enough detail on experimental conditions to determine if these findings directly contradict."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on whether attention provides meaningful explanations. However, Passage A describes an adversarial training method to test explanation capability, while Passage B reports empirical findings on standard attention. The text lacks sufficient detail about experimental conditions, datasets, and model architectures to determine if opposition reflects genuine contradiction or methodological"
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "INSUFFICIENT_EVIDENCE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "GENUINE",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "INSUFFICIENT_EVIDENCE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_3d4d5858d0": {
+   "pair_id": "pair_8daeebf11211",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses the conditions under which attention can be considered explainable, while Claim B describes a method for manipulating attention weights without losing accuracy. They address different aspects of attention."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A defines a condition for explainability; Claim B reports that attention can be manipulated with low accuracy cost. They address different aspects (definition vs. manipulability) and do not directly contradict."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A asserts that well-performing pre-trained attention scores indicate explainability. Claim B shows attention weights can be manipulated with minimal accuracy loss. These address different aspects: A discusses when attention IS explanatory; B demonstrates attention CAN be deceived. They don't directly oppose the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_c4e2f9ca52": {
+   "pair_id": "pair_8dcaba42aa2c",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Paper B identifies a specific condition (attention being essential for prediction and not just a gating unit) that explains when attention is interpretable, addressing the opposition to Paper A's findings."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim B limits interpretability to cases where attention is 'essential' and not a 'gating unit', whereas Claim A finds it questionable, especially with 'complex encoder'. This condition explains the opposition."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "task"
+     ],
+     "justification": "Claim A states attention weights largely do not provide meaningful explanations. Claim B states attention weights are interpretable and correlated with feature importance. Paper B explicitly acknowledges this opposition and resolves it by specifying that interpretability holds only when attention weights are essential for prediction, not when they function as gating units—a contextual distinction "
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 3,
+    "task": 1
+   }
+  },
+  "f1_1d4295d84f": {
+   "pair_id": "pair_910e88d5a15c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Both claims agree that sparse architectures trained from scratch (reinitialized) perform worse than the original training process or the 'winning ticket' initialization at high levels of sparsity."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states initialization matters for high sparsity (winning tickets work, reinit fails). Claim B states training sparse architectures from scratch fails to match joint optimization. Both agree that random re-initialization of pruned masks is inferior to the original training process."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states that at extreme sparsity (98.5%), reinitialization of winning tickets reduces accuracy. Claim B states sparse architectures cannot match joint sparsification performance when trained from scratch. These address different phenomena: A concerns reinitializing already-found tickets; B concerns training sparse architectures from scratch without prior pruning. They are compatible finding"
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_43ce4a4912": {
+   "pair_id": "pair_99bdfa5037c7",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares training sparse architectures from scratch versus joint optimization. Claim B compares different retraining techniques (rewinding vs fine-tuning) for pruned models. They address different aspects of the pruning process."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states sparse architectures cannot be trained from scratch to match joint optimization. Claim B states rewinding matches complex techniques. They address different comparisons (from-scratch vs. retraining methods) and do not directly contradict."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims A and B oppose on whether unstructured sparse architectures can match joint sparsification performance. However, insufficient detail on experimental conditions, datasets, metrics, and specific techniques to determine if opposition reflects genuine contradiction or context differences."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_d54f175b35": {
+   "pair_id": "pair_9fa9d9b46377",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A introduces a diagnostic protocol for evaluating attention, while Claim B asserts that specific LSTM variants provide more faithful explanations. They address different aspects of attention interpretability without opposing each other."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes a methodological protocol. Claim B reports results for specific models. They address different aspects and do not state opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes a methodological approach (post-hoc training protocol) for examining attention. Claim B reports that modified LSTM architectures provide more faithful explanations. These address different aspects—method vs. model architecture—without directly opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_6e9f228edf": {
+   "pair_id": "pair_a1bf766e98af",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A compares training sparse architectures from scratch versus joint sparsification, while Claim B describes a comparison between weight rewinding (lottery tickets) and fine-tuning. They address different methodological comparisons."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states training from scratch fails to match joint optimization. Claim B describes a comparison study between lottery ticket networks and fine-tuning, without stating an opposing conclusion about training from scratch."
+    },
+    "haiku": {
+     "stance": "unclear",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A states sparse architectures trained from scratch cannot match joint sparsification-optimization. Claim B compares lottery ticket networks to fine-tuned pruned networks. These address different retraining methods (scratch vs. rewinding/fine-tuning), making direct opposition unclear from the text."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    null
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_5193886a06": {
+   "pair_id": "pair_a3092bd8e2c9",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A makes a general statement about attention weights as importance rankings, while Claim B describes specific observations of attention rollout and flow methods on a single example."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states raw attention fails as an importance ranking. Claim B describes specific weights assigned by improved methods (rollout/flow) in one example. They address different methods and do not state opposing conclusions."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states attention fails as an importance ranking for explaining decisions. Claim B describes a specific example where attention rollout/flow methods assign high weights to relevant tokens. These address different aspects: A critiques raw attention's interpretability; B demonstrates improved methods. They do not directly oppose."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_fe8dfd6098": {
+   "pair_id": "pair_a38c8c644fd3",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states that Batch Normalization improves performance on ImageNet, while Claim B states that specific large model variants (F4, F5) were unstable with it. These are not opposing conclusions."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports superior accuracy using Batch Normalization. Claim B reports instability of specific large models with Batch Normalization. These address different outcomes (accuracy vs stability) and do not directly contradict."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states batch normalization enables state-of-the-art ImageNet performance via ensemble methods. Claim B reports instability with batch normalization in larger models (F4, F5). These address different aspects—ensemble performance vs. training stability in specific model sizes—and do not oppose the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_f38f60664e": {
+   "pair_id": "pair_a6f3d0ca1591",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method"
+     ],
+     "justification": "Claim A states Batch Normalization improves performance, while Claim B finds Normalizer-Free models outperform batch-normalized counterparts, specifically when using adaptive gradient clipping and large-scale pre-training."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "data scale",
+      "experimental conditions"
+     ],
+     "justification": "Claim A refers to training from scratch. Claim B specifies 'finetuning... after large-scale pre-training on a dataset of 300 million labeled images', a different regime where Normalizer-Free models outperform Batch Normalization."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states batch normalization achieves better accuracy with fewer training steps versus baseline. Claim B states normalizer-free models outperform batch-normalized models after large-scale pre-training. These address different experimental conditions (standard training vs. post-pretraining finetuning) and do not directly oppose each other."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "NONE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2,
+    "model / method": 1,
+    "data scale": 1
+   }
+  },
+  "f1_7ac62d0483": {
+   "pair_id": "pair_a9043c84fbac",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A specifies conditions under which attention is interpretable, while Claim B notes it is not a fail-safe indicator. These are complementary observations rather than direct oppositions."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim A limits interpretability to cases where attention is 'essential' and not a 'gating unit'. Claim B finds it 'noisy' and 'not fail-safe' generally. The conditional constraint in A explains the discrepancy with B's broader negative finding."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on attention interpretability, but texts lack sufficient detail on experimental conditions, tasks, models, and evaluation metrics to determine if opposition reflects genuine contradiction or context-dependent differences in methodology."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": null,
+   "status_agreement": "split",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": null,
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1
+   }
+  },
+  "f1_ff31dc552e": {
+   "pair_id": "pair_a9610a18cc5a",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "methodology"
+     ],
+     "justification": "Paper A attributes BN's generalization to enabling higher learning rates via empirical observation, while Paper B attributes it to the stochasticity of batch statistics (μB, σB) through theoretical decomposition and simulation."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "model / method"
+     ],
+     "justification": "Claim A attributes generalization to enabled higher learning rates. Claim B attributes it to stochastic behaviors of batch statistics acting as regularization. These are distinct mechanistic explanations for the same phenomenon."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims A and B propose different mechanisms for BN's generalization benefits (higher learning rates vs. stochastic behaviors of batch statistics), but the passages lack sufficient detail about experimental conditions, network architectures, datasets, and statistical rigor to determine if this is a genuine contradiction or complementary findings."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [],
+   "factor_votes": {
+    "methodology": 1,
+    "model / method": 1
+   }
+  },
+  "f1_2b046bc529": {
+   "pair_id": "pair_acb242e8099d",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses unnormalized networks and activation growth, while Claim B discusses batch-normalized networks and gradient explosion/trainability relative to the epsilon parameter. They address different conditions and phenomena."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A concerns unnormalized networks, while Claim B concerns batch-normalized networks. They address different models/conditions, so they do not oppose each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A addresses activation magnitude growth in unnormalized networks limiting learning rates. Claim B addresses gradient explosion in batch-normalized networks. These concern different phenomena (activations vs gradients) in different network types (unnormalized vs batch-normalized), so they do not oppose each other."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_5b5363b55c": {
+   "pair_id": "pair_ad05b540299b",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A proposes a test for when attention might be explainable, while Claim B notes that others have tried to improve attention due to perceived problems with its faithfulness."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A defines a condition for explainability; Claim B states that faithfulness problems inspired improvements. They address different aspects and do not contradict each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A proposes a specific test for when attention can serve as explanation (pre-trained scores performing well). Claim B acknowledges problems with attention as explanation and notes efforts to improve it. These are compatible positions—B's acknowledgment of problems doesn't negate A's proposed testing framework."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_3f31ac2863": {
+   "pair_id": "pair_adc75c9fbe84",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses the difficulty of training sparse networks from scratch compared to dense ones. Claim B compares a new 'random tickets' pruning method to 'initial tickets' methods."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states direct training of sparse networks often fails. Claim B compares two pruning methods ('random tickets' vs 'initial tickets'). They address different relationships and do not oppose each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states that training sparse networks directly often fails and underperforms dense counterparts. Claim B discusses random pruning methods that achieve comparable performance to other pruning approaches. These address different aspects of pruning (direct training vs. method comparison) and are not directly opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_b39bfb3ef4": {
+   "pair_id": "pair_b43e33c9328e",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses the performance impact of attention layers on specific classification tasks, while Claim B addresses the interpretability/explanatory value of attention weights. They address different properties of attention mechanisms."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses predictive improvement on specific datasets, while Claim B addresses the interpretability/explanatory value of attention weights. These are distinct relationships (performance vs. explanation)."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on whether attention provides explanation. Paper A challenges Jain & Wallace's assumptions and proposes alternative tests showing attention can explain. Paper B claims attention does not provide meaningful explanations. However, insufficient detail on experimental conditions, datasets, and methodologies to determine if opposition reflects genuine contradiction or context-dependent di"
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_e1b4076b69": {
+   "pair_id": "pair_b554fbe55462",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "evaluation metric",
+      "methodology"
+     ],
+     "justification": "Paper A argues attention provides explainability if it aids prediction in a diagnostic framework, while Paper B argues it fails as an importance ranking based on weight manipulation and gradient-based comparisons."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A posits attention can be explanatory under specific 'clean' diagnostic settings, while Claim B concludes it fails as an importance ranking. The text lacks sufficient detail on experimental conditions to determine if these are contradictory or context-dependent."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on whether attention explains model decisions, but use different definitions of 'explanation' and test different aspects (pre-trained frozen weights vs. importance ranking). Text lacks sufficient detail on methodological comparability to determine if opposition is genuine contradiction."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "INSUFFICIENT_EVIDENCE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "INSUFFICIENT_EVIDENCE",
+   "factors": [],
+   "factor_votes": {
+    "evaluation metric": 1,
+    "methodology": 1
+   }
+  },
+  "f1_6e69ea0701": {
+   "pair_id": "pair_b7cd47af92af",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "data scale",
+      "population"
+     ],
+     "justification": "Paper A finds winning tickets in smaller networks/datasets, while Paper B fails to replicate this 'at scale' using larger models (ResNet-50, Transformer) and datasets (ImageNet, WMT)."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "dataset",
+      "data scale"
+     ],
+     "justification": "Claim A asserts subnetworks match original accuracy; Claim B denies this for large-scale tasks (ImageNet, WMT). The difference in data scale and dataset complexity explains the opposing findings."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "dataset",
+      "data scale",
+      "experimental conditions",
+      "population"
+     ],
+     "justification": "Claim A reports winning tickets reach comparable accuracy when trained in isolation. Claim B states sparse architectures from pruning cannot match performance when trained from scratch at scale. The opposition reflects differences in experimental scale (Frankle used smaller datasets; Gale tested on large-scale tasks like ImageNet and WMT 2014) and conditions."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "dataset",
+    "data scale",
+    "population"
+   ],
+   "factor_votes": {
+    "data scale": 3,
+    "population": 2,
+    "dataset": 2,
+    "experimental conditions": 1
+   }
+  },
+  "f1_97aaf098fd": {
+   "pair_id": "pair_b8cecc778b4c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses the necessity of specific initializations for extremely sparse networks, while Claim B describes a new 'hybrid tickets' pruning method. They address different aspects of network pruning."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states initialization matters for high sparsity. Claim B proposes a new method improving on random tickets. They address different aspects/methods and do not directly contradict each other."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A discusses initialization importance at high sparsity levels (98.5% pruning). Claim B discusses hybrid tickets combining random and data-dependent pruning. These address different aspects of pruning and do not directly oppose each other regarding the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_61030cd09a": {
+   "pair_id": "pair_c63a52382b27",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "training & design"
+     ],
+     "justification": "Claim A states BN improves convergence generally, while Claim B specifies that vanilla BN networks without skip connections are untrainable at large depths, identifying architecture and depth as limiting factors."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states BN improves convergence generally. Claim B states vanilla BN is untrainable at large depths. These address different conditions (general vs. deep/vanilla); B does not negate A's general benefit, but limits it."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A states BN improves convergence and generalization generally. Claim B addresses trainability of deep vanilla BN networks without skip connections at large depths—a specific architectural constraint. These address different aspects and settings, not opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "training & design": 1
+   }
+  },
+  "f1_9034a6e8d9": {
+   "pair_id": "pair_ca214c85cae6",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "methodology"
+     ],
+     "justification": "Paper A claims attention is interpretable when essential for prediction, while Paper B finds it fails as an importance ranking based on weight manipulation experiments in specific text classification settings."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A states attention is interpretable under specific conditions, while Claim B states it fails as an importance ranking. The text lacks sufficient detail on experimental settings to determine if these are contradictory or context-dependent."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "task",
+      "evaluation metric",
+      "methodology"
+     ],
+     "justification": "Claim A asserts attention is interpretable when essential for prediction; Claim B states attention fails as importance ranking. Paper A uses manual evaluation on diverse NLP tasks; Paper B manipulates attention weights in text classification. Different methodologies and evaluation approaches account for the opposition."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "methodology"
+   ],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "methodology": 2,
+    "task": 1,
+    "evaluation metric": 1
+   }
+  },
+  "f1_10b38d19b0": {
+   "pair_id": "pair_ccc330a1ff73",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A proposes a theoretical view on how normalization works, while Claim B proposes an alternative initialization method (Fixup) that achieves similar results without normalization. They address different aspects of deep learning."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A proposes a theoretical view on normalization's function. Claim B reports empirical results for an alternative method. They address different aspects (theory vs. performance of alternative) and do not contradict."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A proposes a theoretical view of normalization's purpose (decoupling weights' norm from objective). Claim B demonstrates that normalization can be replaced by alternative initialization. These address different aspects—theory vs. practice—and are complementary rather than opposing."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_2caf59ec22": {
+   "pair_id": "pair_cd1e74f9175c",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes activation growth in unnormalized networks limiting learning rates, while Claim B describes weight growth and gradient behavior in batch-normalized networks after one step of learning."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A concerns unnormalized networks, while Claim B concerns batch-normalized networks. They describe different systems, so there is no opposition."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims A and B both discuss gradient/activation behavior in deep networks, but address different scenarios: A discusses unnormalized networks (where BN is absent), while B discusses batch-normalized networks. They oppose on whether gradients explode in depth, but the different network types prevent determining if this is a genuine contradiction."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_c2b257ce4d": {
+   "pair_id": "pair_d07a8b3f1ca8",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "comparable",
+     "status": "GENUINE",
+     "factors": [],
+     "justification": "Paper A claims Batch Normalization is necessary for state-of-the-art ImageNet performance, while Paper B claims their Normalizer-Free models exceed the performance of the best batch-normalized models on the same task."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "training & design"
+     ],
+     "justification": "Claim B's superiority relies on 'Adaptive Gradient Clipping' and 'strong data augmentations', specific techniques absent in Claim A. These methodological differences explain how non-normalized models can outperform normalized ones."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method",
+      "time period"
+     ],
+     "justification": "Claim A (2015) reports batch normalization beating prior state-of-the-art. Claim B (2021) reports normalizer-free networks exceeding batch-normalized models. The opposition reflects methodological advances over 6 years and different training regimes (adaptive gradient clipping, large-scale pre-training)."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "GENUINE",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 2,
+    "training & design": 1,
+    "model / method": 1,
+    "time period": 1
+   }
+  },
+  "f1_3092727f58": {
+   "pair_id": "pair_d70c8785c992",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "task",
+      "methodology"
+     ],
+     "justification": "Paper A claims attention fails to identify important representations, while Paper B argues it is interpretable and correlates with feature importance, provided attention is essential for the model's prediction and not just gating."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A states attention often fails to identify important representations. Claim B states attention is interpretable and correlated with importance. They oppose, but specific experimental conditions and tasks are not detailed enough to judge contradiction."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on attention interpretability, but Paper B explicitly qualifies its finding ('only for cases when attention weights are essential'), while Paper A's scope and conditions are unclear. Insufficient detail to determine if opposition reflects genuine contradiction or different experimental conditions."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "INSUFFICIENT_EVIDENCE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "INSUFFICIENT_EVIDENCE",
+   "factors": [],
+   "factor_votes": {
+    "task": 1,
+    "methodology": 1
+   }
+  },
+  "f1_e7e50306c4": {
+   "pair_id": "pair_d77c91a49c48",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "methodology"
+     ],
+     "justification": "Paper A attributes BN's generalization to stochastic noise in batch statistics, while Paper B attributes it primarily to enabling larger learning rates, identifying different underlying mechanisms for the same outcome."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claims oppose on BN's mechanism (stochasticity vs. learning rate enablement). Text provides sufficient detail to identify these distinct, plausible mechanisms as context-dependent explanations rather than a direct contradiction."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Both claims address BN's generalization improvement but attribute it to different mechanisms: Claim A cites stochastic behaviors of batch statistics; Claim B cites larger learning rates. The text lacks sufficient detail on experimental conditions, controls, and whether these mechanisms are mutually exclusive or complementary to determine if this is genuine contradiction."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [],
+   "factor_votes": {
+    "methodology": 1,
+    "experimental conditions": 1
+   }
+  },
+  "f1_c036449bb7": {
+   "pair_id": "pair_d7a54da74f56",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "training & design"
+     ],
+     "justification": "Claim A asserts BN is necessary for accuracy/speed, while Claim B demonstrates that a new method (Adaptive Gradient Clipping) allows unnormalized models to exceed BN performance, resolving the opposition through methodological innovation."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A advocates replacing L2 BN with L1/Linf BN (normalization remains). Claim B advocates removing normalization entirely. They address different interventions, so they do not oppose each other."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method",
+      "baseline"
+     ],
+     "justification": "Claim A shows L1/L∞ normalization alternatives work well on CIFAR/ImageNet. Claim B shows normalization-free models exceed batch-normalized ones on large-scale datasets. The opposition reflects different approaches: A proposes normalization variants; B proposes removing normalization entirely with adaptive gradient clipping. Both achieve competitive/superior results under their respective conditio"
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "NONE",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [],
+   "factor_votes": {
+    "training & design": 1,
+    "experimental conditions": 1,
+    "model / method": 1,
+    "baseline": 1
+   }
+  },
+  "f1_a15539d916": {
+   "pair_id": "pair_d8c64f4e4898",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "methodology"
+     ],
+     "justification": "Paper A finds training from scratch matches or outperforms fine-tuning for structured pruning, while Paper B finds it fails to match magnitude pruning (unstructured sparsity) at scale."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "dataset",
+      "data scale",
+      "task"
+     ],
+     "justification": "Claim A finds scratch training comparable/better on smaller datasets/tasks. Claim B finds it worse on large-scale tasks (ImageNet, WMT). The difference in data scale and task complexity explains the opposing results."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "dataset",
+      "data scale",
+      "experimental conditions",
+      "model / method"
+     ],
+     "justification": "Liu et al. tested on smaller datasets with structured pruning; Gale et al. tested on large-scale tasks (ImageNet, WMT 2014) with magnitude pruning and extended training. Different pruning methods, datasets, and training protocols explain the opposing findings."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "dataset",
+    "data scale"
+   ],
+   "factor_votes": {
+    "methodology": 1,
+    "dataset": 2,
+    "data scale": 2,
+    "task": 1,
+    "experimental conditions": 1,
+    "model / method": 1
+   }
+  },
+  "f1_51bd61c33d": {
+   "pair_id": "pair_de7db3b8efdb",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "evaluation metric",
+      "methodology"
+     ],
+     "justification": "Paper B explicitly challenges Paper A's definition of explanation, proposing alternative tests and a 'clean' setting to argue that attention can fulfill a sense of explainability, unlike Paper A's findings."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method"
+     ],
+     "justification": "Claim A questions explainability in standard settings with complex encoders. Claim B finds explainability in a specific 'clean' diagnostic setup using frozen pre-trained weights, indicating the opposition depends on experimental design."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on whether attention provides meaningful explanation. However, Claim B uses a specific diagnostic framework (frozen pretrained weights) with different criteria ('helpful and consistent') than Claim A's broader assessment. Text lacks sufficient detail on experimental conditions, task specifics, and model architectures to determine if opposition reflects genuine contradiction or method"
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [],
+   "factor_votes": {
+    "evaluation metric": 1,
+    "methodology": 1,
+    "experimental conditions": 1,
+    "model / method": 1
+   }
+  },
+  "f1_d330012779": {
+   "pair_id": "pair_e126cefe404f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "E",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A finds attention distributions are often not plausible explanations, while Claim B argues for using saliency methods instead of attention. These are complementary observations/proposals, not opposing conclusions."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A reports empirical findings on attention's flaws. Claim B proposes a strategic shift to saliency methods. They address related topics but do not state opposing conclusions about the same relationship."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A observes that attention distributions fail to provide plausible explanations for predictions. Claim B proposes using saliency methods instead of attention for explanations. These are complementary positions about different approaches, not opposing claims about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_d4960b1fef": {
+   "pair_id": "pair_e98032065c88",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "training & design",
+      "methodology"
+     ],
+     "justification": "Paper A argues attention can be explainable under specific diagnostic tests, while Paper B finds standard LSTM attention unexplainable due to hidden state similarity, proposing a modified LSTM to fix this."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A posits attention can be explanatory under specific 'clean' diagnostic conditions, while Claim B states it generally fails. The text lacks sufficient detail on whether Claim B's experiments exclude the specific conditions of Claim A."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on whether attention provides explainability, but Claim A tests pre-trained frozen models while Claim B examines standard LSTM encoders. Different model architectures and experimental conditions prevent determining if opposition is genuine contradiction."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "INSUFFICIENT_EVIDENCE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "INSUFFICIENT_EVIDENCE",
+   "factors": [],
+   "factor_votes": {
+    "training & design": 1,
+    "methodology": 1
+   }
+  },
+  "f1_87a81905f7": {
+   "pair_id": "pair_ed4e5329db5f",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "The claims are not opposing; Claim A discusses how unnormalized networks fail at large learning rates, while Claim B discusses how batch-normalized networks fail at large depths without skip connections."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A concerns unnormalized networks, while Claim B concerns batch-normalized networks. They address different models/conditions, so they do not oppose each other."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method"
+     ],
+     "justification": "Claim A attributes activation magnitude growth to unnormalized networks limiting learning rates. Claim B attributes gradient explosion to batch normalization itself causing trainability issues. The opposition concerns whether BN causes or solves the depth-related problem, but differs in focus: A examines unnormalized networks' limitations, B examines BN's gradient dynamics at initialization in wid"
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "model / method": 1
+   }
+  },
+  "f1_af64553060": {
+   "pair_id": "pair_f0e36bc9c67e",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "comparable",
+     "status": "GENUINE",
+     "factors": [],
+     "justification": "Paper A argues attention learns meaningful relationships that cannot be easily 'hacked' adversarially, while Paper B argues attention provides questionable transparency because alternative distributions yield equivalent predictions."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "training & design"
+     ],
+     "justification": "Claim A relies on adversarial training showing attention is meaningful; Claim B finds counterfactual distributions have modest effects, questioning explanation. The differing experimental protocols (adversarial vs counterfactual) account for the opposition."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims directly oppose on whether attention learns meaningful relationships. However, text lacks sufficient detail on experimental conditions, datasets, model architectures, and evaluation metrics to determine if opposition reflects genuine contradiction or context-dependent differences."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "majority",
+   "status": null,
+   "status_agreement": "split",
+   "comparability": null,
+   "derived": [
+    "GENUINE",
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": null,
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "training & design": 1
+   }
+  },
+  "f1_0bf9efa6f8": {
+   "pair_id": "pair_f216c0b11d32",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes an experimental setup for training BN networks, while Claim B discusses the untrainability of deep BN networks without skip connections. They do not make opposing claims."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes an experimental setup to analyze BN benefits. Claim B states BN causes gradient explosion in deep vanilla networks. They address different aspects (benefits vs. initialization limits) and do not directly contradict."
+    },
+    "haiku": {
+     "stance": "not_oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A describes an experimental procedure (training a BN network with specific learning rates). Claim B describes trainability limitations of BN networks at large depths without skip connections. These address different aspects and do not state opposing conclusions about the same relationship."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "unanimous",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "NONE"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {}
+  },
+  "f1_ff382e8b2c": {
+   "pair_id": "pair_f221b33cd140",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "comparable",
+     "status": "GENUINE",
+     "factors": [],
+     "justification": "Claim A asserts batch normalization is necessary for state-of-the-art ImageNet performance, while Claim B demonstrates that models without normalization layers can exceed the performance of the best batch-normalized models."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "data scale",
+      "training & design"
+     ],
+     "justification": "Claim B's superiority relies on 'Adaptive Gradient Clipping' and 'large-scale pre-training on a dataset of 300 million labeled images', conditions absent in Claim A's standard Batch Normalization setup."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method",
+      "time period"
+     ],
+     "justification": "Claim A (2015) establishes batch normalization as state-of-the-art. Claim B (2021) shows normalizer-free networks exceed batch-normalized models. The opposition reflects methodological advances and different training techniques (adaptive gradient clipping) developed over six years, not a direct contradiction."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "majority",
+   "comparability": "context_dependent",
+   "derived": [
+    "GENUINE",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [],
+   "factor_votes": {
+    "data scale": 1,
+    "training & design": 1,
+    "experimental conditions": 1,
+    "model / method": 1,
+    "time period": 1
+   }
+  },
+  "f1_78ac0f4cd8": {
+   "pair_id": "pair_f657c57ef158",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "D",
+   "labels": {
+    "gemini": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A argues raw attention is not a reliable explanation. Claim B agrees that raw attention is problematic and proposes new methods (rollout/flow) that improve upon it."
+    },
+    "qwen": {
+     "stance": "not_oppose",
+     "sufficiency": "sufficient",
+     "comparability": "not_applicable",
+     "status": "NONE",
+     "factors": [],
+     "justification": "Claim A critiques raw attention weights as explanations. Claim B proposes new methods (rollout/flow) that outperform raw attention. They address different interventions (raw vs. processed attention), so they do not oppose."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "model / method"
+     ],
+     "justification": "Claim A argues attention weights provide questionable explanations in complex encoders. Claim B proposes post-hoc methods (rollout/flow) that improve correlations with importance scores. They address different solutions: raw attention vs. processed attention weights through post-hoc methods."
+    }
+   },
+   "stance": "not_oppose",
+   "stance_agreement": "majority",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "NONE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "NONE",
+    "NONE",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "NONE",
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "model / method": 1
+   }
+  },
+  "f1_8c3d3240a0": {
+   "pair_id": "pair_f965b660c868",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Paper B identifies that the importance of initialization (opposing Paper A's claim) only emerges at extreme levels of sparsity (e.g., 98.5%) not explored by Paper A."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions"
+     ],
+     "justification": "Claim B explicitly limits its finding to 'after further pruning' (up to 98.5%), whereas Claim A covers the algorithms examined generally. The difference in sparsity levels explains the opposing conclusions on initialization importance."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "data scale",
+      "experimental conditions"
+     ],
+     "justification": "Claim A states fine-tuning pruned models performs comparably or worse than training from scratch. Claim B shows that at extreme sparsity (98.5%), reinitialization hurts accuracy, implying initialization matters. The opposition depends on pruning depth: Claim B explicitly notes initialization matters 'beyond this point' of extreme pruning, suggesting Claim A may apply to moderate pruning levels."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "sufficient",
+   "sufficiency_agreement": "unanimous",
+   "status": "CONTEXT_DEPENDENT",
+   "status_agreement": "unanimous",
+   "comparability": "context_dependent",
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT",
+    "CONTEXT_DEPENDENT"
+   ],
+   "status_derived": "CONTEXT_DEPENDENT",
+   "factors": [
+    "experimental conditions"
+   ],
+   "factor_votes": {
+    "experimental conditions": 3,
+    "data scale": 1
+   }
+  },
+  "f1_26b64d665f": {
+   "pair_id": "pair_fe5e3547cdc1",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B",
+   "labels": {
+    "gemini": {
+     "stance": "oppose",
+     "sufficiency": "sufficient",
+     "comparability": "context_dependent",
+     "status": "CONTEXT_DEPENDENT",
+     "factors": [
+      "experimental conditions",
+      "task"
+     ],
+     "justification": "Claim A finds attention weights are not fail-safe indicators of importance, while Claim B argues they are interpretable/correlated with importance, provided they are essential for prediction and not just gating units."
+    },
+    "qwen": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claim A finds attention often fails as an indicator; Claim B asserts it is interpretable. The texts lack specific experimental details (tasks, metrics) to determine if these findings contradict or reflect different conditions."
+    },
+    "haiku": {
+     "stance": "oppose",
+     "sufficiency": "insufficient",
+     "comparability": "not_applicable",
+     "status": "INSUFFICIENT_EVIDENCE",
+     "factors": [],
+     "justification": "Claims oppose on attention interpretability, but Claim B's conclusion explicitly qualifies that interpretability holds only when attention is essential for prediction. Text lacks sufficient detail on whether Claim A tested such conditions, preventing determination of genuine contradiction."
+    }
+   },
+   "stance": "oppose",
+   "stance_agreement": "unanimous",
+   "sufficiency": "insufficient",
+   "sufficiency_agreement": "majority",
+   "status": "INSUFFICIENT_EVIDENCE",
+   "status_agreement": "majority",
+   "comparability": null,
+   "derived": [
+    "CONTEXT_DEPENDENT",
+    "INSUFFICIENT_EVIDENCE",
+    "INSUFFICIENT_EVIDENCE"
+   ],
+   "status_derived": "INSUFFICIENT_EVIDENCE",
+   "factors": [],
+   "factor_votes": {
+    "experimental conditions": 1,
+    "task": 1
+   }
+  }
+ }
+}

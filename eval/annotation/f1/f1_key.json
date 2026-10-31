@@ -1,0 +1,667 @@
+{
+ "batch": "f1",
+ "protocol": "four-state conflict annotation v2",
+ "strata": {
+  "A": "pair-analysis stance = oppose and relation call with passages = CONTRADICTS (the E1 both-agree set)",
+  "B": "the current trigger fires, not in A",
+  "C": "the current trigger does not fire; both relation calls say CONTRADICTS",
+  "D": "the current trigger does not fire; exactly one relation call says CONTRADICTS",
+  "E": "no LLM reading signals opposition"
+ },
+ "design": {
+  "strata": {
+   "A": {
+    "pool": 28,
+    "sampled": 28,
+    "weight": 1.0
+   },
+   "B": {
+    "pool": 24,
+    "sampled": 24,
+    "weight": 1.0
+   },
+   "C": {
+    "pool": 43,
+    "sampled": 13,
+    "weight": 3.3076923076923075
+   },
+   "D": {
+    "pool": 128,
+    "sampled": 12,
+    "weight": 10.666666666666666
+   },
+   "E": {
+    "pool": 377,
+    "sampled": 7,
+    "weight": 53.857142857142854
+   }
+  },
+  "pool_by_topic": {
+   "attention_explanation": {
+    "E": 135,
+    "D": 25,
+    "C": 10,
+    "B": 16,
+    "A": 14
+   },
+   "batchnorm_covariate_shift": {
+    "C": 18,
+    "E": 103,
+    "D": 65,
+    "A": 9,
+    "B": 5
+   },
+   "lottery_ticket_pruning": {
+    "E": 139,
+    "D": 38,
+    "C": 15,
+    "A": 5,
+    "B": 3
+   }
+  },
+  "candidates": 600,
+  "incomplete_readings": 0,
+  "detector_pool_counts": {
+   "current": 52,
+   "rel_ctx": 178,
+   "agree": 28,
+   "vote2": 76,
+   "nli": 61
+  },
+  "n_max": 84,
+  "key_usage_before": 1.648193152,
+  "key_limit": 2.0,
+  "seed": 20261007,
+  "scorer_sha256": "9fc76f4c177e51c3c4b9258376ec31c227e9bf58623c46540da2c21b40cae05c"
+ },
+ "items": [
+  {
+   "item_id": "f1_8aa6988024",
+   "pair_id": "pair_05e6fff5b5f5",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_d9a29fd39b",
+   "pair_id": "pair_063b688fbf96",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_a62f8590ae",
+   "pair_id": "pair_0892699f6c9c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E"
+  },
+  {
+   "item_id": "f1_fb1d540b7e",
+   "pair_id": "pair_189c0b91129b",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_afb6b6473a",
+   "pair_id": "pair_1d044516054d",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_8c7e7d2143",
+   "pair_id": "pair_2002613e5aa6",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_a06b1b94bc",
+   "pair_id": "pair_21cef0bda960",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_fe4d2e434e",
+   "pair_id": "pair_232ccb8a77a2",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_ad0dae003c",
+   "pair_id": "pair_2cbbb1795f81",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E"
+  },
+  {
+   "item_id": "f1_b5a997a3b2",
+   "pair_id": "pair_2e198711df62",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_93cf66387f",
+   "pair_id": "pair_2f923777d85e",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_7ddbd57d6a",
+   "pair_id": "pair_2ff1c659710c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_ee3294d9de",
+   "pair_id": "pair_3b83838ee9fd",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_7184084127",
+   "pair_id": "pair_3d77cf31bd4c",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_df7a0bd5f2",
+   "pair_id": "pair_4049930ee009",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_e5a8dde992",
+   "pair_id": "pair_413883da7b0f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_6935bf6983",
+   "pair_id": "pair_428633bda9df",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_7fde3bbd4d",
+   "pair_id": "pair_43b92625a870",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_8dee3a20f7",
+   "pair_id": "pair_447af0cd01de",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_ab7203734a",
+   "pair_id": "pair_452d6d647822",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_c3756eb337",
+   "pair_id": "pair_455316b89302",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_c0d2c857ea",
+   "pair_id": "pair_4d665c97b067",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_677707ffb4",
+   "pair_id": "pair_4e1533a56f4f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_79f5eb75b6",
+   "pair_id": "pair_511864be7c0e",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_377017aeb2",
+   "pair_id": "pair_517635ebbfa6",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_3a05f8b543",
+   "pair_id": "pair_51e43722b0a6",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_b8230182a4",
+   "pair_id": "pair_5403f55588bd",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_2e3705ae84",
+   "pair_id": "pair_5b53536c1ce6",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_3551bd8d88",
+   "pair_id": "pair_604f6fc4e073",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_7931aa91c8",
+   "pair_id": "pair_6139a4ff694f",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "E"
+  },
+  {
+   "item_id": "f1_187f4128b3",
+   "pair_id": "pair_68ec4d211483",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_cee47a10de",
+   "pair_id": "pair_69be32ef366c",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_eede2d49d7",
+   "pair_id": "pair_6b413cebb286",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_5288eaaa05",
+   "pair_id": "pair_6baa09b69ec7",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_464e6b7064",
+   "pair_id": "pair_6ea79cd737d0",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_00bf89626e",
+   "pair_id": "pair_706a267391b8",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_6a8a93d29c",
+   "pair_id": "pair_7191e3314a5d",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_ae52feb708",
+   "pair_id": "pair_7a4e3a8a0146",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_33e847c36b",
+   "pair_id": "pair_7b180d554a83",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_ca11c8a36d",
+   "pair_id": "pair_7beb8c2cb580",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_cc99d39677",
+   "pair_id": "pair_7c56d95b23f6",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_0a8ccddc50",
+   "pair_id": "pair_7f04305cdaf3",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_01e3e93b3e",
+   "pair_id": "pair_836b4593d008",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_a938a706fb",
+   "pair_id": "pair_83835e0773bf",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_be88f61ab5",
+   "pair_id": "pair_8485226af21f",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E"
+  },
+  {
+   "item_id": "f1_90b7c04144",
+   "pair_id": "pair_8925e529ab3f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_781a399014",
+   "pair_id": "pair_89f23c0cd5df",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_3d4d5858d0",
+   "pair_id": "pair_8daeebf11211",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_c4e2f9ca52",
+   "pair_id": "pair_8dcaba42aa2c",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_1d4295d84f",
+   "pair_id": "pair_910e88d5a15c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_43ce4a4912",
+   "pair_id": "pair_99bdfa5037c7",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_d54f175b35",
+   "pair_id": "pair_9fa9d9b46377",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_6e9f228edf",
+   "pair_id": "pair_a1bf766e98af",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E"
+  },
+  {
+   "item_id": "f1_5193886a06",
+   "pair_id": "pair_a3092bd8e2c9",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_fe8dfd6098",
+   "pair_id": "pair_a38c8c644fd3",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_f38f60664e",
+   "pair_id": "pair_a6f3d0ca1591",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_7ac62d0483",
+   "pair_id": "pair_a9043c84fbac",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_ff31dc552e",
+   "pair_id": "pair_a9610a18cc5a",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_2b046bc529",
+   "pair_id": "pair_acb242e8099d",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_5b5363b55c",
+   "pair_id": "pair_ad05b540299b",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_3f31ac2863",
+   "pair_id": "pair_adc75c9fbe84",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "E"
+  },
+  {
+   "item_id": "f1_b39bfb3ef4",
+   "pair_id": "pair_b43e33c9328e",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_e1b4076b69",
+   "pair_id": "pair_b554fbe55462",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_6e69ea0701",
+   "pair_id": "pair_b7cd47af92af",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_97aaf098fd",
+   "pair_id": "pair_b8cecc778b4c",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_61030cd09a",
+   "pair_id": "pair_c63a52382b27",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_9034a6e8d9",
+   "pair_id": "pair_ca214c85cae6",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_10b38d19b0",
+   "pair_id": "pair_ccc330a1ff73",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_2caf59ec22",
+   "pair_id": "pair_cd1e74f9175c",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_c2b257ce4d",
+   "pair_id": "pair_d07a8b3f1ca8",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_3092727f58",
+   "pair_id": "pair_d70c8785c992",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_e7e50306c4",
+   "pair_id": "pair_d77c91a49c48",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_c036449bb7",
+   "pair_id": "pair_d7a54da74f56",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_a15539d916",
+   "pair_id": "pair_d8c64f4e4898",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_51bd61c33d",
+   "pair_id": "pair_de7db3b8efdb",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_d330012779",
+   "pair_id": "pair_e126cefe404f",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "E"
+  },
+  {
+   "item_id": "f1_d4960b1fef",
+   "pair_id": "pair_e98032065c88",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_87a81905f7",
+   "pair_id": "pair_ed4e5329db5f",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_af64553060",
+   "pair_id": "pair_f0e36bc9c67e",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_0bf9efa6f8",
+   "pair_id": "pair_f216c0b11d32",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "C"
+  },
+  {
+   "item_id": "f1_ff382e8b2c",
+   "pair_id": "pair_f221b33cd140",
+   "topic": "batchnorm_covariate_shift",
+   "run": "fresh",
+   "stratum": "A"
+  },
+  {
+   "item_id": "f1_78ac0f4cd8",
+   "pair_id": "pair_f657c57ef158",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "D"
+  },
+  {
+   "item_id": "f1_8c3d3240a0",
+   "pair_id": "pair_f965b660c868",
+   "topic": "lottery_ticket_pruning",
+   "run": "fresh",
+   "stratum": "B"
+  },
+  {
+   "item_id": "f1_26b64d665f",
+   "pair_id": "pair_fe5e3547cdc1",
+   "topic": "attention_explanation",
+   "run": "fresh",
+   "stratum": "B"
+  }
+ ]
+}

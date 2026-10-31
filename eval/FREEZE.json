@@ -1,0 +1,77 @@
+{
+ "frozen_at": "2026-10-06T14:51:53+0530",
+ "note": "Decision rules, prompts, baselines and metrics were fixed at this point, after development on the dev topics (vit_pretraining, cot_small_models) only. No system output on a test topic had been inspected. LLM: inclusionai/ling-3.0-flash via OpenRouter, upstream host pinned to Novita, temperature 0, reasoning off, seed 7.",
+ "sha256": {
+  "backend/app/reasoning/relations.py": "c929946f6194eb8536c13ab2e693e1ed36d15b920474741b73f8f5300dd8157a",
+  "backend/app/reasoning/alignment.py": "596d7347c050d35495b9e463555f550f8cf014a6a5e2e1bfe8e513fbd30019bb",
+  "backend/app/reasoning/conflicts.py": "db12c99fdd6d223ab8b777a874ddffcc58893a886a45cfcd68549219f8db5b38",
+  "backend/app/extraction/claims.py": "37819000d2afcff6366bc23dc7725cf0a02ce3a436e4f5c06ea2699908d1ab07",
+  "backend/app/extraction/context.py": "6d803cdc48ac265c92aed7da7c39c80807878691f6821bb0541e3af8ab4932fc",
+  "backend/app/evaluation/llm_baseline.py": "4189d1cc41d68c47e267dafa7f73d8db384e1fb19d57537fe61e0f6f729ff254",
+  "backend/app/evaluation/experiment.py": "489b195d477972fb74524a33e058c3117f401344dd7a4deda838b672aaab632c",
+  "backend/app/evaluation/annotation.py": "f2071cbde57881553235802ca0116ff8dfd8180cba5d765c913c36ae42def847",
+  "backend/app/evaluation/metrics.py": "eae374879e6ff6d9da431d8b1ed32b210782cd53cd3bc19dde2cd1d8005bd4d8",
+  "backend/app/providers/llm/openai_compatible.py": "d32fc132ac3731e455ff5439c8ddab21c391da9ee32aba403916ed46d4e152e0",
+  "eval/topics.json": "07e6acd6a11821f1d08fe1abd6d40f3b8f8184cf1c451b6a4b3c1da9d2e40508"
+ },
+ "addenda": [
+  {
+   "at": "2026-10-06T15:02",
+   "what": "Annotation sampler only (backend/app/evaluation/annotation.py): the conflict stratum was split so that every pair the full system asserts as CONTRADICTS or abstains on is annotated. Decided from aggregate prediction counts on the test topics (the full system asserted only 8 contradictions in 1,200 pairs), before any label existed. No decision rule, prompt, baseline or metric changed.",
+   "sha256": {
+    "backend/app/evaluation/annotation.py": "15c830f1e576387df251f077f00efd2057c7385f2f61663f115625cf8cb350f1"
+   }
+  },
+  {
+   "at": "2026-10-06T15:35",
+   "what": "Reporting only: added the metric 'false contradictions per 100 pairs' (false CONTRADICTS assertions / pairs) to the tables and the plot, next to FCR. Reason: genuine contradictions turned out to be rare, so a rate over a handful of assertions is unstable. Added after a preliminary scoring against the AI assistant's own labels (eval/results/prelim_assistant_labels) and before any human label existed. Four tie-breaker rules were added to the annotation guide at the same time, before the sheets were distributed. No rule, prompt or baseline changed.",
+   "sha256": {
+    "backend/app/evaluation/metrics.py": "7b89a1ed778f933d4c5172b7ed80104725aec26aaf265aa6d18837ecaf51af5e",
+    "backend/app/evaluation/scoring.py": "8e554542d519314574ccd19aa5650153e17f529b9573ce207065ec3dafaf336e",
+    "eval/ANNOTATION_GUIDE.md": "b83883aa18bd6a41205a5206be47e64e0f809a82c78bcdfb26df563d2c459d7b"
+   }
+  },
+  {
+   "at": "2026-10-06T16:40",
+   "what": "Final evaluation pass. (1) DECISION-LOGIC CHANGE, from a code audit of the context gate: an LLM 'partial' stance was only honoured when embedding similarity was >= 0.79, a cut-off meant for the noisy surface-cue stance; it is now treated like 'agree' and 'oppose' (no corroboration needed). Effect on the 1,200 held-out pairs: 7 pairs change from UNRELATED to QUALIFIES for the full system and its LLM-based ablations; no asserted contradiction changes. Made before the new gold labels existed, but after the earlier preliminary scoring against the assistant's own labels had been seen. No other rule, prompt, threshold or baseline changed. (2) Evaluation labels are now two-level: five relations (SUPPORTS, EXTENDS, QUALIFIES, CONTRADICTS, UNRELATED) and a separate conflict verdict; a face-value conflict the system does not assert (verdict insufficient) is scored as an abstention - never correct, never an asserted contradiction - with both alternative readings reported. (3) Added after the decision and unable to change it: the grounded conflict-explanation layer. (4) New gold standard: blinded model-assisted consensus labels with researcher adjudication on a new stratified sample; the assistant's earlier labels are not used as gold.",
+   "sha256": {
+    "backend/app/reasoning/relations.py": "fc0ee81e5c2783964fd4a7a5c8479ba71ae29dbdac608835d0aaae7bf44f6b90",
+    "backend/app/reasoning/conflicts.py": "95ad9f1eea25f29f15d43dfb7459d404f7a343c2560b9e8a04bb7cb2269ab21e",
+    "backend/app/reasoning/explanations.py": "df54c205d4135070f6cd52e653e4eaf7e14e6794b2cb12f6c903474a46bf4820",
+    "backend/app/evaluation/metrics.py": "e93e3249812e97d5248993bfee330d8dd6ec430de2f350fc0f8d0bd882965d97",
+    "backend/app/evaluation/scoring.py": "17f7212bf3162fadbfeee69c0ba1227c9a9f6e5d973a27ee330f65d84b2c6b58",
+    "backend/app/evaluation/experiment.py": "5e9210d9ebea415a2f8b6d08ae74546304c483e53f16a1c595ff6dd956e48dc0",
+    "backend/app/evaluation/model_annotation.py": "b9c3322351f065fc82a5458064bd4b9ccd63b2866fdaf6348f07d67c1065945d"
+   }
+  },
+  {
+   "at": "2026-10-06T17:20",
+   "what": "Reference labels for batch eval2 produced: 200 pairs x 3 annotator models = 600 calls, 0 failures, US$0.568. Scores in eval/results/eval2_main are PROVISIONAL: 106 of 181 scored labels are two-to-one majorities awaiting researcher adjudication; 19 three-way splits are excluded until then. Primary reading of an unasserted conflict (abstention) was fixed in the previous addendum, before these labels existed; the relation-level reading is reported next to it. Explanation prompt and checks were developed on the dev topics only and not changed after the test explanations were generated.",
+   "sha256": {
+    "eval/annotation/eval2/eval2_key.json": "2f32afd4cf255ba1f7f654b184b4a239aa27cb0f64ea7bbfe8115d8c7072eb0b",
+    "eval/annotation/eval2/model_calls.jsonl": "28a3e91e3159ce6738d02387fa1f921cde81b77be34df56f05309afbd30cfaa9",
+    "backend/app/reasoning/explanations.py": "df54c205d4135070f6cd52e653e4eaf7e14e6794b2cb12f6c903474a46bf4820"
+   }
+  },
+  {
+   "at": "2026-10-06T19:50",
+   "what": "V2 development begins. Batch eval2 (the 6 former test topics, 200 annotated pairs) is DEVELOPMENT data from this point: its labels were used to study and calibrate the V2 comparability model (eval/results/v2_dev, eval/v2_params.json). The V1 numbers in eval/results/eval2_main stay the record of V1 on its original held-out set; no V2 number on eval2 may be reported as a held-out result. A V2 claim needs topics that were not used here. Fixed before the fits were run: ridge penalty 1.0, non-negative weights, leave-one-topic-out cross-validation, selection = fewest fitted numbers within one SE of the best out-of-fold log-loss, sufficiency rule = at least one scope or measurement factor stated by both papers. Changed after a first run had been read (post hoc on development data, all variants reported): the reported AUC (pooled -> within-topic, after a pooled AUC of 0.39 under shuffled factors showed the pooled figure is biased); the sufficiency-only model, the within-cell shuffle and the 'shared context only' column, added once the first run showed where the signal sat; and the threshold rule for the P3-as-specified rows (lowest threshold with training precision >= 50%), chosen before those rows were computed, next to the maximum-training-F1 rule used for the rows without the sufficiency rule. The finding that the signal is the sufficiency split is therefore exploratory and needs held-out confirmation. Outcome: the calibrated role-weight model did not beat uniform weights, V1 hand weights or a sufficiency-only model; the V1 gate in the pipeline is unchanged. New code: backend/app/reasoning/comparability.py, backend/app/evaluation/comparability_study.py, systems v2_* in the harness."
+  },
+  {
+   "at": "2026-10-06T22:10",
+   "what": "Four-state re-annotation (batch c4, protocol 'four-state conflict annotation v2'): 196 pairs (all 140 pairs the system reads as opposed on the eight development topics, the 26 other eval2 pairs in which an annotator model had seen opposition, and a random 30 of the remaining 97) x 3 annotator models = 588 labels, 604 HTTP calls, 0 failures, US$0.758. Five dimensions collected separately (stance, sufficiency, comparability, final status, explanatory factors); zero-shot; no system output in any prompt (system outputs were used only to choose which pairs to label). Reference = per-dimension majority, unadjudicated. Development data only. Fixed before the labels were read: the sufficiency rule (E = 0), the V1 and typed four-state rules, the model family, ridge 1.0, leave-one-topic-out. Added after the first pass was read (post hoc, all reported): the softer GENUINE targets (any annotator, each annotator alone), the fitted role-weight column on those targets, the graded-versus-gate AUC difference and the deterministic comparison of named values. Results: eval/results/v2_fourstate. No pipeline or prompt change."
+  },
+  {
+   "at": "2026-10-07T00:39",
+   "what": "Layer study E1-E3 on the C4 four-state labels (eval/results/c4_layers/, `cg_eval.py layer-study`). C4 is the only reference from here on; eval2 forced-choice labels are historical (V1 baseline) and were not used. C4 labels and the annotation protocol are unchanged; the 13 no-consensus pairs are outside every status score. Pipeline, prompts of the pair analysis, gate and explanation layer are unchanged. New LLM calls: 165 (one per distinct claim of the C4 pairs, inclusionai/ling-3.0-flash, cached), US$0.0037, for the per-claim conditional-prediction frames of E3 (eval/frames/c4_frames.json); the model saw one claim, its passage and its abstract, never the other claim, a system output or a label. The frame prompt was written once and not changed after its outputs were seen (an 8-claim pilot checked format only). Everything else is recomputed from cached outputs. NOT blind: before the study was specified, read-only checks on C4 had already shown that the cached five-way relation call separates confirmed from unconfirmed opposition (AUC 0.80 among system-opposed pairs) and that requiring it to agree with the pair-analysis stance raises precision; a sample of 22 false-opposed pairs with the annotators' justifications had been read. The E1 detectors and the frame rules were specified after that. Parameter-free rules (both agree, 2 of 3) need no fitting; every fitted score is leave-one-topic-out with ridge 1 and a 0.5 decision threshold fixed in advance. Post hoc, after the pre-specified E3 rows were read: two sensitivity rows (no role swap; 'it depends' counted as opposed), marked POST HOC in the report; paired-difference rows; the stratum-weighted accuracy column; the entailment-on-conclusions increment. All eight topics remain development data: no number in this study is a held-out result. (Timestamp corrected to the time the study file was written; the entry first carried an estimated time.)"
+  },
+  {
+   "at": "2026-10-07T01:10",
+   "what": "PRE-REGISTRATION of the fresh-topic validation of the E1 opposition detectors (batch f1), written before the pair readings of the fresh topics were complete and before any fresh pair was labelled. Full text: eval/annotation/f1/PREREGISTRATION.md (sha256 eb8b629a7a6c409771b5114da00d1f80f1ee975353140dbccd5a8df102ba4971). Scoring code frozen: backend/app/evaluation/fresh_validation.py (sha256 9fc76f4c177e51c3c4b9258376ec31c227e9bf58623c46540da2c21b40cae05c); it was dry-run once on C4, where it reproduces the known C4 figures. Three fresh topics (lottery_ticket_pruning, batchnorm_covariate_shift, attention_explanation; 29 papers, none in a development corpus), run 'fresh', pipeline and prompts unchanged. Frozen detectors: current trigger; relation call with passages; E1 both agree; E1 2 of 3; NLI only as comparison. Stratified sample from the frozen readings (strata A-E), seed 20261007, size set by the remaining key balance. Annotation: the C4 protocol exactly. Criteria: success = precision >= 75% and recall >= 60% without collapse on a topic; strong = recall >= 70%; failure = precision < 65% or recall < 50% or the gain resting on one topic. Verdict computed by code. Disclosed before the labels: C4's recall figures were relative to its labelled pool (every trigger-fired pair, but only 56 of 1,460 other candidates), so they are upper estimates over all candidates; and the C4 precision of 'relation only' and '2 of 3' covers only the labelled part of the pairs those rules flag (85 of 266 and 89 of 142). The criteria use design-weighted precision and C4-comparable recall; full-pool recall is reported but cannot be estimated precisely at this budget."
+  },
+  {
+   "at": "2026-10-07T01:21",
+   "what": "RESULT of the pre-registered fresh-topic validation of E1 (batch f1; eval/results/f1_validation/validation.md sha256 9d45fca720dce5ff0579151c8b14225f16eb0fbe4f7d25a02c951e5fc128bd64, validation.json 4459021b53486f2c7314dd5b8e18f917f3934b48a31855a0f8257abbd68f3e0b, reference.json 19735d297f9833d65e4fd29e702944661c16a810fcde1309e3634cac8fe1952f). 600 candidate pairs, 84 sampled (A 28 of 28, B 24 of 24, C 13 of 43, D 12 of 128, E 7 of 377), 252 labels, 0 failures; the scorer (sha256 9fc76f4c...) was unchanged and run once. Verdict by the pre-registered rule: PROMISING BUT INCONCLUSIVE. Both agree: 19 of 28 flagged are opposed, precision 67.9% [44, 88], C4-comparable recall 52.8% [38, 69], precision gain over the current trigger +15.9 points [+3, +32], collapse on one topic (4 of 9): intermediate, neither success nor failure. 2 of 3: design-weighted precision 62.0% [41, 77], recall 86.1%: failure on precision. Current trigger: 27 of 52, 51.9% [33, 70]. Spend: US$0.035 for 1,800 pair readings and US$0.321 logged for the annotation. Deviation from the letter of the tooling, not of the protocol: the leak guard of `fourstate-annotate` matched the English word 'similarity' inside quoted paper text in 8 prompts; it now ignores the papers' own words. The annotation prompts were not changed and no pair was removed. The error analysis (error_analysis.md) was written after the metrics and changed nothing."
+  }
+ ]
+}

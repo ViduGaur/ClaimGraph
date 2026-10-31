@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8.2
+# evaluation harness plots (scripts/cg_eval.py score)
+matplotlib>=3.8
